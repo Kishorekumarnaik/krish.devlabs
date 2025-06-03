@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>All Services | Krish.Devlabs</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+<!-- Poppins for Subheadings -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<!-- Inter for Paragraphs -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html, body {
+      height: 100%;
+    }
+  </style>
+</head>
+
+
+<body class="bg-white text-gray-900">
+
+  <!-- Page Preloader -->
+<div id="preloader" class="fixed inset-0 z-[9999] bg-black flex items-center justify-center">
+  <div class="relative w-16 h-16">
+    <div class="absolute inset-0 rounded-full border-4 border-t-transparent border-indigo-500 animate-spin"></div>
+    <div class="absolute inset-2 rounded-full bg-black"></div> <!-- Inner circle to match background -->
+    <div class="absolute inset-0 flex items-center justify-center">
+      <span class="text-indigo-400 font-semibold text-sm font-[Outfit]">Loading...</span>
+    </div>
+  </div>
+</div>
+
+<style>
+  #preloader {
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+#preloader.hide {
+  opacity: 0;
+  visibility: hidden;
+}
+</style>
+
+   <header class="fixed top-0 left-0 right-0 z-50 bg-white bg-white shadow-2xl rounded-b-xl border-b border-gray-200 transition duration-300"
+        style="box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);">
+  <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center relative transform-gpu hover:scale-[1.005] hover:rotateX-[0.5deg] transition-transform duration-300">
+
+    <!-- Logo -->
+    <a href="index.html" class="inline-block transform hover:scale-105 transition duration-300">
+      <img 
+        src="https://i.postimg.cc/XYjKKqBm/Krish-devlabs-1.png" 
+        alt="Krish.Dev Logo" 
+        class="h-10 w-auto drop-shadow-md"
+      />
+    </a>
+
+    <!-- Desktop Navigation -->
+    <nav class="hidden md:flex space-x-8 text-lg font-medium">
+      <a href="index.html" class="hover:text-blue-600 transition" style="font-family: 'Outfit', sans-serif;">Home</a>
+      <a href="services.html" class="hover:text-blue-600 transition" style="font-family: 'Outfit', sans-serif;">Services</a>
+      
+      <a href="about-us.html" class="hover:text-blue-600 transition" style="font-family: 'Outfit', sans-serif;">About Us</a>
+      <a href="contact-us.html" class="hover:text-blue-600 transition" style="font-family: 'Outfit', sans-serif;">Contact Us</a>
+    </nav>
+
+    <!-- Hamburger Toggle -->
+    <button id="menu-toggle" class="md:hidden focus:outline-none relative z-50">
+      <svg id="hamburger" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-800" fill="none"
+        viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+      <svg id="close" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-800 hidden" fill="none"
+        viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="md:hidden hidden absolute top-full left-4 right-4 bg-white rounded-xl shadow-2xl border border-gray-200 z-40 transition-transform transform-gpu"
+       style="box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);">
+    <a href="index.html" class="block py-4 px-6 border-b hover:bg-blue-100 text-gray-800 transition" style="font-family: 'Outfit', sans-serif;">Home</a>
+    <a href="services.html" class="block py-4 px-6 border-b hover:bg-blue-100 text-gray-800 transition" style="font-family: 'Outfit', sans-serif;">Services</a>
+    
+    <a href="about-us.html" class="block py-4 px-6 border-b hover:bg-blue-100 text-gray-800 transition" style="font-family: 'Outfit', sans-serif;">About Us</a>
+    <a href="contact-us.html" class="block py-4 px-6 hover:bg-blue-100 text-gray-800 transition" style="font-family: 'Outfit', sans-serif;">Contact Us</a>
+  </div>
+</header>
+
+
+
+
+
+
+<!-- Services Section -->
+<section class="hero relative overflow-hidden py-10 pt-20">
+  <!-- Soft animated gradient background -->
+  <div class="absolute inset-0 bg-gradient-to-r from-pink-100 via-red-100 to-yellow-100 animate-gradient-x opacity-60 -z-10"></div>
+
+  <!-- Optional white overlay for softer feel -->
+  <div class="absolute inset-0 bg-white/30 backdrop-blur-sm -z-10"></div>
+    <!-- hearts here -->
+  </div>
+
+  <div class="relative max-w-4xl mx-auto text-center px-4">
+<style>
+  @keyframes fadeSlideUp {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .black-heading {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 900;
+    font-size: 3rem;
+    color: #000;
+    text-align: center;
+    letter-spacing: 1px;
+    position: relative;
+    animation: fadeSlideUp 1s ease-out forwards;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.25);
+  }
+
+  .black-heading::after {
+    content: "";
+    display: block;
+    width: 100px;
+    height: 4px;
+    background-color: #000;
+    margin: 14px auto 0;
+    border-radius: 2px;
+    opacity: 0.8;
+  }
+
+  @media (max-width: 640px) {
+    .black-heading {
+      font-size: 2rem;
+    }
+
+    .black-heading::after {
+      width: 60px;
+      height: 3px;
+    }
+  }
+
+  .service-description {
+    font-family: 'Inter', sans-serif;
+    text-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
+    color: #111827;
+    font-size: 1.125rem; /* text-lg */
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto 3rem;
+    line-height: 1.7;
+    padding: 0 1rem;
+  }
+</style>
+
+<h2 class="black-heading">All Services</h2>
+
+
+<p class="service-description">
+  We build elegant websites that showcase your unique business<br>
+  
+</p>
+
+
+
+
+
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+  <!-- Card 1 -->
+  <div class="bg-blue-100/80 rounded-2xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300"
+     data-aos="fade-up" data-aos-delay="0">
+  <img src="https://i.postimg.cc/vBHFs1NV/restaurant-show-case-1.png" alt="Experience 1"
+       class="w-full h-48 object-cover filter brightness-90 rounded-t-2xl">
+  <div class="p-6">
+    <h3 class="text-black text-xl font-semibold mb-2" style="font-family: 'Outfit', sans-serif;">
+  Restaurant Showcase Websites
+    </h3>
+
+    <p class="text-blue-800 text-sm" style="font-family: 'Poppins', sans-serif;">
+      Beautiful, image-rich sites for restaurants, cafes or bistros. Highlight your menu, chef stories, interior ambiance, special events and location – no delivery features, just pure discovery.
+    </p>
+
+   <a href="contact-us.html"
+   class="mt-4 inline-block bg-black text-white text-sm font-semibold px-5 py-2 rounded-full shadow hover:bg-gray-800 transition duration-300"
+   style="font-family: 'Poppins', sans-serif;">
+  Start Your Project
+</a>
+
+  </div>
+</div>
+
+
+  <!-- Card 2 -->
+
+    <div class="bg-blue-100/80 rounded-2xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300"
+     data-aos="fade-up" data-aos-delay="0">
+  <img src="https://i.postimg.cc/6pcx1LHX/Student-portfolio-1.png" alt="Experience 1"
+       class="w-full h-48 object-cover filter brightness-90 rounded-t-2xl">
+  <div class="p-6">
+    <h3 class="text-black text-xl font-semibold mb-2" style="font-family: 'Outfit', sans-serif;">
+  Student Portfolio Websites
+</h3>
+
+    <p class="text-blue-800 text-sm" style="font-family: 'Poppins', sans-serif;">
+       Personal portfolios to help students present their projects, skills and academic journey in a professional way.
+    </p>
+
+    <a href="contact-us.html"
+   class="mt-4 inline-block bg-black text-white text-sm font-semibold px-5 py-2 rounded-full shadow hover:bg-gray-800 transition duration-300"
+   style="font-family: 'Poppins', sans-serif;">
+  Start Your Project
+</a>
+
+  </div>
+</div>
+
+<div class="bg-blue-100/80 rounded-2xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300"
+     data-aos="fade-up" data-aos-delay="0">
+  <img src="https://i.postimg.cc/NjB5HD9q/local-farm-and-market-1.png" alt="Experience 1"
+       class="w-full h-48 object-cover filter brightness-90 rounded-t-2xl">
+  <div class="p-6">
+    <h3 class="text-black text-xl font-semibold mb-2" style="font-family: 'Outfit', sans-serif;">
+ Local Farm or Market Websites
+</h3>
+
+    <p class="text-blue-800 text-sm" style="font-family: 'Poppins', sans-serif;">  Share what's in season, visiting hours, photo galleries and info about tours or farm events - grat for local agriculture or farmer markets.
+    </p>
+
+    <a href="contact-us.html"
+   class="mt-4 inline-block bg-black text-white text-sm font-semibold px-5 py-2 rounded-full shadow hover:bg-gray-800 transition duration-300"
+   style="font-family: 'Poppins', sans-serif;">
+  Start Your Project
+</a>
+
+  </div>
+</div>
+
+
+    <div class="bg-blue-100/80 rounded-2xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300"
+     data-aos="fade-up" data-aos-delay="0">
+  <img src="https://i.postimg.cc/76GvhvqH/Freelancer-1.png" alt="Experience 1"
+       class="w-full h-48 object-cover filter brightness-90 rounded-t-2xl">
+  <div class="p-6">
+    <h3 class="text-black text-xl font-semibold mb-2" style="font-family: 'Outfit', sans-serif;">
+  Freelancer Portfolio Websites
+</h3>
+
+    <p class="text-blue-800 text-sm" style="font-family: 'Poppins', sans-serif;">
+       Modern, impactful websites for freelancers to showcase services, past work, testimonials and contact info.
+    </p>
+
+   <a href="contact-us.html"
+   class="mt-4 inline-block bg-black text-white text-sm font-semibold px-5 py-2 rounded-full shadow hover:bg-gray-800 transition duration-300"
+   style="font-family: 'Poppins', sans-serif;">
+  Start Your Project
+</a>
+
+  </div>
+</div>
+
+ 
+<div class="bg-blue-100/80 rounded-2xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300"
+     data-aos="fade-up" data-aos-delay="0">
+  <img src="https://i.postimg.cc/mr7CskHB/Tuition-1.png" alt="Experience 1"
+       class="w-full h-48 object-cover filter brightness-90 rounded-t-2xl">
+  <div class="p-6">
+    <h3 class="text-black text-xl font-semibold mb-2" style="font-family: 'Outfit', sans-serif;">
+Tuition center & Coaching Websites
+</h3>
+
+    <p class="text-blue-800 text-sm" style="font-family: 'Poppins', sans-serif;">Informative, student - focussed websites to highlight courses, schedules, faculty and academic achievements.
+    </p>
+
+    <a href="contact-us.html"
+   class="mt-4 inline-block bg-black text-white text-sm font-semibold px-5 py-2 rounded-full shadow hover:bg-gray-800 transition duration-300"
+   style="font-family: 'Poppins', sans-serif;">
+  Start Your Project
+</a>
+
+  </div>
+</div>
+ 
+
+ <div class="bg-blue-100/80 rounded-2xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300"
+     data-aos="fade-up" data-aos-delay="0">
+  <img src="https://i.postimg.cc/VL9xdWPC/Developer-portfolio-1.png" alt="Experience 1"
+       class="w-full h-48 object-cover filter brightness-90 rounded-t-2xl">
+  <div class="p-6">
+    <h3 class="text-black text-xl font-semibold mb-2" style="font-family: 'Outfit', sans-serif;">
+ Developer Portfolio Websites
+</h3>
+
+    <p class="text-blue-800 text-sm" style="font-family: 'Poppins', sans-serif;">
+       Tech focused portfolios for developers to feature projects, Github links, Case studies and technical skills.
+    </p>
+
+ <a href="contact-us.html"
+   class="mt-4 inline-block bg-black text-white text-sm font-semibold px-5 py-2 rounded-full shadow hover:bg-gray-800 transition duration-300"
+   style="font-family: 'Poppins', sans-serif;">
+  Start Your Project
+</a>
+
+  </div>
+</div>
+<div class="bg-blue-100/80 rounded-2xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300"
+     data-aos="fade-up" data-aos-delay="0">
+  <img src="https://i.postimg.cc/rs5wdRqw/Hospital-1.png" alt="Experience 1"
+       class="w-full h-48 object-cover filter brightness-90 rounded-t-2xl">
+  <div class="p-6">
+    <h3 class="text-black text-xl font-semibold mb-2" style="font-family: 'Outfit', sans-serif;">
+Hospital & Clinic Websites
+</h3>
+
+    <p class="text-blue-800 text-sm" style="font-family: 'Poppins', sans-serif;"> Clean, trustworthy websites for hospitals and clinics to showcase services, doctors, departments and visting hours.
+    </p>
+
+    <a href="contact-us.html"
+   class="mt-4 inline-block bg-black text-white text-sm font-semibold px-5 py-2 rounded-full shadow hover:bg-gray-800 transition duration-300"
+   style="font-family: 'Poppins', sans-serif;">
+  Start Your Project
+</a>
+
+  </div>
+</div>
+
+ <div class="bg-blue-100/80 rounded-2xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300"
+     data-aos="fade-up" data-aos-delay="0">
+  <img src="https://i.postimg.cc/7h3WJwdk/Blogging-1.png" alt="Experience 1"
+       class="w-full h-48 object-cover filter brightness-90 rounded-t-2xl">
+  <div class="p-6">
+    <h3 class="text-black text-xl font-semibold mb-2" style="font-family: 'Outfit', sans-serif;">
+ Blogging Websites
+</h3>
+
+    <p class="text-blue-800 text-sm" style="font-family: 'Poppins', sans-serif;">
+       Clean, content first websites for bloggers to share stories, insights, tutorials or niche content with a personal touch.
+    </p>
+
+    <a href="contact-us.html"
+   class="mt-4 inline-block bg-black text-white text-sm font-semibold px-5 py-2 rounded-full shadow hover:bg-gray-800 transition duration-300"
+   style="font-family: 'Poppins', sans-serif;">
+  Start Your Project
+</a>
+
+  </div>
+</div>
+
+<div class="bg-blue-100/80 rounded-2xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300"
+     data-aos="fade-up" data-aos-delay="0">
+  <img src="https://i.postimg.cc/T10cXwBp/Fitness-and-gym-1.png" alt="Experience 1"
+       class="w-full h-48 object-cover filter brightness-90 rounded-t-2xl">
+  <div class="p-6">
+    <h3 class="text-black text-xl font-semibold mb-2" style="font-family: 'Outfit', sans-serif;">
+ Fitness Studio & Gym Website
+</h3>
+
+    <p class="text-blue-800 text-sm" style="font-family: 'Poppins', sans-serif;">
+       Promote class schedules, trainer profiles, facility photos and membership info. Show case your energy and community without needing online registration tools.
+    </p>
+
+    <a href="contact-us.html"
+   class="mt-4 inline-block bg-black text-white text-sm font-semibold px-5 py-2 rounded-full shadow hover:bg-gray-800 transition duration-300"
+   style="font-family: 'Poppins', sans-serif;">
+  Start Your Project
+</a>
+
+  </div>
+</div>
+
+   <div class="bg-blue-100/80 rounded-2xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300"
+     data-aos="fade-up" data-aos-delay="0">
+  <img src="https://i.postimg.cc/6pj1vHjy/Hotel-1.png" alt="Experience 1"
+       class="w-full h-48 object-cover filter brightness-90 rounded-t-2xl">
+  <div class="p-6">
+    <h3 class="text-black text-xl font-semibold mb-2" style="font-family: 'Outfit', sans-serif;">
+ Hotel & B&B Websites
+</h3>
+
+    <p class="text-blue-800 text-sm" style="font-family: 'Poppins', sans-serif;">
+        Let your guests explore rooms, amenities, nearby attractions and photo galleries. Ideal for small hotels or B&Bs looking to charm visitors with style and information without direct booking integrations.
+    </p>
+
+    <a href="contact-us.html"
+   class="mt-4 inline-block bg-black text-white text-sm font-semibold px-5 py-2 rounded-full shadow hover:bg-gray-800 transition duration-300"
+   style="font-family: 'Poppins', sans-serif;">
+  Start Your Project
+</a>
+ </div>
+</div>
+
+<div class="bg-blue-100/80 rounded-2xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300"
+     data-aos="fade-up" data-aos-delay="0">
+  <img src="https://i.postimg.cc/nhG9Rgbh/Gen4-A-sleek-and-modern-website-homepage-thumbnail-for-a-coffee-and-cafe-service-The-a-2-32979698.png" alt="Experience 1"
+       class="w-full h-48 object-cover filter brightness-90 rounded-t-2xl">
+  <div class="p-6">
+    <h3 class="text-black text-xl font-semibold mb-2" style="font-family: 'Outfit', sans-serif;">
+Coffee shops & Cafe sites
+</h3>
+
+    <p class="text-blue-800 text-sm" style="font-family: 'Poppins', sans-serif;"> Capture your shop's story, vibe,drinks, events and community with warm design and rich visuals - ideal for independent cafes and roasters.Highlight course offerings, campus features, faculty profiles and admisiion info. A clear, engaging digital front door for schools, academics and learning centers.
+    </p>
+
+    <a href="contact-us.html"
+   class="mt-4 inline-block bg-black text-white text-sm font-semibold px-5 py-2 rounded-full shadow hover:bg-gray-800 transition duration-300"
+   style="font-family: 'Poppins', sans-serif;">
+  Start Your Project
+</a>
+
+  </div>
+</div>
+
+
+ <div class="bg-blue-100/80 rounded-2xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300"
+     data-aos="fade-up" data-aos-delay="0">
+  <img src="https://i.postimg.cc/ZY87cYsk/Art-gallery-1.png" alt="Experience 1"
+       class="w-full h-48 object-cover filter brightness-90 rounded-t-2xl">
+  <div class="p-6">
+    <h3 class="text-black text-xl font-semibold mb-2" style="font-family: 'Outfit', sans-serif;">
+ Art gallery & Museum Sites
+</h3>
+
+    <p class="text-blue-800 text-sm" style="font-family: 'Poppins', sans-serif;">
+       Display current and upcoming exhibitions, artist bios, event schedules and vistor info. Designed to spark curiosity and increase foot traffic to your space.
+    </p>
+
+    <a href="contact-us.html"
+   class="mt-4 inline-block bg-black text-white text-sm font-semibold px-5 py-2 rounded-full shadow hover:bg-gray-800 transition duration-300"
+   style="font-family: 'Poppins', sans-serif;">
+  Start Your Project
+</a>
+
+  </div>
+</div>
+
+ 
+  
+ <div class="bg-blue-100/80 rounded-2xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300"
+     data-aos="fade-up" data-aos-delay="0">
+  <img src="https://i.postimg.cc/vZctpGhZ/Ed-Institution-1.png" alt="Experience 1"
+       class="w-full h-48 object-cover filter brightness-90 rounded-t-2xl">
+  <div class="p-6">
+    <h3 class="text-black text-xl font-semibold mb-2" style="font-family: 'Outfit', sans-serif;">
+Educational Institution Websites
+</h3>
+
+    <p class="text-blue-800 text-sm" style="font-family: 'Poppins', sans-serif;">
+       Highlight course offerings, campus features, faculty profiles and admisiion info. A clear, engaging digital front door for schools, academics and learning centers.
+    </p>
+
+    <a href="contact-us.html"
+   class="mt-4 inline-block bg-black text-white text-sm font-semibold px-5 py-2 rounded-full shadow hover:bg-gray-800 transition duration-300"
+   style="font-family: 'Poppins', sans-serif;">
+  Start Your Project
+</a>
+
+  </div>
+</div>
+
+ <div class="bg-blue-100/80 rounded-2xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300"
+     data-aos="fade-up" data-aos-delay="0">
+  <img src="https://i.postimg.cc/Wpw8ZWtT/Tourist-1.png" alt="Experience 1"
+       class="w-full h-48 object-cover filter brightness-90 rounded-t-2xl">
+  <div class="p-6">
+    <h3 class="text-black text-xl font-semibold mb-2" style="font-family: 'Outfit', sans-serif;">
+ Tourist Attraction Websites
+</h3>
+
+    <p class="text-blue-800 text-sm" style="font-family: 'Poppins', sans-serif;">
+       Feature must see spots, hours, ticket prices, directions and image galleries. Perfect for parks, historical sites and family-friendly venues.
+    </p>
+
+    <a href="contact-us.html"
+   class="mt-4 inline-block bg-black text-white text-sm font-semibold px-5 py-2 rounded-full shadow hover:bg-gray-800 transition duration-300"
+   style="font-family: 'Poppins', sans-serif;">
+  Start Your Project
+</a>
+
+  </div>
+</div>
+
+ 
+
+ <div class="bg-blue-100/80 rounded-2xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300"
+     data-aos="fade-up" data-aos-delay="0">
+  <img src="https://i.postimg.cc/PrqWwdBQ/Wedding-venue-1.png" alt="Experience 1"
+       class="w-full h-48 object-cover filter brightness-90 rounded-t-2xl">
+  <div class="p-6">
+    <h3 class="text-black text-xl font-semibold mb-2" style="font-family: 'Outfit', sans-serif;">
+Wedding Venue & Event Hall Sites
+</h3>
+
+    <p class="text-blue-800 text-sm" style="font-family: 'Poppins', sans-serif;">
+       Elegant layouts for venues to show off space details, pricing, photo tours, testimonials and contact forms - helping couples and planners envision their perfect event.
+    </p>
+
+    <a href="contact-us.html"
+   class="mt-4 inline-block bg-black text-white text-sm font-semibold px-5 py-2 rounded-full shadow hover:bg-gray-800 transition duration-300"
+   style="font-family: 'Poppins', sans-serif;">
+  Start Your Project
+</a>
+
+  </div>
+</div>
+
+ <div class="bg-blue-100/80 rounded-2xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300"
+     data-aos="fade-up" data-aos-delay="0">
+  <img src="https://i.postimg.cc/yYrFhwK4/Spa-and-wellness-1.png" alt="Experience 1"
+       class="w-full h-48 object-cover filter brightness-90 rounded-t-2xl">
+  <div class="p-6">
+    <h3 class="text-black text-xl font-semibold mb-2" style="font-family: 'Outfit', sans-serif;">
+Spa & Wellness center Websites
+</h3>
+
+    <p class="text-blue-800 text-sm" style="font-family: 'Poppins', sans-serif;">
+      Create a calming online presence to showcase treatments, pricing, staff bios and a photo gallery - no need for complex booking systems.
+    </p>
+
+    <a href="contact-us.html"
+   class="mt-4 inline-block bg-black text-white text-sm font-semibold px-5 py-2 rounded-full shadow hover:bg-gray-800 transition duration-300"
+   style="font-family: 'Poppins', sans-serif;">
+  Start Your Project
+</a>
+
+  </div>
+</div>
+
+ 
+
+
+
+
+   
+
+ 
+</div>
+
+
+
+
+      <!-- Repeat cards with same style for others -->
+      <!-- ... -->
+    
+</section>
+
+
+
+<!-- Floating Contact Buttons -->
+<!-- Floating Buttons -->
+<div class="fixed bottom-6 right-6 flex flex-col space-y-5 z-50">
+
+  <!-- WhatsApp Button -->
+<a href="https://wa.me/916303059843" target="_blank" rel="noopener"
+   class="w-14 h-14 rounded-full overflow-hidden shadow-[0_8px_30px_rgba(0,255,0,0.4)] backdrop-blur-md bg-white bg-opacity-30 border border-green-400 hover:scale-110 transform transition duration-300 ease-in-out hover:shadow-[0_0_25px_rgba(0,255,0,0.7)]"
+   title="Chat on WhatsApp">
+  <img src="https://i.postimg.cc/dVyG2fqk/Picsart-25-05-29-22-05-52-255-1.png"
+       alt="WhatsApp Icon"
+       class="w-full h-full object-cover" />
+</a>
+
+
+
+  <!-- Call Button -->
+<!-- Call Button -->
+<button id="callBtn"
+  class="flex items-center justify-center w-14 h-14 rounded-full bg-blue-600 hover:bg-blue-700 text-white shadow-lg transition-transform transform hover:scale-110"
+  title="Call Us">
+  <!-- Thicker Call Icon (white inside blue bg) -->
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="white" stroke-width="2.5"
+       stroke-linecap="round" stroke-linejoin="round" class="w-7 h-7" viewBox="0 0 24 24">
+    <path d="M22 16.92v3a2 2 0 01-2.18 2A19.72 19.72 0 013 5.18 2 2 0 015 3h3a2 2 0 012 1.72 12.38 12.38 0 00.56 2.57 2 2 0 01-.45 2L8.09 10.91a16 16 0 007 7l1.62-1.62a2 2 0 012-.45 12.38 12.38 0 002.57.56A2 2 0 0122 16.92z"/>
+  </svg>
+</button>
+
+
+
+</div>
+
+<!-- Call Popup Modal -->
+<div id="callPopup" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
+  <div class="bg-white rounded-2xl p-6 max-w-sm w-full text-center relative shadow-2xl border border-blue-300">
+    <button id="closeCallPopup" class="absolute top-2 right-3 text-gray-600 hover:text-red-600 text-2xl font-bold">&times;</button>
+    <h3 class="text-2xl font-semibold mb-4 text-blue-700"style="font-family: 'Outfit', sans-serif;">Call Us Now</h3>
+    <a href="tel:+916303059843"
+       class="block bg-blue-600 text-white py-3 px-4 rounded-xl hover:bg-blue-700 transition duration-300 font-semibold tracking-wide">+91 6303059843</a>
+  </div>
+</div>
+
+
+<!-- Script for Call Popup -->
+<script>
+  const callBtn = document.getElementById('callBtn');
+  const callPopup = document.getElementById('callPopup');
+  const closeCallPopup = document.getElementById('closeCallPopup');
+
+  callBtn.addEventListener('click', () => {
+    callPopup.classList.remove('hidden');
+  });
+
+  closeCallPopup.addEventListener('click', () => {
+    callPopup.classList.add('hidden');
+  });
+
+  // Optional: close popup on clicking outside
+  callPopup.addEventListener('click', e => {
+    if(e.target === callPopup) {
+      callPopup.classList.add('hidden');
+    }
+  });
+</script>
+
+<!-- Font Awesome CDN (Place this in <head>) -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+<!-- Social Media Popup Modal -->
+<div id="socialModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+  <div class="bg-white rounded-2xl p-8 w-full max-w-md shadow-xl relative animate-fade-in-up">
+
+    <!-- Close Button -->
+    <button onclick="closeModal()" class="absolute top-3 right-3 text-gray-500 hover:text-red-500 text-xl font-bold">
+      &times;
+    </button>
+
+    <!-- Modal Content -->
+    <h2 class="text-2xl font-bold mb-4 text-center text-gray-800">Follow Us</h2>
+    <p class="text-center mb-6 text-gray-600">Stay connected with us on social media!</p>
+
+    <!-- Social Icons -->
+    <div class="flex justify-center space-x-6 text-2xl">
+      <a href="https://www.facebook.com/share/16pQpUED1b/" target="_blank" class="text-blue-600 hover:scale-110 transition">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="https://www.instagram.com/krish.devlabs?igsh=NGJlcjhuY3lxc3M2" target="_blank" class="text-pink-600 hover:scale-110 transition">
+        <i class="fab fa-instagram"></i>
+      </a>
+     <a href="https://twitter.com/Krish_2936" target="_blank" class="text-blue-400 hover:scale-110 transition">
+  <i class="fab fa-x-twitter"></i>
+</a>
+
+      <a href="https://www.linkedin.com/in/m-kishore-kumar-naik-4b9741369?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="text-blue-700 hover:scale-110 transition">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+      <a href="https://youtube.com/@krish.devlabs?si=b78Qtew9TzEbv-y2" target="_blank" class="text-red-600 hover:scale-110 transition">
+        <i class="fab fa-youtube"></i>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- Script: Show popup after page loads -->
+<script>
+  window.addEventListener("load", () => {
+    setTimeout(() => {
+      document.getElementById("socialModal").classList.remove("hidden");
+    }, 1500); // 1.5-second delay
+  });
+
+  function closeModal() {
+    document.getElementById("socialModal").classList.add("hidden");
+  }
+</script>
+
+<!-- Smooth Animation -->
+<style>
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .animate-fade-in-up {
+    animation: fade-in-up 0.4s ease-out both;
+  }
+</style>
+
+
+ <footer class="bg-gray-900 text-gray-300 py-10 px-6 md:px-20">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+    
+    <!-- Logo and Description -->
+    <div>
+      <img src="https://i.postimg.cc/W38sd5bW/Picsart-25-06-02-08-05-19-554-1.png" 
+        alt="Krish.Dev Logo" 
+        class="h-10 object-contain" />
+      <p class="text-sm mt-4" style="font-family: 'Outfit', sans-serif;">
+        Empowering your digital presence with modern, scalable web development services.
+      </p>
+
+      <!-- Social Media Icons -->
+      <div class="flex space-x-4 mt-4">
+        <a href="https://www.facebook.com/share/16pQpUED1b/" class="hover:text-white text-lg"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://twitter.com/Krish_2936" class="hover:text-white text-lg">
+  <i class="fab fa-x-twitter"></i>
+</a>
+
+        <a href="https://www.instagram.com/krish.devlabs?igsh=NGJlcjhuY3lxc3M2" class="hover:text-white text-lg"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/m-kishore-kumar-naik-4b9741369?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="hover:text-white text-lg"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://youtube.com/@krish.devlabs?si=b78Qtew9TzEbv-y2" class="hover:text-white text-lg"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+
+    <!-- Quick Links -->
+    <div>
+      <h3 class="text-white font-semibold mb-3" style="font-family: 'Outfit', sans-serif;">Quick Links</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="index.html" class="hover:text-white" style="font-family: 'Poppins', sans-serif;">Home</a></li>
+        <li><a href="services.html" class="hover:text-white" style="font-family: 'Poppins', sans-serif;">Services</a></li>
+        <li><a href="Affiliate-Program.html" class="hover:text-white" style="font-family: 'Poppins', sans-serif;">Affiliate Program</a></li>
+        <li><a href="about-us.html" class="hover:text-white" style="font-family: 'Poppins', sans-serif;">About Us</a></li>
+        <li><a href="contact-us.html" class="hover:text-white" style="font-family: 'Poppins', sans-serif;">Contact Us</a></li>
+      </ul>
+    </div>
+
+    <!-- Services -->
+    <div>
+      <h3 class="text-white font-semibold mb-3" style="font-family: 'Outfit', sans-serif;">Services</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="services.html" class="hover:text-white" style="font-family: 'Poppins', sans-serif;">Web Development</a></li>
+        <li><a href="services.html" class="hover:text-white" style="font-family: 'Poppins', sans-serif;">Landing Pages</a></li>
+      </ul>
+    </div>
+
+    <!-- Newsletter -->
+  
+
+  </div>
+
+  <!-- Legal Links -->
+  <div class="mt-10 text-center text-sm text-gray-400" style="font-family: 'Poppins', sans-serif;">
+    <a href="Privacy-policy.html" class="hover:text-white mr-4">Privacy Policy</a>
+    <a href="Terms-and-Conditions.html" class="hover:text-white">Terms & Conditions</a>
+  </div>
+
+  <!-- Copyright -->
+  <div class="mt-2 text-center text-sm text-gray-500" style="font-family: 'Poppins', sans-serif;">
+    © 2025 <span class="font-semibold text-white">Krish.Devlabs</span>. All rights reserved.
+  </div>
+</footer>
+<!-- Script: Show popup after page loads -->
+<script>
+  window.addEventListener("load", () => {
+    setTimeout(() => {
+      document.getElementById("socialModal").classList.remove("hidden");
+    }, 1500); // 1.5-second delay
+  });
+
+  function closeModal() {
+    document.getElementById("socialModal").classList.add("hidden");
+  }
+</script>
+
+<!-- Smooth Animation -->
+<style>
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .animate-fade-in-up {
+    animation: fade-in-up 0.4s ease-out both;
+  }
+</style>
+
+
+  </div>
+
+ 
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+
+
+
+
+<script>
+  window.addEventListener('load', () => {
+    const preloader = document.getElementById('preloader');
+    preloader.classList.add('hide');
+    setTimeout(() => preloader.remove(), 500); // optional: remove from DOM after fade
+  });
+</script>
+
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const toggle = document.getElementById("menu-toggle");
+    const hamburger = document.getElementById("hamburger");
+    const close = document.getElementById("close");
+    const mobileMenu = document.getElementById("mobile-menu");
+
+    toggle.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+      hamburger.classList.toggle("hidden");
+      close.classList.toggle("hidden");
+    });
+  });
+</script>
+
+<!-- AOS Library -->
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 800,
+    easing: 'ease-in-out',
+    once: true, // animates only once
+  });
+</script>
+
+
+</body>
+</html>
