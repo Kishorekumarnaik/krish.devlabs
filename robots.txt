@@ -3,30 +3,6 @@ Disallow:
 
 Sitemap: https://krishdevlabs.xyz/sitemap.xml
 
-<url>
-  <loc>https://krishdevlabs.xyz/services</loc>
-</url>
 
-<url>
-  <loc>https://krishdevlabs.xyz/aboutus</loc>
-</url>
 
-<url>
-  <loc>https://krishdevlabs.xyz/contactus</loc>
-</url>
 
-<url>
-  <loc>https://krishdevlabs.xyz/founder</loc>
-</url>
-
-<url>
-  <loc>https://krishdevlabs.xyz/affiliateprogram</loc>
-</url>
-
-<url>
-  <loc>https://krishdevlabs.xyz/privacypolicy</loc>
-</url>
-
-<url>
-  <loc>https://krishdevlabs.xyz/termsandconditions</loc>
-</url>
