@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://krishdevlabs.xyz/sitemap.xml
