@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Courses| Krish.Devlabs</title>
+  <meta name="description" content="Explore a wide range of web development courses at Krish.Devlabs, from beginner to advanced levels. Learn HTML, CSS, JavaScript, React, Tailwind, Git, and more with hands-on projects designed to help you build real-world skills and launch your developer career." />
+
+  
+  <link rel="canonical" href="https://krishdevlabs.xyz/founder" />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800&family=Poppins:wght@400;600&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- AOS Animations -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+
+  <style>
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: linear-gradient(135deg, #f3f4f6 0%, #e0f2fe 50%, #f0fdf4 100%);
+      color: #374151;
+      min-height: 100vh;
+    }
+
+    /* Removed gradient text styles */
+
+    /* Social icons circle background */
+    .social-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border-radius: 9999px;
+      background-color: #e5e7eb;
+      color: #6b7280;
+      transition: background-color 0.3s, color 0.3s, transform 0.3s;
+      box-shadow: 0 2px 6px rgb(0 0 0 / 0.1);
+    }
+    .social-icon:hover {
+      background-color: #2563eb;
+      color: white;
+      transform: scale(1.1);
+      box-shadow: 0 4px 10px rgb(37 99 235 / 0.5);
+    }
+  </style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="sticky top-0 z-50 bg-white shadow-lg rounded-b-xl border-b border-gray-200">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center transition-transform duration-300 hover:scale-[1.005] hover:rotateX-[0.5deg]">
+    <a href="index.html" class="inline-block hover:scale-105 transition-transform duration-300">
+      <img src="https://i.postimg.cc/XYjKKqBm/Krish-devlabs-1.png" alt="Krish.Dev Logo" class="h-10 w-auto drop-shadow-md" />
+    </a>
+    <nav class="hidden md:flex space-x-10 text-lg font-semibold text-gray-700">
+      <a href="index.html" class="hover:text-blue-600 transition" style="font-family: 'Outfit', sans-serif;">Home</a>
+      <a href="services.html" class="hover:text-blue-600 transition" style="font-family: 'Outfit', sans-serif;">Services</a>
+      <a href="courses.html" class="hover:text-blue-600 transition" style="font-family: 'Outfit', sans-serif;">Courses</a>
+      <a href="about-us.html" class="hover:text-blue-600 transition" style="font-family: 'Outfit', sans-serif;">About Us</a>
+      <a href="contact-us.html" class="hover:text-blue-600 transition" style="font-family: 'Outfit', sans-serif;">Contact Us</a>
+    </nav>
+    <button id="menu-toggle" class="md:hidden focus:outline-none relative z-50">
+      <svg id="hamburger" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+      <svg id="close" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-800 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+  </div>
+
+  <div id="mobile-menu" class="md:hidden hidden absolute top-full left-4 right-4 bg-white rounded-xl shadow-lg border border-gray-200 z-40">
+    <a href="index.html" class="block py-4 px-6 border-b hover:bg-blue-100 text-gray-800 transition" style="font-family: 'Outfit', sans-serif;">Home</a>
+    <a href="services.html" class="block py-4 px-6 border-b hover:bg-blue-100 text-gray-800 transition" style="font-family: 'Outfit', sans-serif;">Services</a>
+    <a href="courses.html" class="block py-4 px-6 border-b hover:bg-blue-100 text-gray-800 transition" style="font-family: 'Outfit', sans-serif;">Courses</a>
+    <a href="about-us.html" class="block py-4 px-6 border-b hover:bg-blue-100 text-gray-800 transition" style="font-family: 'Outfit', sans-serif;">About Us</a>
+    <a href="contact-us.html" class="block py-4 px-6 hover:bg-blue-100 text-gray-800 transition" style="font-family: 'Outfit', sans-serif;">Contact Us</a>
+  </div>
+</header>
+
+
+
+
+<!-- Courses Page Section -->
+<section class="min-h-screen bg-gradient-to-br from-indigo-100 via-white to-purple-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 py-16 px-6">
+
+  <!-- Heading -->
+  <div class="text-center mb-10" data-aos="fade-down">
+    <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white tracking-tight mb-3 uppercase text-center" style="text-shadow: 0 0 10px rgba(255, 215, 0, 0.6); letter-spacing: 0.05em;"
+    style="font-family: 'Outfit', sans-serif;">
+  Premium Skill Courses
+</h2>
+
+    <p class="text-lg text-gray-600 dark:text-gray-300 font-medium"style="font-family: 'Inter', sans-serif;">Learn. Build. Grow. Your future starts here.</p>
+  </div>
+
+  <!-- Search Bar -->
+  <div class="flex justify-center mb-10" data-aos="fade-up" data-aos-delay="100">
+    <div class="relative w-full max-w-xl">
+      <input type="text" placeholder="Search courses..." class="w-full py-3 pl-5 pr-12 rounded-full shadow-lg border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:bg-slate-800 dark:text-white" />
+      <span class="absolute top-3.5 right-4 text-gray-400 dark:text-gray-300">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+        </svg>
+      </span>
+    </div>
+  </div>
+
+  <!-- Course Cards -->
+  <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-7xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+
+    <!-- Example Card -->
+   <div class="course-card bg-white  rounded-2xl shadow-xl hover:shadow-2xl border border-gray-200 dark:border-slate-700 p-6 flex flex-col transition duration-300"
+      data-title="Full Stack Development">
+
+        
+      <h3 class="text-2xl font-bold text-indigo-600  mb-2"style="font-family: 'Outfit', sans-serif;">HTML MASTERY</h3>
+      <p class="text-gray-600  text-sm mb-4"style="font-family: 'Inter', sans-serif;">Welcome to the Ultimate HTML Full Course!
+Whether you're just starting out in web development or looking to sharpen your front-end skills, this course takes you from absolute beginner to advanced level step-by-step.</p>
+      <div class="mt-auto flex justify-between items-center">
+        <span class="text-sm font-semibold text-green-600 dark:text-green-400"style="font-family: 'Poppins', sans-serif;">Beginner – Adv</span>
+        <a href="HTML-Course.html" class="px-4 py-2 bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 text-white rounded-full text-sm font-medium">Start Learning</a>
+      </div>
+    </div>
+
+    <!-- Another Card -->
+   <div class="course-card bg-white  rounded-2xl shadow-xl hover:shadow-2xl border border-gray-200 dark:border-slate-700 p-6 flex flex-col transition duration-300"
+      data-title="Complete CSS guide">
+
+      <h3 class="text-2xl font-bold text-indigo-600  mb-2"style="font-family: 'Outfit', sans-serif;">COMPLETE CSS GUIDE</h3>
+      <p class="text-gray-600  text-sm mb-4"style="font-family: 'Inter', sans-serif;">Master CSS and design beautiful, responsive websites from scratch!
+This course is your complete guide to learning Cascading Style Sheets (CSS),the language that gives life and style to your HTML structure.</p>
+      <div class="mt-auto flex justify-between items-center">
+        <span class="text-sm font-semibold text-green-600 dark:text-green-400"style="font-family: 'Poppins', sans-serif;">Beginner – Adv</span>
+        <button 
+    disabled 
+    class="px-4 py-2 bg-gradient-to-r from-indigo-400 to-purple-500 text-white rounded-full text-sm font-medium opacity-70 cursor-not-allowed"
+    style="font-family: 'Poppins', sans-serif;">
+    Coming Soon
+  </button>
+      </div>
+    </div>
+
+    <!-- Another Card -->
+   <div class="course-card bg-white  rounded-2xl shadow-xl hover:shadow-2xl border border-gray-200 dark:border-slate-700 p-6 flex flex-col transition duration-300" 
+      data-title="Master Java Script">
+
+      <h3 class="text-2xl font-bold text-indigo-600  mb-2"style="font-family: 'Outfit', sans-serif;">MASTER JAVA SCRIPT </h3>
+      <p class="text-gray-600  text-sm mb-4"style="font-family: 'Inter', sans-serif;">Learn JavaScript, the language that powers the web.
+Whether you're just starting out or want to level up your coding skills, this all-in-one course will take you from zero to hero with real-world projects, simple explanations, and modern techniques.</p>
+      <div class="mt-auto flex justify-between items-center">
+        <span class="text-sm font-semibold text-green-600 dark:text-green-400"style="font-family: 'Poppins', sans-serif;">Beginner – Adv</span>
+        <button 
+    disabled 
+    class="px-4 py-2 bg-gradient-to-r from-indigo-400 to-purple-500 text-white rounded-full text-sm font-medium opacity-70 cursor-not-allowed"
+    style="font-family: 'Poppins', sans-serif;">
+    Coming Soon
+  </button>
+      </div>
+    </div>
+
+    <!-- Add more cards as needed -->
+
+  </div>
+
+ 
+
+</section>
+
+
+
+<footer class="bg-gray-900 text-gray-300 py-10 px-6 md:px-20">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+    
+    <!-- Logo and Description -->
+    <div>
+      <img src="https://i.postimg.cc/W38sd5bW/Picsart-25-06-02-08-05-19-554-1.png" 
+        alt="Krish.Dev Logo" 
+        class="h-10 object-contain" />
+      <p class="text-sm mt-4" style="font-family: 'Outfit', sans-serif;">
+        Empowering your digital presence with modern, scalable web development services.
+      </p>
+
+      <!-- Social Media Icons -->
+      <div class="flex space-x-4 mt-4">
+        <a href="https://www.facebook.com/share/16pQpUED1b/" class="hover:text-white text-lg"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://twitter.com/Krish_2936" class="hover:text-white text-lg">
+  <i class="fab fa-x-twitter"></i>
+</a>
+
+        <a href="https://www.instagram.com/krish.devlabs?igsh=NGJlcjhuY3lxc3M2" class="hover:text-white text-lg"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/m-kishore-kumar-naik-4b9741369?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="hover:text-white text-lg"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://youtube.com/@krish.devlabs?si=b78Qtew9TzEbv-y2" class="hover:text-white text-lg"><i class="fab fa-youtube"></i></a>
+  
+
+
+      </div>
+    </div>
+
+    <!-- Quick Links -->
+    <div>
+      <h3 class="text-white font-semibold mb-3" style="font-family: 'Outfit', sans-serif;">Quick Links</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="index.html" class="hover:text-white" style="font-family: 'Poppins', sans-serif;">Home</a></li>
+        <li><a href="services.html" class="hover:text-white" style="font-family: 'Poppins', sans-serif;">Services</a></li>
+        <li><a href="Affiliate-Program.html" class="hover:text-white" style="font-family: 'Poppins', sans-serif;">Affiliate Program</a></li>
+        <li><a href="about-us.html" class="hover:text-white" style="font-family: 'Poppins', sans-serif;">About Us</a></li>
+        <li><a href="contact-us.html" class="hover:text-white" style="font-family: 'Poppins', sans-serif;">Contact Us</a></li>
+      </ul>
+    </div>
+
+    <!-- Services -->
+    <div>
+      <h3 class="text-white font-semibold mb-3" style="font-family: 'Outfit', sans-serif;">Services</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="services.html" class="hover:text-white" style="font-family: 'Poppins', sans-serif;">Web Development</a></li>
+        <li><a href="services.html" class="hover:text-white" style="font-family: 'Poppins', sans-serif;">Landing Pages</a></li>
+      </ul>
+    </div>
+
+    <!-- Newsletter -->
+  
+
+  </div>
+
+  <!-- Legal Links -->
+  <div class="mt-10 text-center text-sm text-gray-400" style="font-family: 'Poppins', sans-serif;">
+    <a href="Privacy-policy.html" class="hover:text-white mr-4">Privacy Policy</a>
+    <a href="Terms-and-Conditions.html" class="hover:text-white">Terms & Conditions</a>
+  </div>
+
+  <!-- Copyright -->
+  <div class="mt-2 text-center text-sm text-gray-500" style="font-family: 'Poppins', sans-serif;">
+    © 2025 <span class="font-semibold text-white">Krish.Devlabs</span>. All rights reserved.
+  </div>
+</footer>
+
+<!-- Scripts -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const toggle = document.getElementById("menu-toggle");
+    const hamburger = document.getElementById("hamburger");
+    const close = document.getElementById("close");
+    const mobileMenu = document.getElementById("mobile-menu");
+
+    toggle.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+      hamburger.classList.toggle("hidden");
+      close.classList.toggle("hidden");
+    });
+  });
+</script>
+
+<script>
+  const searchInput = document.querySelector('input[type="text"]');
+  const courseCards = document.querySelectorAll('.course-card');
+
+  searchInput.addEventListener('input', () => {
+    const searchTerm = searchInput.value.toLowerCase();
+    courseCards.forEach(card => {
+      const title = card.dataset.title.toLowerCase();
+      card.style.display = title.includes(searchTerm) ? 'block' : 'none';
+    });
+  });
+</script>
+
+
+</body>
+</html>
+
