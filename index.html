@@ -92,61 +92,38 @@
 </style>
   
   <!-- Header -->
-<header class="sticky top-0 z-50 bg-white shadow-2xl rounded-b-xl border-b border-gray-200 transition duration-300"
-        style="box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);">
-
-  <!-- Inner Container -->
-  <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center relative transform-gpu hover:scale-[1.005] hover:rotateX-[0.5deg] transition-transform duration-300">
-
-    <!-- Logo -->
-    <a href="index.html" class="inline-block transform hover:scale-105 transition duration-300">
-      <img 
-        src="https://i.postimg.cc/XYjKKqBm/Krish-devlabs-1.png" 
-        alt="Krish.Dev Logo" 
-        class="h-10 w-auto drop-shadow-md"
-      />
+<!-- Header -->
+<header class="sticky top-0 z-50 bg-white shadow-lg rounded-b-xl border-b border-gray-200">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center transition-transform duration-300 hover:scale-[1.005] hover:rotateX-[0.5deg]">
+    <a href="index.html" class="inline-block hover:scale-105 transition-transform duration-300">
+      <img src="https://i.postimg.cc/XYjKKqBm/Krish-devlabs-1.png" alt="Krish.Dev Logo" class="h-10 w-auto drop-shadow-md" />
     </a>
-
-    <!-- Desktop Navigation -->
-    <nav class="hidden md:flex space-x-8 text-lg font-medium">
+    <nav class="hidden md:flex space-x-10 text-lg font-semibold text-gray-700">
       <a href="index.html" class="hover:text-blue-600 transition" style="font-family: 'Outfit', sans-serif;">Home</a>
       <a href="services.html" class="hover:text-blue-600 transition" style="font-family: 'Outfit', sans-serif;">Services</a>
-      
+      <a href="courses.html" class="hover:text-blue-600 transition" style="font-family: 'Outfit', sans-serif;">Courses</a>
       <a href="about-us.html" class="hover:text-blue-600 transition" style="font-family: 'Outfit', sans-serif;">About Us</a>
       <a href="contact-us.html" class="hover:text-blue-600 transition" style="font-family: 'Outfit', sans-serif;">Contact Us</a>
     </nav>
-
-    <!-- Hamburger Toggle -->
     <button id="menu-toggle" class="md:hidden focus:outline-none relative z-50">
-      <!-- Hamburger Icon -->
-      <svg id="hamburger" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-800" fill="none"
-           viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M4 6h16M4 12h16M4 18h16" />
+      <svg id="hamburger" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
       </svg>
-
-      <!-- Close Icon -->
-      <svg id="close" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-800 hidden" fill="none"
-           viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M6 18L18 6M6 6l12 12" />
+      <svg id="close" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-800 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
       </svg>
     </button>
-
   </div>
 
-  <!-- Mobile Menu -->
-  <div id="mobile-menu" class="md:hidden hidden absolute top-full left-4 right-4 bg-white rounded-xl shadow-2xl border border-gray-200 z-40 transition-transform transform-gpu"
-       style="box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);">
-
+  <div id="mobile-menu" class="md:hidden hidden absolute top-full left-4 right-4 bg-white rounded-xl shadow-lg border border-gray-200 z-40">
     <a href="index.html" class="block py-4 px-6 border-b hover:bg-blue-100 text-gray-800 transition" style="font-family: 'Outfit', sans-serif;">Home</a>
     <a href="services.html" class="block py-4 px-6 border-b hover:bg-blue-100 text-gray-800 transition" style="font-family: 'Outfit', sans-serif;">Services</a>
-    
+    <a href="courses.html" class="block py-4 px-6 border-b hover:bg-blue-100 text-gray-800 transition" style="font-family: 'Outfit', sans-serif;">Courses</a>
     <a href="about-us.html" class="block py-4 px-6 border-b hover:bg-blue-100 text-gray-800 transition" style="font-family: 'Outfit', sans-serif;">About Us</a>
     <a href="contact-us.html" class="block py-4 px-6 hover:bg-blue-100 text-gray-800 transition" style="font-family: 'Outfit', sans-serif;">Contact Us</a>
-
   </div>
 </header>
+
 
 
 
