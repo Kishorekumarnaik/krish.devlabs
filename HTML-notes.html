@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>View Notes - HTML | Krish.Devlabs</title>
+
+ <meta name="description" content="Master HTML from scratch with Krish.Devlabs — a digital learning platform founded by self-taught developer M. Kishore Kumar Naik. Learn step-by-step through beginner-friendly lessons, hands-on notes, and real-world projects." />
+
+  <link rel="canonical" href="https://krishdevlabs.xyz/htmlcourse" />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+
+  <!-- AOS Animations -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Website",
+    "name": "Krish.devlabs",
+    "url": "https://krishdevlabs.xyz",
+    "founder": {
+      "@type": "Person",
+      "name": "M. Kishore Kumar Naik",
+      "url": "https://krishdevlabs.xyz/about"
+    },
+    "sameAs": [
+      "https://linkedin.com/in/m-kishore-kumar-naik-4b9741369",
+      "https://twitter.com/Krish_2936/"
+    ]
+  }
+  </script>
+
+  <style>
+    em.note {
+      @apply italic text-indigo-700 border-l-4 border-indigo-400 pl-4 py-2 bg-indigo-50 rounded-md block my-6;
+    }
+  </style>
+</head>
+
+<body class="bg-gradient-to-br from-[#f8fbff] via-[#e6f0ff] to-[#f1f5ff] text-gray-900 font-[Poppins]">
+
+  <!-- Preloader -->
+  <div id="preloader" class="fixed inset-0 z-[9999] bg-black flex items-center justify-center">
+    <div class="relative w-16 h-16">
+      <div class="absolute inset-0 rounded-full border-4 border-t-transparent border-indigo-500 animate-spin"></div>
+      <div class="absolute inset-2 rounded-full bg-black"></div>
+      <div class="absolute inset-0 flex items-center justify-center">
+        <span class="text-indigo-400 font-semibold text-sm font-[Outfit]">Loading...</span>
+      </div>
+    </div>
+  </div>
+  <style>
+    #preloader {
+      transition: opacity 0.4s ease, visibility 0.4s ease;
+    }
+    #preloader.hide {
+      opacity: 0;
+      visibility: hidden;
+    }
+  </style>
+
+  <!-- Header -->
+  <header class="sticky top-0 bg-white shadow-md border-b border-gray-200 py-4 px-6 flex items-center justify-between z-20">
+    <a href="intro-html-course.html" class="text-indigo-600 hover:text-indigo-700 font-semibold flex items-center space-x-2">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+      </svg>
+      <span></span>
+    </a>
+  </header>
+
+  <!-- Main Notes Content -->
+  <main class="max-w-3xl mx-auto px-4 py-10">
+    <h1 class="text-4xl md:text-5xl font-extrabold text-indigo-700 font-[Outfit] mb-6">Introduction to HTML - Notes</h1>
+
+    <p class="text-lg mb-6">HTML (HyperText Markup Language) is the foundation of all web pages. Understanding its syntax and structure is crucial to building websites.</p>
+
+    <p class="text-lg font-semibold mb-4">Key points:</p>
+    <ul class="list-disc list-inside text-base space-y-2 mb-6">
+      <li>Elements are written using tags like <code class="bg-gray-100 px-1 py-0.5 rounded">&lt;h1&gt;</code>, <code class="bg-gray-100 px-1 py-0.5 rounded">&lt;p&gt;</code>, and <code class="bg-gray-100 px-1 py-0.5 rounded">&lt;a&gt;</code>.</li>
+      <li>HTML documents have a <code class="bg-gray-100 px-1 py-0.5 rounded">&lt;head&gt;</code> and a <code class="bg-gray-100 px-1 py-0.5 rounded">&lt;body&gt;</code> section.</li>
+      <li>Headings (<code class="bg-gray-100 px-1 py-0.5 rounded">&lt;h1&gt; - &lt;h6&gt;</code>) define content hierarchy.</li>
+      <li>Paragraphs (<code class="bg-gray-100 px-1 py-0.5 rounded">&lt;p&gt;</code>) contain text blocks.</li>
+    </ul>
+
+    <em class="note">
+      Reminder: Take notes by hand in your notebook while watching the videos to enhance understanding and retention.
+    </em>
+
+    <p class="text-lg mb-6">Practice creating simple pages using these tags, and experiment with nesting to understand the document structure better.</p>
+
+    <p class="text-lg">Explore the official documentation here: 
+      <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank" rel="noopener noreferrer" class="text-indigo-600 underline hover:text-indigo-800">MDN HTML Docs</a>.
+    </p>
+  </main>
+
+   <!-- Footer -->
+  <footer class="py-6 text-center text-gray-600 border-t border-gray-200"style="font-family: 'Inter', sans-serif;">
+    © 2025 Krish.Devlabs. All rights reserved.
+  </footer>
+
+  <!-- AOS Script -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+    window.addEventListener("load", () => {
+      document.getElementById("preloader").classList.add("hide");
+    });
+  </script>
+</body>
+</html>
+
+
+
