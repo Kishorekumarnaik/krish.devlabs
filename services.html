@@ -107,467 +107,328 @@
 
 
 <!-- Services Section -->
-<section class="hero relative overflow-hidden py-10 pt-20">
-  <!-- Soft animated gradient background -->
-  <div class="absolute inset-0 bg-gradient-to-r from-pink-100 via-red-100 to-yellow-100 animate-gradient-x opacity-60 -z-10"></div>
-
-  <!-- Optional white overlay for softer feel -->
-  <div class="absolute inset-0 bg-white/30 backdrop-blur-sm -z-10"></div>
-    <!-- hearts here -->
+<header class="sticky top-0 z-50 bg-white shadow-lg rounded-b-xl border-b border-gray-200">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center transition-transform duration-300 hover:scale-[1.005] hover:rotateX-[0.5deg]">
+    <a href="index.html" class="inline-block hover:scale-105 transition-transform duration-300">
+      <img src="https://i.postimg.cc/XYjKKqBm/Krish-devlabs-1.png" alt="Krish.Dev Logo" class="h-10 w-auto drop-shadow-md" />
+    </a>
+    <nav class="hidden md:flex space-x-10 text-lg font-semibold text-gray-700">
+      <a href="index.html" class="hover:text-blue-600 transition">Home</a>
+      <a href="services.html" class="hover:text-blue-600 transition">Services</a>
+      <a href="about-us.html" class="hover:text-blue-600 transition">About Us</a>
+      <a href="contact-us.html" class="hover:text-blue-600 transition">Contact Us</a>
+    </nav>
+    <button id="menu-toggle" class="md:hidden focus:outline-none relative z-50">
+      <svg id="hamburger" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+      <svg id="close" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-800 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
   </div>
 
-  <div class="relative max-w-4xl mx-auto text-center px-4">
-<style>
-  @keyframes fadeSlideUp {
-    0% {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  .black-heading {
-    font-family: 'Outfit', sans-serif;
-    font-weight: 900;
-    font-size: 3rem;
-    color: #000;
-    text-align: center;
-    letter-spacing: 1px;
-    position: relative;
-    animation: fadeSlideUp 1s ease-out forwards;
-    margin-bottom: 1rem;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.25);
-  }
-
-  .black-heading::after {
-    content: "";
-    display: block;
-    width: 100px;
-    height: 4px;
-    background-color: #000;
-    margin: 14px auto 0;
-    border-radius: 2px;
-    opacity: 0.8;
-  }
-
-  @media (max-width: 640px) {
-    .black-heading {
-      font-size: 2rem;
-    }
-
-    .black-heading::after {
-      width: 60px;
-      height: 3px;
-    }
-  }
-
-  .service-description {
-    font-family: 'Inter', sans-serif;
-    text-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
-    color: #111827;
-    font-size: 1.125rem; /* text-lg */
-    text-align: center;
-    max-width: 720px;
-    margin: 0 auto 3rem;
-    line-height: 1.7;
-    padding: 0 1rem;
-  }
-</style>
-
-<h2 class="black-heading">All Services</h2>
-
-
-<p class="service-description">
-  We build elegant websites that showcase your unique business<br>
-  
-</p>
-
-
-
-
-
-
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-  <!-- Card 1 -->
-  <div class="bg-blue-100/80 rounded-2xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300"
-     data-aos="fade-up" data-aos-delay="0">
-  <img src="https://i.postimg.cc/vBHFs1NV/restaurant-show-case-1.png" alt="Experience 1"
-       class="w-full h-48 object-cover filter brightness-90 rounded-t-2xl">
-  <div class="p-6">
-    <h3 class="text-black text-xl font-semibold mb-2" style="font-family: 'Outfit', sans-serif;">
-  Restaurant Showcase Websites
-    </h3>
-
-    <p class="text-blue-800 text-sm" style="font-family: 'Poppins', sans-serif;">
-      Beautiful, image-rich sites for restaurants, cafes or bistros. Highlight your menu, chef stories, interior ambiance, special events and location – no delivery features, just pure discovery.
-    </p>
-
-   <a href="contact-us.html"
-   class="mt-4 inline-block bg-black text-white text-sm font-semibold px-5 py-2 rounded-full shadow hover:bg-gray-800 transition duration-300"
-   style="font-family: 'Poppins', sans-serif;">
-  Start Your Project
-</a>
-
+  <div id="mobile-menu" class="md:hidden hidden absolute top-full left-4 right-4 bg-white rounded-xl shadow-lg border border-gray-200 z-40">
+    <a href="index.html" class="block py-4 px-6 border-b hover:bg-blue-100 text-gray-800 transition">Home</a>
+    <a href="services.html" class="block py-4 px-6 border-b hover:bg-blue-100 text-gray-800 transition">Services</a>
+    <a href="about-us.html" class="block py-4 px-6 border-b hover:bg-blue-100 text-gray-800 transition">About Us</a>
+    <a href="contact-us.html" class="block py-4 px-6 hover:bg-blue-100 text-gray-800 transition">Contact Us</a>
   </div>
-</div>
+</header>
 
 
-  <!-- Card 2 -->
+<section class="min-h-screen bg-gradient-to-br from-indigo-100 via-white to-purple-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 py-16 px-6">
 
-    <div class="bg-blue-100/80 rounded-2xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300"
-     data-aos="fade-up" data-aos-delay="0">
-  <img src="https://i.postimg.cc/6pcx1LHX/Student-portfolio-1.png" alt="Experience 1"
-       class="w-full h-48 object-cover filter brightness-90 rounded-t-2xl">
-  <div class="p-6">
-    <h3 class="text-black text-xl font-semibold mb-2" style="font-family: 'Outfit', sans-serif;">
-  Student Portfolio Websites
-</h3>
-
-    <p class="text-blue-800 text-sm" style="font-family: 'Poppins', sans-serif;">
-       Personal portfolios to help students present their projects, skills and academic journey in a professional way.
-    </p>
-
-    <a href="contact-us.html"
-   class="mt-4 inline-block bg-black text-white text-sm font-semibold px-5 py-2 rounded-full shadow hover:bg-gray-800 transition duration-300"
-   style="font-family: 'Poppins', sans-serif;">
-  Start Your Project
-</a>
-
+  <!-- Heading -->
+  <div class="text-center mb-10" data-aos="fade-down">
+    <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white tracking-tight mb-3 uppercase text-center"
+      style="text-shadow: 0 0 10px rgba(255, 215, 0, 0.6); letter-spacing: 0.05em;">
+      Our Services
+    </h2>
+    <p class="text-lg text-gray-600 dark:text-gray-300 font-medium">Explore our expert services to boost your growth.</p>
   </div>
-</div>
 
-<div class="bg-blue-100/80 rounded-2xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300"
-     data-aos="fade-up" data-aos-delay="0">
-  <img src="https://i.postimg.cc/NjB5HD9q/local-farm-and-market-1.png" alt="Experience 1"
-       class="w-full h-48 object-cover filter brightness-90 rounded-t-2xl">
-  <div class="p-6">
-    <h3 class="text-black text-xl font-semibold mb-2" style="font-family: 'Outfit', sans-serif;">
- Local Farm or Market Websites
-</h3>
-
-    <p class="text-blue-800 text-sm" style="font-family: 'Poppins', sans-serif;">  Share what's in season, visiting hours, photo galleries and info about tours or farm events - grat for local agriculture or farmer markets.
-    </p>
-
-    <a href="contact-us.html"
-   class="mt-4 inline-block bg-black text-white text-sm font-semibold px-5 py-2 rounded-full shadow hover:bg-gray-800 transition duration-300"
-   style="font-family: 'Poppins', sans-serif;">
-  Start Your Project
-</a>
-
+  <!-- Search Bar -->
+  <div class="flex justify-center mb-10" data-aos="fade-up" data-aos-delay="100">
+    <div class="relative w-full max-w-xl">
+      <input type="text" id="serviceSearch" placeholder="Search services..." 
+        class="w-full py-3 pl-5 pr-12 rounded-full shadow-lg border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:bg-slate-800 dark:text-white" />
+      <span class="absolute top-3.5 right-4 text-gray-400 dark:text-gray-300">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+        </svg>
+      </span>
+    </div>
   </div>
+
+  <!-- Service Cards -->
+  <div id="servicesGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-7xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+
+    <!-- Card Example -->
+    <div
+      class="service-card bg-white dark:bg-slate-800 rounded-2xl shadow-xl hover:shadow-2xl border border-gray-200 dark:border-slate-700 p-6 flex flex-col transition duration-300"
+      data-title="Restaurant Showcase Websites">
+      
+      <img src="https://i.postimg.cc/vBHFs1NV/restaurant-show-case-1.png" alt="Web Development" class="rounded-xl mb-4 object-cover h-40 w-full" />
+      <h3 class="text-2xl font-bold text-indigo-600 dark:text-yellow-400 mb-2"style="font-family: 'Outfit', sans-serif;">Restaurant Showcase Websites</h3>
+      <p class="text-gray-600 dark:text-gray-300 text-sm mb-4"style="font-family: 'Poppins', sans-serif;"> Beautiful, image-rich sites for restaurants, cafes or bistros. Highlight your menu, chef stories, interior ambiance, special events and location – no delivery features, just pure discovery.</p>
+     <div class="mt-auto flex justify-center">
+  <a href="contact-us.html" class="px-5 py-2 bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 text-white rounded-full text-sm font-medium"
+     style="font-family: 'Poppins', sans-serif;">
+    Start Your Project
+  </a>
 </div>
 
+    </div>
 
-    <div class="bg-blue-100/80 rounded-2xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300"
-     data-aos="fade-up" data-aos-delay="0">
-  <img src="https://i.postimg.cc/76GvhvqH/Freelancer-1.png" alt="Experience 1"
-       class="w-full h-48 object-cover filter brightness-90 rounded-t-2xl">
-  <div class="p-6">
-    <h3 class="text-black text-xl font-semibold mb-2" style="font-family: 'Outfit', sans-serif;">
-  Freelancer Portfolio Websites
-</h3>
-
-    <p class="text-blue-800 text-sm" style="font-family: 'Poppins', sans-serif;">
-       Modern, impactful websites for freelancers to showcase services, past work, testimonials and contact info.
-    </p>
-
-   <a href="contact-us.html"
-   class="mt-4 inline-block bg-black text-white text-sm font-semibold px-5 py-2 rounded-full shadow hover:bg-gray-800 transition duration-300"
-   style="font-family: 'Poppins', sans-serif;">
-  Start Your Project
-</a>
-
-  </div>
+    <!-- Card Example -->
+     <div
+      class="service-card bg-white dark:bg-slate-800 rounded-2xl shadow-xl hover:shadow-2xl border border-gray-200 dark:border-slate-700 p-6 flex flex-col transition duration-300"
+      data-title="Student Portfolio Websites">
+      
+      <img src="https://i.postimg.cc/6pcx1LHX/Student-portfolio-1.png" alt="Web Development" class="rounded-xl mb-4 object-cover h-40 w-full" />
+      <h3 class="text-2xl font-bold text-indigo-600 dark:text-yellow-400 mb-2"style="font-family: 'Outfit', sans-serif;">Student Portfolio Websites</h3>
+      <p class="text-gray-600 dark:text-gray-300 text-sm mb-4"style="font-family: 'Poppins', sans-serif;"> Personal portfolios to help students present their projects, skills and academic journey in a professional way.</p>
+     <div class="mt-auto flex justify-center">
+  <a href="contact-us.html" class="px-5 py-2 bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 text-white rounded-full text-sm font-medium"
+     style="font-family: 'Poppins', sans-serif;">
+    Start Your Project
+  </a>
 </div>
 
- 
-<div class="bg-blue-100/80 rounded-2xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300"
-     data-aos="fade-up" data-aos-delay="0">
-  <img src="https://i.postimg.cc/mr7CskHB/Tuition-1.png" alt="Experience 1"
-       class="w-full h-48 object-cover filter brightness-90 rounded-t-2xl">
-  <div class="p-6">
-    <h3 class="text-black text-xl font-semibold mb-2" style="font-family: 'Outfit', sans-serif;">
-Tuition center & Coaching Websites
-</h3>
-
-    <p class="text-blue-800 text-sm" style="font-family: 'Poppins', sans-serif;">Informative, student - focussed websites to highlight courses, schedules, faculty and academic achievements.
-    </p>
-
-    <a href="contact-us.html"
-   class="mt-4 inline-block bg-black text-white text-sm font-semibold px-5 py-2 rounded-full shadow hover:bg-gray-800 transition duration-300"
-   style="font-family: 'Poppins', sans-serif;">
-  Start Your Project
-</a>
-
-  </div>
-</div>
- 
-
- <div class="bg-blue-100/80 rounded-2xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300"
-     data-aos="fade-up" data-aos-delay="0">
-  <img src="https://i.postimg.cc/VL9xdWPC/Developer-portfolio-1.png" alt="Experience 1"
-       class="w-full h-48 object-cover filter brightness-90 rounded-t-2xl">
-  <div class="p-6">
-    <h3 class="text-black text-xl font-semibold mb-2" style="font-family: 'Outfit', sans-serif;">
- Developer Portfolio Websites
-</h3>
-
-    <p class="text-blue-800 text-sm" style="font-family: 'Poppins', sans-serif;">
-       Tech focused portfolios for developers to feature projects, Github links, Case studies and technical skills.
-    </p>
-
- <a href="contact-us.html"
-   class="mt-4 inline-block bg-black text-white text-sm font-semibold px-5 py-2 rounded-full shadow hover:bg-gray-800 transition duration-300"
-   style="font-family: 'Poppins', sans-serif;">
-  Start Your Project
-</a>
-
-  </div>
-</div>
-<div class="bg-blue-100/80 rounded-2xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300"
-     data-aos="fade-up" data-aos-delay="0">
-  <img src="https://i.postimg.cc/rs5wdRqw/Hospital-1.png" alt="Experience 1"
-       class="w-full h-48 object-cover filter brightness-90 rounded-t-2xl">
-  <div class="p-6">
-    <h3 class="text-black text-xl font-semibold mb-2" style="font-family: 'Outfit', sans-serif;">
-Hospital & Clinic Websites
-</h3>
-
-    <p class="text-blue-800 text-sm" style="font-family: 'Poppins', sans-serif;"> Clean, trustworthy websites for hospitals and clinics to showcase services, doctors, departments and visting hours.
-    </p>
-
-    <a href="contact-us.html"
-   class="mt-4 inline-block bg-black text-white text-sm font-semibold px-5 py-2 rounded-full shadow hover:bg-gray-800 transition duration-300"
-   style="font-family: 'Poppins', sans-serif;">
-  Start Your Project
-</a>
-
-  </div>
+    </div>
+    <!-- Card Example -->
+    <div
+      class="service-card bg-white dark:bg-slate-800 rounded-2xl shadow-xl hover:shadow-2xl border border-gray-200 dark:border-slate-700 p-6 flex flex-col transition duration-300"
+      data-title="Local Farm or Market Websites">
+      
+      <img src="https://i.postimg.cc/NjB5HD9q/local-farm-and-market-1.png" alt="Web Development" class="rounded-xl mb-4 object-cover h-40 w-full" />
+      <h3 class="text-2xl font-bold text-indigo-600 dark:text-yellow-400 mb-2"style="font-family: 'Outfit', sans-serif;">Local Farm or Market Websites</h3>
+      <p class="text-gray-600 dark:text-gray-300 text-sm mb-4"style="font-family: 'Poppins', sans-serif;"> Share what's in season, visiting hours, photo galleries and info about tours or farm events - grat for local agriculture or farmer markets.</p>
+     <div class="mt-auto flex justify-center">
+  <a href="contact-us.html" class="px-5 py-2 bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 text-white rounded-full text-sm font-medium"
+     style="font-family: 'Poppins', sans-serif;">
+    Start Your Project
+  </a>
 </div>
 
- <div class="bg-blue-100/80 rounded-2xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300"
-     data-aos="fade-up" data-aos-delay="0">
-  <img src="https://i.postimg.cc/7h3WJwdk/Blogging-1.png" alt="Experience 1"
-       class="w-full h-48 object-cover filter brightness-90 rounded-t-2xl">
-  <div class="p-6">
-    <h3 class="text-black text-xl font-semibold mb-2" style="font-family: 'Outfit', sans-serif;">
- Blogging Websites
-</h3>
+    </div>
 
-    <p class="text-blue-800 text-sm" style="font-family: 'Poppins', sans-serif;">
-       Clean, content first websites for bloggers to share stories, insights, tutorials or niche content with a personal touch.
-    </p>
-
-    <a href="contact-us.html"
-   class="mt-4 inline-block bg-black text-white text-sm font-semibold px-5 py-2 rounded-full shadow hover:bg-gray-800 transition duration-300"
-   style="font-family: 'Poppins', sans-serif;">
-  Start Your Project
-</a>
-
-  </div>
+       <div
+      class="service-card bg-white dark:bg-slate-800 rounded-2xl shadow-xl hover:shadow-2xl border border-gray-200 dark:border-slate-700 p-6 flex flex-col transition duration-300"
+      data-title="Freelancer Portfolio Websites">
+      
+      <img src="https://i.postimg.cc/76GvhvqH/Freelancer-1.png" alt="Web Development" class="rounded-xl mb-4 object-cover h-40 w-full" />
+      <h3 class="text-2xl font-bold text-indigo-600 dark:text-yellow-400 mb-2"style="font-family: 'Outfit', sans-serif;">Freelancer Portfolio Websites</h3>
+      <p class="text-gray-600 dark:text-gray-300 text-sm mb-4"style="font-family: 'Poppins', sans-serif;"> Modern, impactful websites for freelancers to showcase services, past work, testimonials and contact info.</p>
+     <div class="mt-auto flex justify-center">
+  <a href="contact-us.html" class="px-5 py-2 bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 text-white rounded-full text-sm font-medium"
+     style="font-family: 'Poppins', sans-serif;">
+    Start Your Project
+  </a>
 </div>
 
-<div class="bg-blue-100/80 rounded-2xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300"
-     data-aos="fade-up" data-aos-delay="0">
-  <img src="https://i.postimg.cc/T10cXwBp/Fitness-and-gym-1.png" alt="Experience 1"
-       class="w-full h-48 object-cover filter brightness-90 rounded-t-2xl">
-  <div class="p-6">
-    <h3 class="text-black text-xl font-semibold mb-2" style="font-family: 'Outfit', sans-serif;">
- Fitness Studio & Gym Website
-</h3>
+    </div>
 
-    <p class="text-blue-800 text-sm" style="font-family: 'Poppins', sans-serif;">
-       Promote class schedules, trainer profiles, facility photos and membership info. Show case your energy and community without needing online registration tools.
-    </p>
 
-    <a href="contact-us.html"
-   class="mt-4 inline-block bg-black text-white text-sm font-semibold px-5 py-2 rounded-full shadow hover:bg-gray-800 transition duration-300"
-   style="font-family: 'Poppins', sans-serif;">
-  Start Your Project
-</a>
-
-  </div>
+       <div
+      class="service-card bg-white dark:bg-slate-800 rounded-2xl shadow-xl hover:shadow-2xl border border-gray-200 dark:border-slate-700 p-6 flex flex-col transition duration-300"
+      data-title="Tuition center & Coaching Websites">
+      
+      <img src="https://i.postimg.cc/mr7CskHB/Tuition-1.png" alt="Web Development" class="rounded-xl mb-4 object-cover h-40 w-full" />
+      <h3 class="text-2xl font-bold text-indigo-600 dark:text-yellow-400 mb-2"style="font-family: 'Outfit', sans-serif;">Tuition center & Coaching Websites</h3>
+      <p class="text-gray-600 dark:text-gray-300 text-sm mb-4"style="font-family: 'Poppins', sans-serif;">Informative, student - focussed websites to highlight courses, schedules, faculty and academic achievements.</p>
+     <div class="mt-auto flex justify-center">
+  <a href="contact-us.html" class="px-5 py-2 bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 text-white rounded-full text-sm font-medium"
+     style="font-family: 'Poppins', sans-serif;">
+    Start Your Project
+  </a>
 </div>
 
-   <div class="bg-blue-100/80 rounded-2xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300"
-     data-aos="fade-up" data-aos-delay="0">
-  <img src="https://i.postimg.cc/6pj1vHjy/Hotel-1.png" alt="Experience 1"
-       class="w-full h-48 object-cover filter brightness-90 rounded-t-2xl">
-  <div class="p-6">
-    <h3 class="text-black text-xl font-semibold mb-2" style="font-family: 'Outfit', sans-serif;">
- Hotel & B&B Websites
-</h3>
+    </div>
 
-    <p class="text-blue-800 text-sm" style="font-family: 'Poppins', sans-serif;">
-        Let your guests explore rooms, amenities, nearby attractions and photo galleries. Ideal for small hotels or B&Bs looking to charm visitors with style and information without direct booking integrations.
-    </p>
-
-    <a href="contact-us.html"
-   class="mt-4 inline-block bg-black text-white text-sm font-semibold px-5 py-2 rounded-full shadow hover:bg-gray-800 transition duration-300"
-   style="font-family: 'Poppins', sans-serif;">
-  Start Your Project
-</a>
- </div>
+     <div
+      class="service-card bg-white dark:bg-slate-800 rounded-2xl shadow-xl hover:shadow-2xl border border-gray-200 dark:border-slate-700 p-6 flex flex-col transition duration-300"
+      data-title="Developer Portfolio Websites">
+      
+      <img src="https://i.postimg.cc/VL9xdWPC/Developer-portfolio-1.png" alt="Web Development" class="rounded-xl mb-4 object-cover h-40 w-full" />
+      <h3 class="text-2xl font-bold text-indigo-600 dark:text-yellow-400 mb-2"style="font-family: 'Outfit', sans-serif;">Developer Portfolio Websites</h3>
+      <p class="text-gray-600 dark:text-gray-300 text-sm mb-4"style="font-family: 'Poppins', sans-serif;"> Tech focused portfolios for developers to feature projects, Github links, Case studies and technical skills.</p>
+     <div class="mt-auto flex justify-center">
+  <a href="contact-us.html" class="px-5 py-2 bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 text-white rounded-full text-sm font-medium"
+     style="font-family: 'Poppins', sans-serif;">
+    Start Your Project
+  </a>
 </div>
 
-<div class="bg-blue-100/80 rounded-2xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300"
-     data-aos="fade-up" data-aos-delay="0">
-  <img src="https://i.postimg.cc/nhG9Rgbh/Gen4-A-sleek-and-modern-website-homepage-thumbnail-for-a-coffee-and-cafe-service-The-a-2-32979698.png" alt="Experience 1"
-       class="w-full h-48 object-cover filter brightness-90 rounded-t-2xl">
-  <div class="p-6">
-    <h3 class="text-black text-xl font-semibold mb-2" style="font-family: 'Outfit', sans-serif;">
-Coffee shops & Cafe sites
-</h3>
+    </div>
 
-    <p class="text-blue-800 text-sm" style="font-family: 'Poppins', sans-serif;"> Capture your shop's story, vibe,drinks, events and community with warm design and rich visuals - ideal for independent cafes and roasters.Highlight course offerings, campus features, faculty profiles and admisiion info. A clear, engaging digital front door for schools, academics and learning centers.
-    </p>
-
-    <a href="contact-us.html"
-   class="mt-4 inline-block bg-black text-white text-sm font-semibold px-5 py-2 rounded-full shadow hover:bg-gray-800 transition duration-300"
-   style="font-family: 'Poppins', sans-serif;">
-  Start Your Project
-</a>
-
-  </div>
+     <div
+      class="service-card bg-white dark:bg-slate-800 rounded-2xl shadow-xl hover:shadow-2xl border border-gray-200 dark:border-slate-700 p-6 flex flex-col transition duration-300"
+      data-title="Hospital & Clinic Websites">
+      
+      <img src="https://i.postimg.cc/rs5wdRqw/Hospital-1.png" alt="Web Development" class="rounded-xl mb-4 object-cover h-40 w-full" />
+      <h3 class="text-2xl font-bold text-indigo-600 dark:text-yellow-400 mb-2"style="font-family: 'Outfit', sans-serif;">Hospital & Clinic Websites</h3>
+      <p class="text-gray-600 dark:text-gray-300 text-sm mb-4"style="font-family: 'Poppins', sans-serif;"> Clean, trustworthy websites for hospitals and clinics to showcase services, doctors, departments and visting hours.</p>
+     <div class="mt-auto flex justify-center">
+  <a href="contact-us.html" class="px-5 py-2 bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 text-white rounded-full text-sm font-medium"
+     style="font-family: 'Poppins', sans-serif;">
+    Start Your Project
+  </a>
 </div>
 
+    </div>
 
- <div class="bg-blue-100/80 rounded-2xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300"
-     data-aos="fade-up" data-aos-delay="0">
-  <img src="https://i.postimg.cc/ZY87cYsk/Art-gallery-1.png" alt="Experience 1"
-       class="w-full h-48 object-cover filter brightness-90 rounded-t-2xl">
-  <div class="p-6">
-    <h3 class="text-black text-xl font-semibold mb-2" style="font-family: 'Outfit', sans-serif;">
- Art gallery & Museum Sites
-</h3>
-
-    <p class="text-blue-800 text-sm" style="font-family: 'Poppins', sans-serif;">
-       Display current and upcoming exhibitions, artist bios, event schedules and vistor info. Designed to spark curiosity and increase foot traffic to your space.
-    </p>
-
-    <a href="contact-us.html"
-   class="mt-4 inline-block bg-black text-white text-sm font-semibold px-5 py-2 rounded-full shadow hover:bg-gray-800 transition duration-300"
-   style="font-family: 'Poppins', sans-serif;">
-  Start Your Project
-</a>
-
-  </div>
+      <div
+      class="service-card bg-white dark:bg-slate-800 rounded-2xl shadow-xl hover:shadow-2xl border border-gray-200 dark:border-slate-700 p-6 flex flex-col transition duration-300"
+      data-title="Blogging Websites">
+      
+      <img src="https://i.postimg.cc/7h3WJwdk/Blogging-1.png" alt="Web Development" class="rounded-xl mb-4 object-cover h-40 w-full" />
+      <h3 class="text-2xl font-bold text-indigo-600 dark:text-yellow-400 mb-2"style="font-family: 'Outfit', sans-serif;">Blogging Websites</h3>
+      <p class="text-gray-600 dark:text-gray-300 text-sm mb-4"style="font-family: 'Poppins', sans-serif;"> Clean, content first websites for bloggers to share stories, insights, tutorials or niche content with a personal touch.</p>
+     <div class="mt-auto flex justify-center">
+  <a href="contact-us.html" class="px-5 py-2 bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 text-white rounded-full text-sm font-medium"
+     style="font-family: 'Poppins', sans-serif;">
+    Start Your Project
+  </a>
 </div>
 
- 
-  
- <div class="bg-blue-100/80 rounded-2xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300"
-     data-aos="fade-up" data-aos-delay="0">
-  <img src="https://i.postimg.cc/vZctpGhZ/Ed-Institution-1.png" alt="Experience 1"
-       class="w-full h-48 object-cover filter brightness-90 rounded-t-2xl">
-  <div class="p-6">
-    <h3 class="text-black text-xl font-semibold mb-2" style="font-family: 'Outfit', sans-serif;">
-Educational Institution Websites
-</h3>
+    </div>
 
-    <p class="text-blue-800 text-sm" style="font-family: 'Poppins', sans-serif;">
-       Highlight course offerings, campus features, faculty profiles and admisiion info. A clear, engaging digital front door for schools, academics and learning centers.
-    </p>
-
-    <a href="contact-us.html"
-   class="mt-4 inline-block bg-black text-white text-sm font-semibold px-5 py-2 rounded-full shadow hover:bg-gray-800 transition duration-300"
-   style="font-family: 'Poppins', sans-serif;">
-  Start Your Project
-</a>
-
-  </div>
+      <div
+      class="service-card bg-white dark:bg-slate-800 rounded-2xl shadow-xl hover:shadow-2xl border border-gray-200 dark:border-slate-700 p-6 flex flex-col transition duration-300"
+      data-title="Fitness Studio & Gym Websites">
+      
+      <img src="https://i.postimg.cc/T10cXwBp/Fitness-and-gym-1.png" alt="Web Development" class="rounded-xl mb-4 object-cover h-40 w-full" />
+      <h3 class="text-2xl font-bold text-indigo-600 dark:text-yellow-400 mb-2"style="font-family: 'Outfit', sans-serif;">Fitness Studio & Gym Website</h3>
+      <p class="text-gray-600 dark:text-gray-300 text-sm mb-4"style="font-family: 'Poppins', sans-serif;">  Promote class schedules, trainer profiles, facility photos and membership info. Show case your energy and community without needing online registration tools.</p>
+     <div class="mt-auto flex justify-center">
+  <a href="contact-us.html" class="px-5 py-2 bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 text-white rounded-full text-sm font-medium"
+     style="font-family: 'Poppins', sans-serif;">
+    Start Your Project
+  </a>
 </div>
 
- <div class="bg-blue-100/80 rounded-2xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300"
-     data-aos="fade-up" data-aos-delay="0">
-  <img src="https://i.postimg.cc/Wpw8ZWtT/Tourist-1.png" alt="Experience 1"
-       class="w-full h-48 object-cover filter brightness-90 rounded-t-2xl">
-  <div class="p-6">
-    <h3 class="text-black text-xl font-semibold mb-2" style="font-family: 'Outfit', sans-serif;">
- Tourist Attraction Websites
-</h3>
+    </div>
 
-    <p class="text-blue-800 text-sm" style="font-family: 'Poppins', sans-serif;">
-       Feature must see spots, hours, ticket prices, directions and image galleries. Perfect for parks, historical sites and family-friendly venues.
-    </p>
-
-    <a href="contact-us.html"
-   class="mt-4 inline-block bg-black text-white text-sm font-semibold px-5 py-2 rounded-full shadow hover:bg-gray-800 transition duration-300"
-   style="font-family: 'Poppins', sans-serif;">
-  Start Your Project
-</a>
-
-  </div>
+      <div
+      class="service-card bg-white dark:bg-slate-800 rounded-2xl shadow-xl hover:shadow-2xl border border-gray-200 dark:border-slate-700 p-6 flex flex-col transition duration-300"
+      data-title="Hotel & B&B Websites">
+      
+      <img src="https://i.postimg.cc/6pj1vHjy/Hotel-1.png" alt="Web Development" class="rounded-xl mb-4 object-cover h-40 w-full" />
+      <h3 class="text-2xl font-bold text-indigo-600 dark:text-yellow-400 mb-2"style="font-family: 'Outfit', sans-serif;">Hotel & B&B Websites</h3>
+      <p class="text-gray-600 dark:text-gray-300 text-sm mb-4"style="font-family: 'Poppins', sans-serif;"> Let your guests explore rooms, amenities, nearby attractions and photo galleries. Ideal for small hotels or B&Bs looking to charm visitors with style and information without direct booking integrations.</p>
+     <div class="mt-auto flex justify-center">
+  <a href="contact-us.html" class="px-5 py-2 bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 text-white rounded-full text-sm font-medium"
+     style="font-family: 'Poppins', sans-serif;">
+    Start Your Project
+  </a>
 </div>
 
- 
+    </div>
 
- <div class="bg-blue-100/80 rounded-2xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300"
-     data-aos="fade-up" data-aos-delay="0">
-  <img src="https://i.postimg.cc/PrqWwdBQ/Wedding-venue-1.png" alt="Experience 1"
-       class="w-full h-48 object-cover filter brightness-90 rounded-t-2xl">
-  <div class="p-6">
-    <h3 class="text-black text-xl font-semibold mb-2" style="font-family: 'Outfit', sans-serif;">
-Wedding Venue & Event Hall Sites
-</h3>
-
-    <p class="text-blue-800 text-sm" style="font-family: 'Poppins', sans-serif;">
-       Elegant layouts for venues to show off space details, pricing, photo tours, testimonials and contact forms - helping couples and planners envision their perfect event.
-    </p>
-
-    <a href="contact-us.html"
-   class="mt-4 inline-block bg-black text-white text-sm font-semibold px-5 py-2 rounded-full shadow hover:bg-gray-800 transition duration-300"
-   style="font-family: 'Poppins', sans-serif;">
-  Start Your Project
-</a>
-
-  </div>
+      <div
+      class="service-card bg-white dark:bg-slate-800 rounded-2xl shadow-xl hover:shadow-2xl border border-gray-200 dark:border-slate-700 p-6 flex flex-col transition duration-300"
+      data-title="Coffee shops & Cafe sites">
+      
+      <img src="https://i.postimg.cc/nhG9Rgbh/Gen4-A-sleek-and-modern-website-homepage-thumbnail-for-a-coffee-and-cafe-service-The-a-2-32979698.png" alt="Web Development" class="rounded-xl mb-4 object-cover h-40 w-full" />
+      <h3 class="text-2xl font-bold text-indigo-600 dark:text-yellow-400 mb-2"style="font-family: 'Outfit', sans-serif;">Coffee shops & Cafe sites</h3>
+      <p class="text-gray-600 dark:text-gray-300 text-sm mb-4"style="font-family: 'Poppins', sans-serif;"> Capture your shop's story, vibe,drinks, events and community with warm design and rich visuals - ideal for independent cafes and roasters.Highlight course offerings, campus features, faculty profiles and admisiion info. A clear, engaging digital front door for schools, academics and learning centers.</p>
+     <div class="mt-auto flex justify-center">
+  <a href="contact-us.html" class="px-5 py-2 bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 text-white rounded-full text-sm font-medium"
+     style="font-family: 'Poppins', sans-serif;">
+    Start Your Project
+  </a>
 </div>
 
- <div class="bg-blue-100/80 rounded-2xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300"
-     data-aos="fade-up" data-aos-delay="0">
-  <img src="https://i.postimg.cc/yYrFhwK4/Spa-and-wellness-1.png" alt="Experience 1"
-       class="w-full h-48 object-cover filter brightness-90 rounded-t-2xl">
-  <div class="p-6">
-    <h3 class="text-black text-xl font-semibold mb-2" style="font-family: 'Outfit', sans-serif;">
-Spa & Wellness center Websites
-</h3>
+    </div>
 
-    <p class="text-blue-800 text-sm" style="font-family: 'Poppins', sans-serif;">
-      Create a calming online presence to showcase treatments, pricing, staff bios and a photo gallery - no need for complex booking systems.
-    </p>
-
-    <a href="contact-us.html"
-   class="mt-4 inline-block bg-black text-white text-sm font-semibold px-5 py-2 rounded-full shadow hover:bg-gray-800 transition duration-300"
-   style="font-family: 'Poppins', sans-serif;">
-  Start Your Project
-</a>
-
-  </div>
+        <div
+      class="service-card bg-white dark:bg-slate-800 rounded-2xl shadow-xl hover:shadow-2xl border border-gray-200 dark:border-slate-700 p-6 flex flex-col transition duration-300"
+      data-title="Art gallery & Museum Sites">
+      
+      <img src="https://i.postimg.cc/ZY87cYsk/Art-gallery-1.png" alt="Web Development" class="rounded-xl mb-4 object-cover h-40 w-full" />
+      <h3 class="text-2xl font-bold text-indigo-600 dark:text-yellow-400 mb-2"style="font-family: 'Outfit', sans-serif;">Art gallery & Museum Sites</h3>
+      <p class="text-gray-600 dark:text-gray-300 text-sm mb-4"style="font-family: 'Poppins', sans-serif;"> Display current and upcoming exhibitions, artist bios, event schedules and vistor info. Designed to spark curiosity and increase foot traffic to your space.</p>
+     <div class="mt-auto flex justify-center">
+  <a href="contact-us.html" class="px-5 py-2 bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 text-white rounded-full text-sm font-medium"
+     style="font-family: 'Poppins', sans-serif;">
+    Start Your Project
+  </a>
 </div>
 
- 
+    </div>
 
-
-
-
-   
-
- 
+        <div
+      class="service-card bg-white dark:bg-slate-800 rounded-2xl shadow-xl hover:shadow-2xl border border-gray-200 dark:border-slate-700 p-6 flex flex-col transition duration-300"
+      data-title="Educational Institution Websites">
+      
+      <img src="https://i.postimg.cc/vZctpGhZ/Ed-Institution-1.png" alt="Web Development" class="rounded-xl mb-4 object-cover h-40 w-full" />
+      <h3 class="text-2xl font-bold text-indigo-600 dark:text-yellow-400 mb-2"style="font-family: 'Outfit', sans-serif;">Educational Institution Websites</h3>
+      <p class="text-gray-600 dark:text-gray-300 text-sm mb-4"style="font-family: 'Poppins', sans-serif;"> Highlight course offerings, campus features, faculty profiles and admisiion info. A clear, engaging digital front door for schools, academics and learning centers.</p>
+     <div class="mt-auto flex justify-center">
+  <a href="contact-us.html" class="px-5 py-2 bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 text-white rounded-full text-sm font-medium"
+     style="font-family: 'Poppins', sans-serif;">
+    Start Your Project
+  </a>
 </div>
 
+    </div>
 
+    <div
+      class="service-card bg-white dark:bg-slate-800 rounded-2xl shadow-xl hover:shadow-2xl border border-gray-200 dark:border-slate-700 p-6 flex flex-col transition duration-300"
+      data-title="Tourist Attraction Websites">
+      
+      <img src="https://i.postimg.cc/Wpw8ZWtT/Tourist-1.png" alt="Web Development" class="rounded-xl mb-4 object-cover h-40 w-full" />
+      <h3 class="text-2xl font-bold text-indigo-600 dark:text-yellow-400 mb-2"style="font-family: 'Outfit', sans-serif;">Tourist Attraction Websites</h3>
+      <p class="text-gray-600 dark:text-gray-300 text-sm mb-4"style="font-family: 'Poppins', sans-serif;"> Feature must see spots, hours, ticket prices, directions and image galleries. Perfect for parks, historical sites and family-friendly venues.</p>
+     <div class="mt-auto flex justify-center">
+  <a href="contact-us.html" class="px-5 py-2 bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 text-white rounded-full text-sm font-medium"
+     style="font-family: 'Poppins', sans-serif;">
+    Start Your Project
+  </a>
+</div>
 
+    </div>
 
-      <!-- Repeat cards with same style for others -->
-      <!-- ... -->
+    <div
+      class="service-card bg-white dark:bg-slate-800 rounded-2xl shadow-xl hover:shadow-2xl border border-gray-200 dark:border-slate-700 p-6 flex flex-col transition duration-300"
+      data-title="Wedding Venue & Event Hall Sites">
+      
+      <img src="https://i.postimg.cc/PrqWwdBQ/Wedding-venue-1.png" alt="Web Development" class="rounded-xl mb-4 object-cover h-40 w-full" />
+      <h3 class="text-2xl font-bold text-indigo-600 dark:text-yellow-400 mb-2"style="font-family: 'Outfit', sans-serif;">Wedding Venue & Event Hall Sites</h3>
+      <p class="text-gray-600 dark:text-gray-300 text-sm mb-4"style="font-family: 'Poppins', sans-serif;"> Elegant layouts for venues to show off space details, pricing, photo tours, testimonials and contact forms - helping couples and planners envision their perfect event.</p>
+     <div class="mt-auto flex justify-center">
+  <a href="contact-us.html" class="px-5 py-2 bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 text-white rounded-full text-sm font-medium"
+     style="font-family: 'Poppins', sans-serif;">
+    Start Your Project
+  </a>
+</div>
+
+    </div>
+
+     <div
+      class="service-card bg-white dark:bg-slate-800 rounded-2xl shadow-xl hover:shadow-2xl border border-gray-200 dark:border-slate-700 p-6 flex flex-col transition duration-300"
+      data-title="Spa & Wellness center Websites">
+      
+      <img src="https://i.postimg.cc/yYrFhwK4/Spa-and-wellness-1.png" alt="Web Development" class="rounded-xl mb-4 object-cover h-40 w-full" />
+      <h3 class="text-2xl font-bold text-indigo-600 dark:text-yellow-400 mb-2"style="font-family: 'Outfit', sans-serif;">Spa & Wellness center Websites</h3>
+      <p class="text-gray-600 dark:text-gray-300 text-sm mb-4"style="font-family: 'Poppins', sans-serif;">  Create a calming online presence to showcase treatments, pricing, staff bios and a photo gallery - no need for complex booking systems.</p>
+     <div class="mt-auto flex justify-center">
+  <a href="contact-us.html" class="px-5 py-2 bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 text-white rounded-full text-sm font-medium"
+     style="font-family: 'Poppins', sans-serif;">
+    Start Your Project
+  </a>
+</div>
+
+    </div>
+
     
+    <!-- Add more cards here as needed -->
+
+  </div>
 </section>
-
-
 
 <!-- Floating Contact Buttons -->
 <!-- Floating Buttons -->
@@ -700,7 +561,6 @@ Spa & Wellness center Websites
     animation: fade-in-up 0.4s ease-out both;
   }
 </style>
-
 
  <footer class="bg-gray-900 text-gray-300 py-10 px-6 md:px-20">
   <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
