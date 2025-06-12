@@ -3,35 +3,73 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="robots" content="index, follow">
-  <title>All Services | Krish.Devlabs</title>
-  <meta name="description" content="Explore Krish.Devlabs - Web development services - Custom websites, responsive design and scalable solutions to elevate your online presence." />
-  
-  <link rel="canonical" href="https://krishdevlabs.xyz/services" />
-<link rel="icon" href="https://i.postimg.cc/mr0vMdZY/Picsart-25-06-09-19-32-03-4761749532394-1-1.png" type="image/png">
+   <meta name="robots" content="index, follow">
 
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+  
+  <title>Krish.Devlabs – Web Development Digital Studio</title>
+   <meta name="description" content="Krish.Devlabs is a digital studio led by 'Krish', delivering clean, modern and user focused web solutions that help businesses grow online." />
+  
+  <link rel="canonical" href="https://krishdevlabs.xyz/" />
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Website",
+  "name": "Krish.devlabs",
+  "url": "https://krishdevlabs.xyz",
+  "founder": {
+    "@type": "Person",
+    "name": "M. Kishore Kumar Naik",
+    "url": "https://krishdevlabs.xyz/about"
+  },
+  "sameAs": [
+    "https://linkedin.com/comm/mynetwork/discovery-see-all?usecase=PEOPLE_FOLLOWS&followMember=m-kishore-kumar-naik-4b9741369",
+    "https://twitter.com/Krish_2936/"
+  ]
+}
+</script>
+
+ <link rel="icon" href="https://i.postimg.cc/mr0vMdZY/Picsart-25-06-09-19-32-03-4761749532394-1-1.png" type="image/png">
+
+
+  <!-- Outfit for Headings -->
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
 <!-- Poppins for Subheadings -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 <!-- Inter for Paragraphs -->
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    *, *::before, *::after {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    html, body {
-      height: 100%;
-    }
-  </style>
+
+  <!-- Tailwind CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+
+  <!-- AOS Animations -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Website",
+  "name": "Krish.DevLabs",
+  "url": "https://krishdevlabs.xyz",
+  "logo": "https://i.postimg.cc/MTvNJ7Tr/logo.jpg", 
+  "sameAs": [
+    "https://linkedin.com/comm/mynetwork/discovery-see-all?usecase=PEOPLE_FOLLOWS&followMember=m-kishore-kumar-naik-4b9741369",
+    
+    "https://twitter.com/Krish_2936/"
+  ]
+}
+</script>
 </head>
 
 
 <body class="bg-white text-gray-900">
 
-  <!-- Page Preloader -->
+<!-- Page Preloader -->
 <div id="preloader" class="fixed inset-0 z-[9999] bg-black flex items-center justify-center">
   <div class="relative w-16 h-16">
     <div class="absolute inset-0 rounded-full border-4 border-t-transparent border-indigo-500 animate-spin"></div>
@@ -52,6 +90,64 @@
   visibility: hidden;
 }
 </style>
+  
+  <!-- Header -->
+<header class="sticky top-0 z-50 bg-white shadow-2xl rounded-b-xl border-b border-gray-200 transition duration-300"
+        style="box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);">
+
+  <!-- Inner Container -->
+  <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center relative transform-gpu hover:scale-[1.005] hover:rotateX-[0.5deg] transition-transform duration-300">
+
+    <!-- Logo -->
+    <a href="index.html" class="inline-block transform hover:scale-105 transition duration-300">
+      <img 
+        src="https://i.postimg.cc/XYjKKqBm/Krish-devlabs-1.png" 
+        alt="Krish.Dev Logo" 
+        class="h-10 w-auto drop-shadow-md"
+      />
+    </a>
+
+    <!-- Desktop Navigation -->
+    <nav class="hidden md:flex space-x-8 text-lg font-medium">
+      <a href="index.html" class="hover:text-blue-600 transition" style="font-family: 'Outfit', sans-serif;">Home</a>
+      <a href="services.html" class="hover:text-blue-600 transition" style="font-family: 'Outfit', sans-serif;">Services</a>
+      
+      <a href="about-us.html" class="hover:text-blue-600 transition" style="font-family: 'Outfit', sans-serif;">About Us</a>
+      <a href="contact-us.html" class="hover:text-blue-600 transition" style="font-family: 'Outfit', sans-serif;">Contact Us</a>
+    </nav>
+
+    <!-- Hamburger Toggle -->
+    <button id="menu-toggle" class="md:hidden focus:outline-none relative z-50">
+      <!-- Hamburger Icon -->
+      <svg id="hamburger" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-800" fill="none"
+           viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+
+      <!-- Close Icon -->
+      <svg id="close" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-800 hidden" fill="none"
+           viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="md:hidden hidden absolute top-full left-4 right-4 bg-white rounded-xl shadow-2xl border border-gray-200 z-40 transition-transform transform-gpu"
+       style="box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);">
+
+    <a href="index.html" class="block py-4 px-6 border-b hover:bg-blue-100 text-gray-800 transition" style="font-family: 'Outfit', sans-serif;">Home</a>
+    <a href="services.html" class="block py-4 px-6 border-b hover:bg-blue-100 text-gray-800 transition" style="font-family: 'Outfit', sans-serif;">Services</a>
+    
+    <a href="about-us.html" class="block py-4 px-6 border-b hover:bg-blue-100 text-gray-800 transition" style="font-family: 'Outfit', sans-serif;">About Us</a>
+    <a href="contact-us.html" class="block py-4 px-6 hover:bg-blue-100 text-gray-800 transition" style="font-family: 'Outfit', sans-serif;">Contact Us</a>
+
+  </div>
+</header>
+
 
   <section class="hero relative overflow-hidden py-10 pt-20">
   <!-- Soft animated gradient background -->
