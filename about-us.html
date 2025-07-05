@@ -56,18 +56,49 @@
     </button>
   </div>
 
+   <!-- Mobile Menu -->
   <div id="mobile-menu"
      class="md:hidden hidden absolute top-full left-4 right-4 bg-white rounded-xl shadow-2xl border border-gray-200 z-40 transition-all duration-300"
      style="font-family: 'Outfit', sans-serif;">
 
-  <a href="index.html" class="block px-6 py-4 border-b hover:bg-blue-100 text-gray-800 transition">Home</a>
-  <a href="services.html" class="block px-6 py-4 border-b hover:bg-blue-100 text-gray-800 transition">Services</a>
-  <a href="Courses.html" class="block px-6 py-4 border-b hover:bg-blue-100 text-gray-800 transition">Courses</a>
-  <a href="internships.html" class="block px-6 py-4 border-b hover:bg-blue-100 text-gray-800 transition">Internships</a>
-  <a href="about-us.html" class="block px-6 py-4 border-b hover:bg-blue-100 text-gray-800 transition">About Us</a>
-  <a href="contact-us.html" class="block px-6 py-4 hover:bg-blue-100 text-gray-800 transition">Contact Us</a>
+  <a href="index.html" class="block px-6 py-4 border-b hover:bg-blue-100 text-gray-800 transition"style="font-family: 'Outfit', sans-serif;">Home</a>
 
+  
+
+  <!-- Services with Submenu -->
+  <div>
+  <!-- Services Link with Toggle -->
+  <div onclick="toggleSubmenu()" 
+       class="w-full text-left px-6 py-4 border-b hover:bg-blue-100 text-gray-800 transition flex items-center justify-between cursor-pointer">
+    <a href="services.html" class="text-gray-800">Services</a>
+    <svg id="services-arrow" class="w-4 h-4 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+    </svg>
+  </div>
+
+  <!-- Submenu -->
+  <div id="services-submenu" class="hidden bg-white transition-all duration-300 overflow-hidden">
+    <a href="#web-dev" class="block px-10 py-2 text-gray-700 hover:bg-blue-50 transition"style="font-family: 'Outfit', sans-serif;">Web Development</a>
+    <a href="#landing-pages" class="block px-10 py-2 text-gray-700 hover:bg-blue-50 transition"style="font-family: 'Outfit', sans-serif;">Landing Pages</a>
+  </div>
 </div>
+
+<!-- Rest of Mobile Menu -->
+<a href="products.html" class="block px-6 py-4 border-b hover:bg-blue-100 text-gray-800 transition"style="font-family: 'Outfit', sans-serif;">Products</a>
+<a href="Courses.html" class="block px-6 py-4 border-b hover:bg-blue-100 text-gray-800 transition"style="font-family: 'Outfit', sans-serif;">Courses</a>
+<a href="internships.html" class="block px-6 py-4 border-b hover:bg-blue-100 text-gray-800 transition"style="font-family: 'Outfit', sans-serif;">Internships</a>
+<a href="Affiliate-Program.html" class="block px-6 py-4 border-b hover:bg-blue-100 text-gray-800 transition"style="font-family: 'Outfit', sans-serif;">Affiliate Program</a>
+<a href="about-us.html" class="block px-6 py-4 border-b hover:bg-blue-100 text-gray-800 transition"style="font-family: 'Outfit', sans-serif;">About Us</a>
+<a href="contact-us.html" class="block px-6 py-4 hover:bg-blue-100 text-gray-800 transition"style="font-family: 'Outfit', sans-serif;">Contact Us</a>
+<script>
+  function toggleSubmenu() {
+    const submenu = document.getElementById("services-submenu");
+    const arrow = document.getElementById("services-arrow");
+    
+    submenu.classList.toggle("hidden");
+    arrow.classList.toggle("rotate-180");
+  }
+</script>
 </header>
 
 
