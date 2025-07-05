@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Explore services by Krish.Devlabs including modern web development and custom landing pages to elevate your digital presence.">
+  <title>Services - Krish.Devlabs</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap">
+
+  <!-- Outfit for Headings -->
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+<!-- Poppins for Subheadings -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<!-- Inter for Paragraphs -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+
+  <!-- AOS Animations -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <style>
+    body { font-family: 'Outfit', sans-serif; }
+  </style>
+
+  <!-- AOS Animation Library -->
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 800,
+    once: true
+  });
+</script>
+
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    
+
+    <header class="sticky top-0 z-50 bg-white shadow-2xl rounded-b-xl border-b border-gray-200 transition duration-300"
+        style="box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);">
+
+  <!-- Inner Container -->
+  <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center relative transform-gpu hover:scale-[1.005] hover:rotateX-[0.5deg] transition-transform duration-300">
+
+    <!-- Logo -->
+    <a href="index.html" class="inline-block transform hover:scale-105 transition duration-300">
+      <img 
+        src="https://i.postimg.cc/XYjKKqBm/Krish-devlabs-1.png" 
+        alt="Krish.Dev Logo" 
+        class="h-10 w-auto drop-shadow-md"
+      />
+    </a>
+
+    <!-- Desktop Navigation -->
+   <!-- Desktop Navigation Menu -->
+<nav class="hidden md:flex space-x-8 text-lg font-medium items-center" style="font-family: 'Outfit', sans-serif; position: relative;">
+
+<nav class="hidden md:flex space-x-8 text-lg font-medium" style="font-family: 'Outfit', sans-serif;">
+  <a href="index.html" class="text-gray-800 hover:text-blue-600 transition">Home</a>
+
+  <!-- Services with Dropdown -->
+  <div class="relative group">
+    <a href="services.html" class="text-gray-800 hover:text-blue-600 transition flex items-center gap-1">
+      Services
+      <svg class="w-4 h-4 transition-transform duration-300 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+      </svg>
+    </a>
+    <div class="absolute left-0 mt-2 w-52 bg-white border border-gray-200 rounded-xl shadow-xl opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition-all duration-200 z-50">
+      <a href="services.html#web-dev" class="block px-5 py-3 text-gray-700 hover:bg-blue-50 transition">Web Development</a>
+      <a href="services.html#landing-pages" class="block px-5 py-3 text-gray-700 hover:bg-blue-50 transition">Landing Pages</a>
+    </div>
+  </div>
+
+  <a href="products.html" class="text-gray-800 hover:text-blue-600 transition">Products</a>
+  <a href="Courses.html" class="text-gray-800 hover:text-blue-600 transition">Courses</a>
+  <a href="internships.html" class="text-gray-800 hover:text-blue-600 transition">Internships</a>
+  <a href="Affiliate-Program.html" class="text-gray-800 hover:text-blue-600 transition">Affiliate Program</a>
+  <a href="about-us.html" class="text-gray-800 hover:text-blue-600 transition">About Us</a>
+  <a href="contact-us.html" class="text-gray-800 hover:text-blue-600 transition">Contact Us</a>
+</nav>
+
+
+
+    <!-- Hamburger Toggle -->
+    <button id="menu-toggle" class="md:hidden focus:outline-none relative z-50">
+      <!-- Hamburger Icon -->
+      <svg id="hamburger" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-800" fill="none"
+           viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+
+      <!-- Close Icon -->
+      <svg id="close" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-800 hidden" fill="none"
+           viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu"
+     class="md:hidden hidden absolute top-full left-4 right-4 bg-white rounded-xl shadow-2xl border border-gray-200 z-40 transition-all duration-300"
+     style="font-family: 'Outfit', sans-serif;">
+
+  <a href="index.html" class="block px-6 py-4 border-b hover:bg-blue-100 text-gray-800 transition"style="font-family: 'Outfit', sans-serif;">Home</a>
+
+  
+
+  <!-- Services with Submenu -->
+  <div>
+  <!-- Services Link with Toggle -->
+  <div onclick="toggleSubmenu()" 
+       class="w-full text-left px-6 py-4 border-b hover:bg-blue-100 text-gray-800 transition flex items-center justify-between cursor-pointer">
+    <a href="services.html" class="text-gray-800">Services</a>
+    <svg id="services-arrow" class="w-4 h-4 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+    </svg>
+  </div>
+
+  <!-- Submenu -->
+  <div id="services-submenu" class="hidden bg-white transition-all duration-300 overflow-hidden">
+    <a href="#web-dev" class="block px-10 py-2 text-gray-700 hover:bg-blue-50 transition"style="font-family: 'Outfit', sans-serif;">Web Development</a>
+    <a href="#landing-pages" class="block px-10 py-2 text-gray-700 hover:bg-blue-50 transition"style="font-family: 'Outfit', sans-serif;">Landing Pages</a>
+  </div>
+</div>
+
+<!-- Rest of Mobile Menu -->
+<a href="products.html" class="block px-6 py-4 border-b hover:bg-blue-100 text-gray-800 transition"style="font-family: 'Outfit', sans-serif;">Products</a>
+<a href="Courses.html" class="block px-6 py-4 border-b hover:bg-blue-100 text-gray-800 transition"style="font-family: 'Outfit', sans-serif;">Courses</a>
+<a href="internships.html" class="block px-6 py-4 border-b hover:bg-blue-100 text-gray-800 transition"style="font-family: 'Outfit', sans-serif;">Internships</a>
+<a href="Affiliate-Program.html" class="block px-6 py-4 border-b hover:bg-blue-100 text-gray-800 transition"style="font-family: 'Outfit', sans-serif;">Affiliate Program</a>
+<a href="about-us.html" class="block px-6 py-4 border-b hover:bg-blue-100 text-gray-800 transition"style="font-family: 'Outfit', sans-serif;">About Us</a>
+<a href="contact-us.html" class="block px-6 py-4 hover:bg-blue-100 text-gray-800 transition"style="font-family: 'Outfit', sans-serif;">Contact Us</a>
+<script>
+  function toggleSubmenu() {
+    const submenu = document.getElementById("services-submenu");
+    const arrow = document.getElementById("services-arrow");
+    
+    submenu.classList.toggle("hidden");
+    arrow.classList.toggle("rotate-180");
+  }
+</script>
+
+</header>
+
+
+
+
+  <!-- Header Include -->
+ <div id="header"></div>
+
+  <!-- Hero Section -->
+  <section class="text-center py-20 px-4 bg-gradient-to-br from-blue-50 to-indigo-100">
+    <h1 class="text-4xl md:text-5xl font-extrabold text-indigo-700 mb-4 drop-shadow-md">Our Services</h1>
+    <p class="max-w-2xl mx-auto text-lg text-gray-600">Empower your business with beautiful, fast, and responsive interfaces built using cutting-edge frontend technologies.</p>
+    <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_jtbfg2nb.json" background="transparent" speed="1" style="max-width: 300px; margin: 2rem auto 0;" loop autoplay></lottie-player>
+  </section>
+
+  <!-- Services Section -->
+<section class="py-16 bg-white overflow-hidden relative">
+  <h3 class="text-center text-3xl md:text-4xl font-extrabold text-gray-800 mb-10" style="font-family: 'Outfit', sans-serif;">
+    Technologies We Use
+  </h3>
+
+  <div class="marquee-wrapper relative w-full overflow-hidden">
+    <div class="marquee flex gap-16">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" class="h-14 w-14" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS" class="h-14 w-14" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" class="h-14 w-14" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" class="h-14 w-14" />
+      
+      <!-- Tailwind from unpkg with white bg -->
+      <img src="https://unpkg.com/simple-icons@v8/icons/tailwindcss.svg" alt="Tailwind CSS" class="h-14 w-14 bg-white rounded-full p-1" style="filter: invert(0.1);" />
+      
+      <!-- GitHub from unpkg with white bg -->
+      <img src="https://unpkg.com/simple-icons@v8/icons/github.svg" alt="GitHub" class="h-14 w-14 bg-white rounded-full p-1" style="filter: invert(0.1);" />
+      
+      <!-- Git icon -->
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" class="h-14 w-14 bg-white rounded-full p-1" />
+
+      <!-- Duplicate for seamless loop -->
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" class="h-14 w-14" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS" class="h-14 w-14" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" class="h-14 w-14" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" class="h-14 w-14" />
+      <img src="https://unpkg.com/simple-icons@v8/icons/tailwindcss.svg" alt="Tailwind CSS" class="h-14 w-14 bg-white rounded-full p-1" style="filter: invert(0.1);" />
+      <img src="https://unpkg.com/simple-icons@v8/icons/github.svg" alt="GitHub" class="h-14 w-14 bg-white rounded-full p-1" style="filter: invert(0.1);" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" class="h-14 w-14 bg-white rounded-full p-1" />
+    </div>
+  </div>
+</section>
+
+<style>
+  .marquee-wrapper {
+    --marquee-width: 200%;
+  }
+
+  .marquee {
+    display: flex;
+    width: calc(var(--marquee-width) * 100%);
+    animation: marqueeAnim 10s linear infinite;
+  }
+
+  .marquee img {
+    flex-shrink: 0;
+  }
+
+  @keyframes marqueeAnim {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(-50%));
+    }
+  }
+</style>
+
+
+ 
+
+<!-- Services Section -->
+<section class="py-16 px-6 bg-gray-50">
+  <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-10">
+
+    <!-- Web Development Card -->
+    <div id="web-dev"
+         class="bg-white rounded-3xl shadow-2xl p-8 transform hover:scale-[1.03] transition-all duration-500"
+         data-aos="fade-up"
+         data-aos-delay="100">
+      <h2 class="text-3xl font-extrabold text-indigo-700 mb-4">Modern Web Development</h2>
+      <p class="text-gray-600 mb-4">We craft stunning websites using HTML, CSS, JavaScript, and frontend frameworks like React to deliver pixel-perfect and responsive designs.</p>
+      <ul class="list-disc pl-6 text-gray-600 space-y-1">
+        <li>Responsive Design</li>
+        <li>Clean & Semantic Code</li>
+        <li>Performance Optimized</li>
+        <li>Cross-Browser Compatible</li>
+      </ul>
+    </div>
+
+    <!-- Landing Pages Card -->
+    <div id="landing-pages"
+         class="bg-white rounded-3xl shadow-2xl p-8 transform hover:scale-[1.03] transition-all duration-500"
+         data-aos="fade-up"
+         data-aos-delay="200">
+      <h2 class="text-3xl font-extrabold text-purple-700 mb-4">Landing Page Design</h2>
+      <p class="text-gray-600 mb-4">Custom-designed landing pages that boost engagement and conversions, tailored to your brand’s goals and user experience best practices.</p>
+      <ul class="list-disc pl-6 text-gray-600 space-y-1">
+        <li>Call-to-Action Focused</li>
+        <li>Fast Loading</li>
+        <li>SEO-Friendly</li>
+        <li>Mobile Optimized</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+  <!-- CTA -->
+  <section class="py-20 px-6 bg-gradient-to-r from-indigo-700 via-purple-700 to-indigo-700 text-white text-center relative overflow-hidden">
+  <div class="max-w-3xl mx-auto z-10 relative" data-aos="fade-up">
+    <h3 class="text-4xl md:text-5xl font-extrabold mb-6" style="font-family: 'Outfit', sans-serif;">
+      Ready to Build with <span class="text-yellow-300">Krish.Devlabs</span>?
+    </h3>
+    <p class="text-lg md:text-xl text-white/90 mb-8" style="font-family: 'Inter', sans-serif;">
+      Let’s create stunning, high-performing frontend experiences tailored for your brand’s digital success.
+    </p>
+    <a href="contact-us.html"
+      class="inline-block px-8 py-4 text-indigo-700 bg-white font-semibold rounded-full shadow-lg hover:bg-indigo-100 transition-all duration-300"
+      style="font-family: 'Poppins', sans-serif;">
+      🚀 Let's Connect
+    </a>
+  </div>
+
+  <!-- Decorative Floating Dots -->
+  <div class="absolute top-0 left-0 w-40 h-40 bg-pink-400/30 blur-3xl rounded-full animate-pulse"></div>
+  <div class="absolute bottom-0 right-0 w-56 h-56 bg-yellow-300/20 blur-3xl rounded-full animate-ping"></div>
+</section>
+
+
+  <script>
+    ScrollReveal().reveal('[data-sr]', {
+      distance: '40px',
+      duration: 1000,
+      easing: 'ease-in-out',
+      origin: 'bottom',
+      interval: 200
+    });
+  </script>
+
+  <!-- Floating Buttons -->
+<div class="fixed bottom-6 right-6 flex flex-col space-y-5 z-50">
+
+  <!-- WhatsApp Button -->
+<a href="https://wa.me/916303059843" target="_blank" rel="noopener"
+   class="w-14 h-14 rounded-full overflow-hidden shadow-[0_8px_30px_rgba(0,255,0,0.4)] backdrop-blur-md bg-white bg-opacity-30 border border-green-400 hover:scale-110 transform transition duration-300 ease-in-out hover:shadow-[0_0_25px_rgba(0,255,0,0.7)]"
+   title="Chat on WhatsApp">
+  <img src="https://i.postimg.cc/dVyG2fqk/Picsart-25-05-29-22-05-52-255-1.png"
+       alt="WhatsApp Icon"
+       class="w-full h-full object-cover" />
+</a>
+
+
+
+  <!-- Call Button -->
+<!-- Call Button -->
+<button id="callBtn"
+  class="flex items-center justify-center w-14 h-14 rounded-full bg-blue-600 hover:bg-blue-700 text-white shadow-lg transition-transform transform hover:scale-110"
+  title="Call Us">
+  <!-- Thicker Call Icon (white inside blue bg) -->
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="white" stroke-width="2.5"
+       stroke-linecap="round" stroke-linejoin="round" class="w-7 h-7" viewBox="0 0 24 24">
+    <path d="M22 16.92v3a2 2 0 01-2.18 2A19.72 19.72 0 013 5.18 2 2 0 015 3h3a2 2 0 012 1.72 12.38 12.38 0 00.56 2.57 2 2 0 01-.45 2L8.09 10.91a16 16 0 007 7l1.62-1.62a2 2 0 012-.45 12.38 12.38 0 002.57.56A2 2 0 0122 16.92z"/>
+  </svg>
+</button>
+
+
+
+</div>
+
+<!-- Call Popup Modal -->
+<div id="callPopup" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
+  <div class="bg-white rounded-2xl p-6 max-w-sm w-full text-center relative shadow-2xl border border-blue-300">
+    <button id="closeCallPopup" class="absolute top-2 right-3 text-gray-600 hover:text-red-600 text-2xl font-bold">&times;</button>
+    <h3 class="text-2xl font-semibold mb-4 text-blue-700"style="font-family: 'Outfit', sans-serif;">Call Us Now</h3>
+    <a href="tel:+916303059843"
+       class="block bg-blue-600 text-white py-3 px-4 rounded-xl hover:bg-blue-700 transition duration-300 font-semibold tracking-wide">+91 6303059843</a>
+  </div>
+</div>
+
+
+<!-- Script for Call Popup -->
+<script>
+  const callBtn = document.getElementById('callBtn');
+  const callPopup = document.getElementById('callPopup');
+  const closeCallPopup = document.getElementById('closeCallPopup');
+
+  callBtn.addEventListener('click', () => {
+    callPopup.classList.remove('hidden');
+  });
+
+  closeCallPopup.addEventListener('click', () => {
+    callPopup.classList.add('hidden');
+  });
+
+  // Optional: close popup on clicking outside
+  callPopup.addEventListener('click', e => {
+    if(e.target === callPopup) {
+      callPopup.classList.add('hidden');
+    }
+  });
+</script>
+
+<!-- Font Awesome CDN (Place this in <head>) -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+<!-- Social Media Popup Modal -->
+
+
+<!-- Smooth Animation -->
+<style>
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .animate-fade-in-up {
+    animation: fade-in-up 0.4s ease-out both;
+  }
+</style>
+
+<footer class="bg-gray-900 text-gray-300 py-10 px-6 md:px-20">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+    
+    <!-- Logo and Description -->
+    <div>
+      <img src="https://i.postimg.cc/W38sd5bW/Picsart-25-06-02-08-05-19-554-1.png" 
+        alt="Krish.Dev Logo" 
+        class="h-10 object-contain" />
+      <p class="text-sm mt-4" style="font-family: 'Outfit', sans-serif;">
+        Empowering your digital presence with modern, scalable web development services.
+      </p>
+
+      <!-- Social Media Icons -->
+      <div class="flex space-x-4 mt-4">
+        <a href="https://www.facebook.com/share/16pQpUED1b/" class="hover:text-white text-lg"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://twitter.com/Krish_2936" class="hover:text-white text-lg">
+  <i class="fab fa-x-twitter"></i>
+</a>
+
+        <a href="https://www.instagram.com/krish.devlabs?igsh=NGJlcjhuY3lxc3M2" class="hover:text-white text-lg"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/m-kishore-kumar-naik-4b9741369?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="hover:text-white text-lg"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://youtube.com/@krish.devlabs?si=b78Qtew9TzEbv-y2" class="hover:text-white text-lg"><i class="fab fa-youtube"></i></a>
+  
+
+
+      </div>
+    </div>
+
+    <!-- Quick Links -->
+    <div>
+      <h3 class="text-white font-semibold mb-3" style="font-family: 'Outfit', sans-serif;">Quick Links</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="index.html" class="hover:text-white" style="font-family: 'Poppins', sans-serif;">Home</a></li>
+        <li><a href="services.html" class="hover:text-white" style="font-family: 'Poppins', sans-serif;">Services</a></li>
+         <li><a href="courses.html" class="hover:text-white" style="font-family: 'Poppins', sans-serif;">Courses</a></li>
+          <li><a href="internships.html" class="hover:text-white" style="font-family: 'Poppins', sans-serif;">Internships</a></li>
+        <li><a href="Affiliate-Program.html" class="hover:text-white" style="font-family: 'Poppins', sans-serif;">Affiliate Program</a></li>
+        <li><a href="about-us.html" class="hover:text-white" style="font-family: 'Poppins', sans-serif;">About Us</a></li>
+        <li><a href="contact-us.html" class="hover:text-white" style="font-family: 'Poppins', sans-serif;">Contact Us</a></li>
+      </ul>
+    </div>
+
+    <!-- Services -->
+    <div>
+      <h3 class="text-white font-semibold mb-3" style="font-family: 'Outfit', sans-serif;">Services</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="services.html" class="hover:text-white" style="font-family: 'Poppins', sans-serif;">Web Development</a></li>
+        <li><a href="services.html" class="hover:text-white" style="font-family: 'Poppins', sans-serif;">Landing Pages</a></li>
+      </ul>
+    </div>
+
+    <!-- Newsletter -->
+  
+
+  </div>
+
+  <!-- Legal Links -->
+  <div class="mt-10 text-center text-sm text-gray-400" style="font-family: 'Poppins', sans-serif;">
+    <a href="Privacy-policy.html" class="hover:text-white mr-4">Privacy Policy</a>
+    <a href="Terms-and-Conditions.html" class="hover:text-white">Terms & Conditions</a>
+  </div>
+
+  <!-- Copyright -->
+  <div class="mt-2 text-center text-sm text-gray-500" style="font-family: 'Poppins', sans-serif;">
+    © 2025 <span class="font-semibold text-white">Krish.Devlabs</span>. All rights reserved.
+  </div>
+</footer>
+
+<!-- Scripts -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const toggle = document.getElementById("menu-toggle");
+    const hamburger = document.getElementById("hamburger");
+    const close = document.getElementById("close");
+    const mobileMenu = document.getElementById("mobile-menu");
+
+    toggle.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+      hamburger.classList.toggle("hidden");
+      close.classList.toggle("hidden");
+    });
+  });
+</script>
+
+<script>
+  // Simple search filter for the cards by title
+  document.getElementById('serviceSearch').addEventListener('input', function(e) {
+    const query = e.target.value.toLowerCase();
+    const cards = document.querySelectorAll('#servicesGrid > div.service-card');
+
+    cards.forEach(card => {
+      const title = card.getAttribute('data-title').toLowerCase();
+      if(title.includes(query)) {
+        card.style.display = 'flex';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
+</body>
+</html>
+
