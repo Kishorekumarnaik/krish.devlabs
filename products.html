@@ -67,15 +67,15 @@
 
       <!-- Services with Dropdown -->
       <div class="relative group">
-        <a href="Services.html" class="text-gray-800 hover:text-blue-600 transition flex items-center gap-1">
+        <a href="services.html" class="text-gray-800 hover:text-blue-600 transition flex items-center gap-1">
           Services
           <svg class="w-4 h-4 transition-transform duration-300 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
           </svg>
         </a>
         <div class="absolute left-0 mt-2 w-52 bg-white border border-gray-200 rounded-xl shadow-xl opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition-all duration-200 z-50">
-          <a href="Services.html#web-dev" class="block px-5 py-3 text-gray-700 hover:bg-blue-50 transition">Web Development</a>
-          <a href="Services.html#landing-pages" class="block px-5 py-3 text-gray-700 hover:bg-blue-50 transition">Landing Pages</a>
+          <a href="services.html#web-dev" class="block px-5 py-3 text-gray-700 hover:bg-blue-50 transition">Web Development</a>
+          <a href="services.html#landing-pages" class="block px-5 py-3 text-gray-700 hover:bg-blue-50 transition">Landing Pages</a>
         </div>
       </div>
 
@@ -105,14 +105,14 @@
     <!-- Services with Submenu -->
     <div>
       <div onclick="toggleSubmenu()" class="w-full text-left px-6 py-4 border-b hover:bg-blue-100 text-gray-800 transition flex items-center justify-between cursor-pointer">
-        <a href="Services.html" class="text-gray-800">Services</a>
+        <a href="services.html" class="text-gray-800">Services</a>
         <svg id="services-arrow" class="w-4 h-4 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
         </svg>
       </div>
 
       <!-- Submenu -->
-      <div id="Services-submenu" class="hidden bg-white transition-all duration-300 overflow-hidden">
+      <div id="services-submenu" class="hidden bg-white transition-all duration-300 overflow-hidden">
         <a href="#web-dev" class="block px-10 py-2 text-gray-700 hover:bg-blue-50 transition" style="font-family: 'Outfit', sans-serif;">Web Development</a>
         <a href="#landing-pages" class="block px-10 py-2 text-gray-700 hover:bg-blue-50 transition" style="font-family: 'Outfit', sans-serif;">Landing Pages</a>
       </div>
@@ -638,20 +638,30 @@
   AOS.init();
 </script>
 
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const toggle = document.getElementById("menu-toggle");
-    const hamburger = document.getElementById("hamburger");
-    const close = document.getElementById("close");
-    const mobileMenu = document.getElementById("mobile-menu");
+  <script>
+    // Mobile menu toggle
+    document.addEventListener("DOMContentLoaded", function () {
+      const toggle = document.getElementById("menu-toggle");
+      const hamburger = document.getElementById("hamburger");
+      const close = document.getElementById("close");
+      const mobileMenu = document.getElementById("mobile-menu");
 
-    toggle.addEventListener("click", () => {
-      mobileMenu.classList.toggle("hidden");
-      hamburger.classList.toggle("hidden");
-      close.classList.toggle("hidden");
+      toggle.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+        hamburger.classList.toggle("hidden");
+        close.classList.toggle("hidden");
+      });
     });
-  });
-</script>
+
+    // Services submenu toggle in mobile menu
+    function toggleSubmenu() {
+      const submenu = document.getElementById("services-submenu");
+      const arrow = document.getElementById("services-arrow");
+
+      submenu.classList.toggle("hidden");
+      arrow.classList.toggle("rotate-180");
+    }
+  </script>
 
 <script>
   // Simple search filter for the cards by title
