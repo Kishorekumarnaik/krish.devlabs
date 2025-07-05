@@ -433,21 +433,30 @@
   AOS.init();
 </script>
 
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const toggle = document.getElementById("menu-toggle");
-    const hamburger = document.getElementById("hamburger");
-    const close = document.getElementById("close");
-    const mobileMenu = document.getElementById("mobile-menu");
+  <script>
+    // Mobile menu toggle
+    document.addEventListener("DOMContentLoaded", function () {
+      const toggle = document.getElementById("menu-toggle");
+      const hamburger = document.getElementById("hamburger");
+      const close = document.getElementById("close");
+      const mobileMenu = document.getElementById("mobile-menu");
 
-    toggle.addEventListener("click", () => {
-      mobileMenu.classList.toggle("hidden");
-      hamburger.classList.toggle("hidden");
-      close.classList.toggle("hidden");
+      toggle.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+        hamburger.classList.toggle("hidden");
+        close.classList.toggle("hidden");
+      });
     });
-  });
-</script>
 
+    // Services submenu toggle in mobile menu
+    function toggleSubmenu() {
+      const submenu = document.getElementById("services-submenu");
+      const arrow = document.getElementById("services-arrow");
+
+      submenu.classList.toggle("hidden");
+      arrow.classList.toggle("rotate-180");
+    }
+  </script>
 <script>
   // Simple search filter for the cards by title
   document.getElementById('serviceSearch').addEventListener('input', function(e) {
