@@ -159,35 +159,33 @@
 
 
   <!-- Services Section -->
-<section class="py-16 bg-white overflow-hidden relative">
-  <h3 class="text-center text-3xl md:text-4xl font-extrabold text-gray-800 mb-10" style="font-family: 'Outfit', sans-serif;">
+<section class="py-16 relative overflow-hidden" aria-label="Technologies We Use" style="background: linear-gradient(135deg, #f0f4ff 0%, #d9e2ff 100%);">
+  <div class="absolute inset-0 opacity-10 pointer-events-none" aria-hidden="true" style="
+    background-image: radial-gradient(circle at 1px 1px, rgba(100, 100, 255, 0.15) 1px, transparent 1px);
+    background-size: 40px 40px;
+  "></div>
+
+  <h3 class="relative z-10 text-center text-3xl md:text-4xl font-extrabold text-gray-800 mb-10" style="font-family: 'Outfit', sans-serif;">
     Technologies We Use
   </h3>
 
-  <div class="marquee-wrapper relative w-full overflow-hidden">
-    <div class="marquee flex gap-16">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" class="h-14 w-14" />
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS" class="h-14 w-14" />
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" class="h-14 w-14" />
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" class="h-14 w-14" />
-      
-      <!-- Tailwind from unpkg with white bg -->
-      <img src="https://unpkg.com/simple-icons@v8/icons/tailwindcss.svg" alt="Tailwind CSS" class="h-14 w-14 bg-white rounded-full p-1" style="filter: invert(0.1);" />
-      
-      <!-- GitHub from unpkg with white bg -->
-      <img src="https://unpkg.com/simple-icons@v8/icons/github.svg" alt="GitHub" class="h-14 w-14 bg-white rounded-full p-1" style="filter: invert(0.1);" />
-      
-      <!-- Git icon -->
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" class="h-14 w-14 bg-white rounded-full p-1" />
+  <div class="marquee-wrapper relative w-full overflow-hidden z-10" role="region" aria-live="polite" aria-atomic="true" tabindex="0">
+    <div class="marquee flex gap-12">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" class="tech-icon" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" class="tech-icon" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" class="tech-icon" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" class="tech-icon" />
+      <img src="https://unpkg.com/simple-icons@v8/icons/tailwindcss.svg" alt="Tailwind CSS" class="tech-icon" />
+      <img src="https://unpkg.com/simple-icons@v8/icons/github.svg" alt="GitHub" class="tech-icon" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" class="tech-icon" />
 
-      <!-- Duplicate for seamless loop -->
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" class="h-14 w-14" />
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS" class="h-14 w-14" />
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" class="h-14 w-14" />
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" class="h-14 w-14" />
-      <img src="https://unpkg.com/simple-icons@v8/icons/tailwindcss.svg" alt="Tailwind CSS" class="h-14 w-14 bg-white rounded-full p-1" style="filter: invert(0.1);" />
-      <img src="https://unpkg.com/simple-icons@v8/icons/github.svg" alt="GitHub" class="h-14 w-14 bg-white rounded-full p-1" style="filter: invert(0.1);" />
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" class="h-14 w-14 bg-white rounded-full p-1" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" class="tech-icon" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" class="tech-icon" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" class="tech-icon" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" class="tech-icon" />
+      <img src="https://unpkg.com/simple-icons@v8/icons/tailwindcss.svg" alt="Tailwind CSS" class="tech-icon" />
+      <img src="https://unpkg.com/simple-icons@v8/icons/github.svg" alt="GitHub" class="tech-icon" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" class="tech-icon" />
     </div>
   </div>
 </section>
@@ -200,11 +198,30 @@
   .marquee {
     display: flex;
     width: calc(var(--marquee-width) * 100%);
-    animation: marqueeAnim 10s linear infinite;
+    animation: marqueeAnim 20s linear infinite;
+    will-change: transform;
   }
 
-  .marquee img {
+  .marquee-wrapper:hover .marquee,
+  .marquee-wrapper:focus-within .marquee {
+    animation-play-state: paused;
+  }
+
+  .tech-icon {
+    height: 56px;
+    width: 56px;
+    background: white;
+    border-radius: 9999px;
+    padding: 6px;
+    filter: invert(0.1);
+    transition: transform 0.3s ease, filter 0.3s ease;
     flex-shrink: 0;
+  }
+
+  .tech-icon:hover,
+  .tech-icon:focus {
+    transform: scale(1.15);
+    filter: invert(0);
   }
 
   @keyframes marqueeAnim {
@@ -215,7 +232,19 @@
       transform: translateX(calc(-50%));
     }
   }
+
+  @media (max-width: 640px) {
+    .marquee {
+      gap: 8px;
+    }
+    .tech-icon {
+      height: 48px;
+      width: 48px;
+      padding: 4px;
+    }
+  }
 </style>
+
 
 
  
