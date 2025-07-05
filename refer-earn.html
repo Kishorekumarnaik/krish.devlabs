@@ -22,40 +22,31 @@
   <!-- Font Awesome -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
 
-  <style>
-    body {
-      font-family: 'Outfit', sans-serif;
-      background: linear-gradient(135deg, #f3f4f6 0%, #e0f2fe 50%, #f0fdf4 100%);
-      color: #374151;
-      min-height: 100vh;
-    }
+<body class="bg-white text-gray-900">
 
-    /* Removed gradient text styles */
+  <!-- Page Preloader -->
+<div id="preloader" class="fixed inset-0 z-[9999] bg-black flex items-center justify-center">
+  <div class="relative w-16 h-16">
+    <div class="absolute inset-0 rounded-full border-4 border-t-transparent border-indigo-500 animate-spin"></div>
+    <div class="absolute inset-2 rounded-full bg-black"></div> <!-- Inner circle to match background -->
+    <div class="absolute inset-0 flex items-center justify-center">
+      <span class="text-indigo-400 font-semibold text-sm font-[Outfit]">KD</span>
+    </div>
+  </div>
+</div>
+<!--triggering redeploy-->
+<style>
+  #preloader {
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+}
 
-    /* Social icons circle background */
-    .social-icon {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 44px;
-      height: 44px;
-      border-radius: 9999px;
-      background-color: #e5e7eb;
-      color: #6b7280;
-      transition: background-color 0.3s, color 0.3s, transform 0.3s;
-      box-shadow: 0 2px 6px rgb(0 0 0 / 0.1);
-    }
-    .social-icon:hover {
-      background-color: #2563eb;
-      color: white;
-      transform: scale(1.1);
-      box-shadow: 0 4px 10px rgb(37 99 235 / 0.5);
-    }
-  </style>
-</head>
-<body>
+#preloader.hide {
+  opacity: 0;
+  visibility: hidden;
+}
+</style>
 
-<!-- Header -->
+  <!-- Header -->
 <header class="sticky top-0 z-50 bg-white shadow-lg rounded-b-xl border-b border-gray-200">
   <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center transition-transform duration-300 hover:scale-[1.005] hover:rotateX-[0.5deg]">
     <a href="index.html" class="inline-block hover:scale-105 transition-transform duration-300">
@@ -83,7 +74,7 @@
       <a href="products.html" class="text-gray-800 hover:text-blue-600 transition">Products</a>
       <a href="Courses.html" class="text-gray-800 hover:text-blue-600 transition">Courses</a>
       <a href="internships.html" class="text-gray-800 hover:text-blue-600 transition">Internships</a>
-      <a href="affiliate-program.html" class="text-gray-800 hover:text-blue-600 transition">Affiliate Program</a>
+      <a href="Affiliate-Program.html" class="text-gray-800 hover:text-blue-600 transition">Affiliate Program</a>
       <a href="about-us.html" class="text-gray-800 hover:text-blue-600 transition">About Us</a>
       <a href="contact-us.html" class="text-gray-800 hover:text-blue-600 transition">Contact Us</a>
     </nav>
@@ -122,7 +113,7 @@
     <a href="products.html" class="block px-6 py-4 border-b hover:bg-blue-100 text-gray-800 transition" style="font-family: 'Outfit', sans-serif;">Products</a>
     <a href="Courses.html" class="block px-6 py-4 border-b hover:bg-blue-100 text-gray-800 transition" style="font-family: 'Outfit', sans-serif;">Courses</a>
     <a href="internships.html" class="block px-6 py-4 border-b hover:bg-blue-100 text-gray-800 transition" style="font-family: 'Outfit', sans-serif;">Internships</a>
-    <a href="affiliate-program.html" class="block px-6 py-4 border-b hover:bg-blue-100 text-gray-800 transition" style="font-family: 'Outfit', sans-serif;">Affiliate Program</a>
+    <a href="Affiliate-Program.html" class="block px-6 py-4 border-b hover:bg-blue-100 text-gray-800 transition" style="font-family: 'Outfit', sans-serif;">Affiliate Program</a>
     <a href="about-us.html" class="block px-6 py-4 border-b hover:bg-blue-100 text-gray-800 transition" style="font-family: 'Outfit', sans-serif;">About Us</a>
     <a href="contact-us.html" class="block px-6 py-4 hover:bg-blue-100 text-gray-800 transition" style="font-family: 'Outfit', sans-serif;">Contact Us</a>
   </div>
@@ -136,74 +127,332 @@
 
   <!-- Header Include -->
  <div id="header"></div>
-<!-- Founder Section -->
-<section class="relative overflow-hidden px-6 py-14 sm:py-28 md:py-32 lg:py-36">
-  <!-- Decorative Blobs -->
-  <div class="absolute -top-10 -left-10 w-80 h-80 bg-blue-100 rounded-full opacity-30 blur-3xl"></div>
-  <div class="absolute top-0 right-0 w-96 h-96 bg-purple-100 rounded-full opacity-30 blur-2xl"></div>
-  <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-72 h-72 bg-green-100 rounded-full opacity-20 blur-3xl"></div>
-
-  <div class="relative z-10 max-w-5xl mx-auto text-center">
-   
 
 
+<section id="affiliate-program" class="relative z-10 py-20 px-6 md:px-12 lg:px-20 max-w-7xl mx-auto text-center">
+  <!-- Full Gradient Background Layer -->
+  <div class="absolute inset-0 bg-gradient-to-br from-purple-100 via-pink-100 to-indigo-200 opacity-80 -z-10"></div>
+  <div class="absolute inset-0 bg-white/30 backdrop-blur-2xl -z-10"></div>
+
+  <!-- Main Heading -->
+ <div class="max-w-4xl mx-auto mt-0 mb-8">
+  <h1 
+    data-aos="fade-up" 
+    class="text-3xl sm:text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 bg-clip-text text-transparent leading-tight whitespace-nowrap font-[Outfit]"
+    style="font-family: 'Outfit', sans-serif;">
+    Our Affiliate Program
+  </h1>
+</div>
 
 
-   <div class="flex flex-col items-center max-w-md mx-auto mb-12" data-aos="zoom-in" data-aos-delay="150">
-  <div class="relative">
-    <!-- Bottom shadow layer -->
-    <div class="absolute inset-0 transform translate-x-3 translate-y-3 bg-blue-200 rounded-xl"></div>
 
-    <!-- Image card layer -->
-    <img src="https://i.postimg.cc/L5d2dKQQ/IMG-20250609-200144.jpgg" alt="Founder Krish" 
-         class="relative w-64 h-64 rounded-xl shadow-xl object-cover border-4 border-white" />
+ <div class="grid lg:grid-cols-2 gap-8 items-center mb-8">
+  <!-- Image Column -->
+ <div 
+  class="relative group max-w-md mx-auto [perspective:1000px]"
+  data-aos="zoom-in-up"
+  data-aos-duration="1000"
+  data-aos-delay="200"
+>
+  <img 
+    src="https://i.postimg.cc/R071fmBS/Gen4-A-confident-young-man-with-voluminous-wavy-dark-hair-a-neatly-trimmed-mustache-and-l-38589196.png" 
+    alt="Team working together" 
+    class="rounded-2xl shadow-2xl transition-transform duration-500 ease-in-out transform group-hover:rotate-y-[6deg] group-hover:rotate-x-[3deg] group-hover:scale-105"
+  />
+</div>
+
+
+  <!-- Right side content here (optional) -->
+  <div>
+    <!-- Your content goes here -->
+  </div>
+</div>
+
+<p data-aos="fade-up" data-aos-delay="150" class="mt-2 text-lg sm:text-xl text-gray-800 font-[Poppins] max-w-2xl mx-auto"
+style="font-family: 'Poppins', sans-serif;">
+  Promote Krish.Devlabs, refer clients, and earn commissions when they hire us for premium web development services.
+</p>
+
+
+  <div data-aos="fade-up" data-aos-delay="300" class="mt-8 flex flex-col sm:flex-row justify-center gap-4">
+    <a href="#Submit-a-Referral">
+
+    <button style="font-family: 'Poppins', sans-serif;" class="px-8 py-4 bg-gradient-to-r from-pink-500 to-purple-600 text-white font-semibold rounded-xl shadow-md transition hover:from-pink-600 hover:to-purple-700 font-[Poppins]"style="font-family: 'Inter', sans-serif;">
+      Refer Now
+    </button>
+    </a>
+    <a href="#how-it-works" class="px-8 py-4 bg-white/40 text-purple-800 border border-purple-300 rounded-xl font-semibold shadow-md transition hover:bg-purple-50 font-[Poppins] backdrop-blur"style="font-family: 'Inter', sans-serif;">
+      How It Works
+    </a>
   </div>
 
- 
-  
-</div>
+  <!-- Scroll Down Button -->
+  <div class="mt-10 flex justify-center">
+    <a href="#how-it-works" class="group relative w-12 h-12 flex items-center justify-center bg-white border border-purple-300 text-purple-700 rounded-full shadow-lg hover:bg-purple-50 transition duration-300 animate-bounce">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 group-hover:translate-y-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+      </svg>
+    </a>
+  </div>
 
-  <h3 class="text-xl font-bold text-gray-900">M. Kishore Kumar Naik</h3>
-  <p class="text-sm text-gray-600 mt-1 leading-snug">
-    Founder of Krish.DevLabs<br>
-    
-  </p>
-</div>
+  <!-- How It Works Section -->
+  <div id="how-it-works" class="mt-20 max-w-5xl mx-auto">
+    <h2 class="text-4xl sm:text-5xl font-extrabold text-gray-900 mb-4 font-[Outfit]" data-aos="fade-up">How It Works</h2>
+    <p class="text-lg text-gray-700 font-[Poppins] mb-12" data-aos="fade-up" data-aos-delay="100"style="font-family: 'Poppins', sans-serif;">
+      Just follow these 3 steps to start earning with us.
+    </p>
 
-      <div class="flex justify-center gap-6 mt-6">
-        <a href="https://linkedin.com/in/m-kishore-kumar-naik-4b9741369" target="_blank" class="social-icon" aria-label="LinkedIn">
-          <i class="fab fa-linkedin-in fa-lg"></i>
-        </a>
-        <a href="https://twitter.com/Krish_2936/" target="_blank" class="social-icon" aria-label="Twitter">
-          <i class="fab fa-x-twitter fa-lg"></i>
-        </a>
-        <a href="https://www.instagram.com/mkishorekumarnaik?igsh=MXgyMXQ5MGZvNWoy"" target="_blank" class="social-icon" aria-label="Instagram">
-          <i class="fab fa-instagram fa-lg"></i>
-        </a>
-        <a href="https://www.facebook.com/share/16UzggHLCv/" target="_blank" class="social-icon" aria-label="Facebook">
-          <i class="fab fa-facebook-f fa-lg"></i>
-        </a>
-        <p><wbr><br></P>
+    <div class="grid sm:grid-cols-3 gap-8 text-left">
+      <!-- Card 1: Refer -->
+      <div data-aos="fade-up" data-aos-delay="150" class="bg-white border border-gray-200 shadow-xl rounded-2xl p-6 transition hover:scale-[1.03] hover:shadow-2xl">
+        <div class="text-4xl mb-3">🔗</div>
+        <h3 class="text-xl font-bold text-gray-800 font-[Poppins] mb-2"style="font-family: 'Outfit', sans-serif;">1. Refer</h3>
+        <p class="text-gray-600 font-[Poppins] text-sm"style="font-family: 'Inter', sans-serif;">
+        Know a startup or business in need of a website? Refer them to us.</p>
       </div>
-  <p><wbr><br></P>
+
+      <!-- Card 2: Register -->
+      <div data-aos="fade-up" data-aos-delay="250" class="bg-white border border-gray-200 shadow-xl rounded-2xl p-6 transition hover:scale-[1.03] hover:shadow-2xl">
+        <div class="text-4xl mb-3">📝</div>
+        <h3 class="text-xl font-bold text-gray-800 font-[Poppins] mb-2"style="font-family: 'Outfit', sans-serif;">2. Register</h3>
+        <p class="text-gray-600 font-[Poppins] text-sm"style="font-family: 'Inter', sans-serif;">As the affiliate, you submit a short form with the client's basic info and your details. Our team connects with client, dicusses their needs, and provides a tailored proposal.</p>
+      </div>
+
+      <!-- Card 3: Earn -->
+      <div data-aos="fade-up" data-aos-delay="350" class="bg-white border border-gray-200 shadow-xl rounded-2xl p-6 transition hover:scale-[1.03] hover:shadow-2xl">
+        <div class="text-4xl mb-3">💰</div>
+        <h3 class="text-xl font-bold text-gray-800 font-[Poppins] mb-2"style="font-family: 'Outfit', sans-serif;">3. Earn</h3>
+        <p class="text-gray-600 font-[Poppins] text-sm"style="font-family: 'Inter', sans-serif;">If the client moves forward with the project and completes payment, you recieve your affiliate commission.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- What Counts As Valid Referral -->
+  <div class="mt-20 max-w-5xl mx-auto">
+    <h2 data-aos="fade-up" class="text-3xl sm:text-4xl font-extrabold text-gray-900 font-[Outfit] mb-6 text-center"style="font-family: 'Outfit', sans-serif;">What Counts as a Valid Referral?</h2>
+    <p data-aos="fade-up" data-aos-delay="100" class="text-lg text-gray-700 font-[Poppins] text-center mb-6 max-w-3xl mx-auto"
+    style="font-family: 'Poppins', sans-serif;">
+      To ensure transparency and fairness in our affiliate program, a referral is considered valid only when the following criteria are met :
+    </p>
+    <ul class="text-left text-gray-800 text-base md:text-lg font-[Poppins] space-y-3 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+      <li style="font-family: 'Inter', sans-serif;">✅ <strong>Successful Registration:</strong> You must complete the registration form with accurate details of the referred client. You must fill out our referal form before our team contacts the client.</li>
+      <li style="font-family: 'Inter', sans-serif;">✅ <strong>Verified Contact Information:</strong> Both email and mobile numbers should be valid and verified.</li>
+      <li style="font-family: 'Inter', sans-serif;">✅ <strong>Minimum Activity:</strong> The referred client must engage with our platform or purchase a service within 30 days of referral and the client must be new to Krish.Devlabs.</li>
+      <li style="font-family: 'Inter', sans-serif;">✅ <strong>Unique Referral:</strong>Duplicate or fraudulent referrals will be disqualified.</li>
+      <li style="font-family: 'Inter', sans-serif;">✅ <strong>Compilance:</strong> All referrals must comply with our terms and conditions and privacy policies.</li>
+    </ul>
+  </div>
+
+  <!-- Referral Form -->
+<div id="Submit-a-Referral" class="mt-28 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="300">
+  <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center font-[Outfit]">Submit a Referral</h2>
+
+  <form id="contact-form" class="space-y-5 text-left font-[Poppins]">
+    <!-- Client Info -->
+    <div>
+      <label class="block text-gray-700 text-sm mb-1 font-[Inter]">Client Name</label>
+      <input type="text" name="clientname" placeholder="Client's Name" required class="w-full px-4 py-3 rounded-xl border border-gray-300 bg-white/70 backdrop-blur-md focus:ring-2 focus:ring-purple-300 outline-none" />
+    </div>
+    <div>
+      <label class="block text-gray-700 text-sm mb-1 font-[Inter]">Client Email</label>
+      <input type="email" name="clientemail" placeholder="client@email.com" required class="w-full px-4 py-3 rounded-xl border border-gray-300 bg-white/70 backdrop-blur-md focus:ring-2 focus:ring-purple-300 outline-none" />
+    </div>
+    <div>
+      <label class="block text-gray-700 text-sm mb-1 font-[Inter]">Client Phone Number</label>
+      <input type="tel" name="clientmobilenumber" placeholder="Client's Phone Number" required class="w-full px-4 py-3 rounded-xl border border-gray-300 bg-white/70 backdrop-blur-md focus:ring-2 focus:ring-purple-300 outline-none" />
+    </div>
+    <div>
+      <label class="block text-gray-700 text-sm mb-1 font-[Inter]">Client WhatsApp Number</label>
+      <input type="tel" name="clientwhatsappnumber" placeholder="Client's WhatsApp Number" class="w-full px-4 py-3 rounded-xl border border-gray-300 bg-white/70 backdrop-blur-md focus:ring-2 focus:ring-purple-300 outline-none" />
     </div>
 
-   <div class="max-w-3xl mx-auto text-gray-700 text-lg leading-relaxed space-y-6 text-left" data-aos="fade-up" data-aos-delay="300">
-  <p style="font-family: 'Poppins', sans-serif;"><strong class="text-yellow-600">M. Kishore Kumar Naik</strong>, widely known as <strong class="text-yellow-600">Krish</strong>, is a <span class="font-semibold">self-taught developer</span> and <span class="font-semibold">young entrepreneur</span> with a passion for building impactful digital experiences. Currently in his first year of <span class="font-medium">B.Tech in Computer Science</span> at Sri Krishnadevaraya University, he is also pursuing an online <span class="font-medium">B.Sc in Data Science</span> (Foundational Level) from <span class="font-semibold">IIT Madras</span>.</p>
+    <!-- Referrer Info -->
+    <div>
+      <label class="block text-gray-700 text-sm mb-1 font-[Inter]">Your Name</label>
+      <input type="text" name="referrername" placeholder="Your Name" required class="w-full px-4 py-3 rounded-xl border border-gray-300 bg-white/70 backdrop-blur-md focus:ring-2 focus:ring-purple-300 outline-none" />
+    </div>
+    <div>
+      <label class="block text-gray-700 text-sm mb-1 font-[Inter]">Your Email</label>
+      <input type="email" name="referreremail" placeholder="your@email.com" required class="w-full px-4 py-3 rounded-xl border border-gray-300 bg-white/70 backdrop-blur-md focus:ring-2 focus:ring-purple-300 outline-none" />
+    </div>
+    <div>
+      <label class="block text-gray-700 text-sm mb-1 font-[Inter]">Your Phone Number</label>
+      <input type="tel" name="referrerphonenumber" placeholder="Your Phone Number" required class="w-full px-4 py-3 rounded-xl border border-gray-300 bg-white/70 backdrop-blur-md focus:ring-2 focus:ring-purple-300 outline-none" />
+    </div>
+    <div>
+      <label class="block text-gray-700 text-sm mb-1 font-[Inter]">Your WhatsApp Number</label>
+      <input type="tel" name="referrerwhatsappnumber" placeholder="Your WhatsApp Number" class="w-full px-4 py-3 rounded-xl border border-gray-300 bg-white/70 backdrop-blur-md focus:ring-2 focus:ring-purple-300 outline-none" />
+    </div>
 
-  <p style="font-family: 'Poppins', sans-serif;">Driven by curiosity and a love for innovation, Krish independently learned the tools, technologies, and principles of modern web development. Without formal training, he <span class="font-medium">mastered the skills</span> and executed projects with <span class="font-semibold">clarity, precision, and vision far beyond his years</span>.</p>
+    <!-- Checkboxes -->
+    <div class="flex items-start">
+      <input type="checkbox" name="confirm_info" id="confirm-info" required class="mt-1 mr-2" />
+      <label for="confirm-info" class="text-sm text-gray-700 font-[Inter]">
+        I confirm that the above information is accurate.
+      </label>
+    </div>
+    <div class="flex items-start">
+      <input type="checkbox" name="agree_terms" id="agree-terms" required class="mt-1 mr-2" />
+      <label for="agree-terms" class="text-sm text-gray-700 font-[Inter]">
+        I agree to the terms and conditions of this referral.
+        <a href="Terms-and-Conditions.html" class="text-purple-600 underline hover:text-purple-800">(Terms and Conditions)</a>
+      </label>
+    </div>
 
-  <p style="font-family: 'Poppins', sans-serif;">At just 19, he <span class="text-yellow-600 font-semibold">founded Krish.DevLabs</span>, a digital studio dedicated to creating clean, modern, and user-friendly web solutions that help businesses grow and stand out online. Every product and project reflects his <span class="font-semibold">deep understanding of design, technology, and the power of great user experiences</span>.</p>
-
-  <p style="font-family: 'Poppins', sans-serif;">As the founder, Krish brings <span class="font-semibold">originality, sharp problem-solving skills</span>, and a <span class="font-medium">relentless commitment to making a real impact</span> in the digital world.</p>
+    <!-- Submit -->
+    <button type="submit" class="w-full py-3 bg-gradient-to-r from-pink-500 to-purple-600 text-white font-semibold rounded-xl hover:from-pink-600 hover:to-purple-700 transition duration-300">
+      Submit Referral
+    </button>
+  </form>
 </div>
 
-   
+<!-- Success Modal -->
+<div id="successModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+  <div class="bg-white p-6 rounded-2xl shadow-xl text-center max-w-sm">
+    <div id="lottie-success" class="w-32 h-32 mx-auto"></div>
+    <h2 class="text-xl font-semibold text-gray-800 mt-4 font-[Outfit]">Referral Submitted Successfully!</h2>
+    <p class="text-gray-600 text-sm mt-1 font-[Outfit]">Thanks for being a valued part of the Krish.Devlabs community.</p>
+    <button onclick="closeSuccess()" class="mt-4 px-4 py-2 bg-indigo-500 hover:bg-indigo-600 text-white rounded-lg transition-all">
+      Close
+    </button>
   </div>
+</div>
+
+<!-- Scripts -->
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.7.4/lottie.min.js"></script>
+
+
+<script>
+  (function () {
+    emailjs.init("7j8gju8m2lhYwRqgZ");
+  })();
+
+  document.getElementById("contact-form").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    emailjs.sendForm("service_gouil1b", "template_x2bz53r", this)
+      .then(function () {
+        showSuccess();
+        document.getElementById("contact-form").reset();
+      }, function (error) {
+        alert("Failed to send message. Please try again.");
+        console.error(error);
+      });
+  });
+
+  function showSuccess() {
+    const container = document.getElementById("lottie-success");
+
+    // Clear previous Lottie animation
+    container.innerHTML = "";
+
+    document.getElementById("successModal").classList.remove("hidden");
+
+    lottie.loadAnimation({
+      container: container,
+      renderer: "svg",
+      loop: false,
+      autoplay: true,
+      path: "https://assets8.lottiefiles.com/packages/lf20_jbrw3hcz.json"
+    });
+  }
+
+  function closeSuccess() {
+    document.getElementById("successModal").classList.add("hidden");
+  }
+</script>
+<script>
+
+    document.getElementById("contact-form").addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const formData = new FormData(this);
+  for (let pair of formData.entries()) {
+    console.log(pair[0] + ': ' + pair[1]); // Debug log
+  }
+
+  emailjs.sendForm("service_j6mkcvi", "template_9w8a07k", this)
+    .then(function () {
+      showSuccess();
+      document.getElementById("contact-form").reset();
+    }, function (error) {
+      alert("Failed to send message. Please try again.");
+      console.error(error);
+    });
+});
+
+</script>
 </section>
 
-<!-- Footer -->
-<footer class="bg-gray-900 text-gray-300 py-10 px-6 md:px-20">
+
+
+
+
+   
+<!-- Floating Buttons -->
+<div class="fixed bottom-6 right-6 flex flex-col space-y-5 z-50">
+
+  <!-- WhatsApp Button -->
+<a href="https://wa.me/916303059843" target="_blank" rel="noopener"
+   class="w-14 h-14 rounded-full overflow-hidden shadow-[0_8px_30px_rgba(0,255,0,0.4)] backdrop-blur-md bg-white bg-opacity-30 border border-green-400 hover:scale-110 transform transition duration-300 ease-in-out hover:shadow-[0_0_25px_rgba(0,255,0,0.7)]"
+   title="Chat on WhatsApp">
+  <img src="https://i.postimg.cc/dVyG2fqk/Picsart-25-05-29-22-05-52-255-1.png"
+       alt="WhatsApp Icon"
+       class="w-full h-full object-cover" />
+</a>
+
+
+
+  <!-- Call Button -->
+<!-- Call Button -->
+<button id="callBtn"
+  class="flex items-center justify-center w-14 h-14 rounded-full bg-blue-600 hover:bg-blue-700 text-white shadow-lg transition-transform transform hover:scale-110"
+  title="Call Us">
+  <!-- Thicker Call Icon (white inside blue bg) -->
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="white" stroke-width="2.5"
+       stroke-linecap="round" stroke-linejoin="round" class="w-7 h-7" viewBox="0 0 24 24">
+    <path d="M22 16.92v3a2 2 0 01-2.18 2A19.72 19.72 0 013 5.18 2 2 0 015 3h3a2 2 0 012 1.72 12.38 12.38 0 00.56 2.57 2 2 0 01-.45 2L8.09 10.91a16 16 0 007 7l1.62-1.62a2 2 0 012-.45 12.38 12.38 0 002.57.56A2 2 0 0122 16.92z"/>
+  </svg>
+</button>
+
+
+
+</div>
+
+<!-- Call Popup Modal -->
+<div id="callPopup" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
+  <div class="bg-white rounded-2xl p-6 max-w-sm w-full text-center relative shadow-2xl border border-blue-300">
+    <button id="closeCallPopup" class="absolute top-2 right-3 text-gray-600 hover:text-red-600 text-2xl font-bold">&times;</button>
+    <h3 class="text-2xl font-semibold mb-4 text-blue-700"style="font-family: 'Outfit', sans-serif;">Call Us Now</h3>
+    <a href="tel:+916303059843"
+       class="block bg-blue-600 text-white py-3 px-4 rounded-xl hover:bg-blue-700 transition duration-300 font-semibold tracking-wide">+91 6303059843</a>
+  </div>
+</div>
+
+
+<!-- Script for Call Popup -->
+<script>
+  const callBtn = document.getElementById('callBtn');
+  const callPopup = document.getElementById('callPopup');
+  const closeCallPopup = document.getElementById('closeCallPopup');
+
+  callBtn.addEventListener('click', () => {
+    callPopup.classList.remove('hidden');
+  });
+
+  closeCallPopup.addEventListener('click', () => {
+    callPopup.classList.add('hidden');
+  });
+
+  // Optional: close popup on clicking outside
+  callPopup.addEventListener('click', e => {
+    if(e.target === callPopup) {
+      callPopup.classList.add('hidden');
+    }
+  });
+</script>
+ <footer class="bg-gray-900 text-gray-300 py-10 px-6 md:px-20">
   <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
     
     <!-- Logo and Description -->
@@ -225,9 +474,6 @@
         <a href="https://www.instagram.com/krish.devlabs?igsh=NGJlcjhuY3lxc3M2" class="hover:text-white text-lg"><i class="fab fa-instagram"></i></a>
         <a href="https://www.linkedin.com/in/m-kishore-kumar-naik-4b9741369?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="hover:text-white text-lg"><i class="fab fa-linkedin-in"></i></a>
         <a href="https://youtube.com/@krish.devlabs?si=b78Qtew9TzEbv-y2" class="hover:text-white text-lg"><i class="fab fa-youtube"></i></a>
-  
-
-
       </div>
     </div>
 
@@ -239,7 +485,7 @@
         <li><a href="services.html" class="hover:text-white" style="font-family: 'Poppins', sans-serif;">Services</a></li>
         <li><a href="courses.html" class="hover:text-white" style="font-family: 'Poppins', sans-serif;">Courses</a></li>
           <li><a href="internships.html" class="hover:text-white" style="font-family: 'Poppins', sans-serif;">Internships</a></li>
-        <li><a href="affiliate-program.html" class="hover:text-white" style="font-family: 'Poppins', sans-serif;">Affiliate Program</a></li>
+        <li><a href="Affiliate-Program.html" class="hover:text-white" style="font-family: 'Poppins', sans-serif;">Affiliate Program</a></li>
         <li><a href="about-us.html" class="hover:text-white" style="font-family: 'Poppins', sans-serif;">About Us</a></li>
         <li><a href="contact-us.html" class="hover:text-white" style="font-family: 'Poppins', sans-serif;">Contact Us</a></li>
       </ul>
@@ -271,12 +517,76 @@
   </div>
 </footer>
 
-<!-- Scripts -->
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-  AOS.init();
+  </section>
+
+  <!-- Overlay + Modal -->
+  
+
+  <!-- Scripts -->
+  <script src="js/menu-toggle.js"></script>
+  <script src="js/scroll-animation.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+
+    const openModalBtn = document.getElementById("openModal");
+    const modal = document.getElementById("joinModal");
+    const closeModalBtn = document.getElementById("closeModal");
+
+    // Show modal
+    openModalBtn.addEventListener("click", () => {
+      modal.classList.remove("hidden");
+    });
+
+    // Hide modal on close button click
+    closeModalBtn.addEventListener("click", () => {
+      modal.classList.add("hidden");
+    });
+
+    // Hide modal when clicking outside modal content
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) {
+        modal.classList.add("hidden");
+      }
+    });
+
+    // Mobile menu toggle
+    const menuToggle = document.getElementById("menu-toggle");
+    const mobileMenu = document.getElementById("mobile-menu");
+    const hamburgerIcon = document.getElementById("hamburger");
+    const closeIcon = document.getElementById("close");
+
+    menuToggle.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+      hamburgerIcon.classList.toggle("hidden");
+      closeIcon.classList.toggle("hidden");
+    });
+  </script>
+   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <!-- Scripts -->
+   <script>
+  window.addEventListener('load', () => {
+    const preloader = document.getElementById('preloader');
+    preloader.classList.add('hide');
+    setTimeout(() => preloader.remove(), 500); // optional: remove from DOM after fade
+  });
 </script>
 
+
+  <script src="js/menu-toggle.js"></script>
+  <script src="js/scroll-animation.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      fetch("components/header.html")
+        .then(res => res.text())
+        .then(data => document.getElementById("header").innerHTML = data);
+
+      fetch("components/footer.html")
+        .then(res => res.text())
+        .then(data => document.getElementById("footer").innerHTML = data);
+    });
+    </script>
   <script>
     // Mobile menu toggle
     document.addEventListener("DOMContentLoaded", function () {
@@ -301,6 +611,5 @@
       arrow.classList.toggle("rotate-180");
     }
   </script>
-
 </body>
 </html>
