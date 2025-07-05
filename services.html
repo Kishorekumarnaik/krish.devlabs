@@ -5,107 +5,115 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Explore services by Krish.Devlabs including modern web development and custom landing pages to elevate your digital presence.">
   <title>Services - Krish.Devlabs</title>
-
-  <!-- Tailwind CSS -->
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap">
+
+  <!-- Outfit for Headings -->
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+  <!-- Poppins for Subheadings -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Inter for Paragraphs -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
 
-  <!-- AOS Animations -->
-  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <!-- Tailwind CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
 
-  <!-- Font Awesome + Custom Styles -->
+  <!-- AOS Animations -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+  <!-- Custom Styles -->
   <link rel="stylesheet" href="css/styles.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-  <!-- Scripts -->
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
   <script src="https://unpkg.com/scrollreveal"></script>
-
   <style>
     body { font-family: 'Outfit', sans-serif; }
   </style>
 
+  <!-- AOS Animation Library -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script>
-    AOS.init({ duration: 800, once: true });
+    AOS.init({
+      duration: 800,
+      once: true
+    });
   </script>
 </head>
-
 <body class="bg-gray-50 text-gray-800">
 
-  <!-- Header -->
-  <header class="sticky top-0 z-50 bg-white shadow-lg rounded-b-xl border-b border-gray-200">
-    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center transition-transform duration-300 hover:scale-[1.005] hover:rotateX-[0.5deg]">
-      <a href="index.html" class="inline-block hover:scale-105 transition-transform duration-300">
-        <img src="https://i.postimg.cc/XYjKKqBm/Krish-devlabs-1.png" alt="Krish.Dev Logo" class="h-10 w-auto drop-shadow-md" />
-      </a>
+<header class="sticky top-0 z-50 bg-white shadow-lg rounded-b-xl border-b border-gray-200">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center transition-transform duration-300 hover:scale-[1.005] hover:rotateX-[0.5deg]">
+    <a href="index.html" class="inline-block hover:scale-105 transition-transform duration-300">
+      <img src="https://i.postimg.cc/XYjKKqBm/Krish-devlabs-1.png" alt="Krish.Dev Logo" class="h-10 w-auto drop-shadow-md" />
+    </a>
 
-      <!-- Desktop Navigation -->
-      <nav class="hidden md:flex space-x-8 text-lg font-medium font-['Outfit']">
-        <a href="index.html" class="text-gray-800 hover:text-blue-600 transition">Home</a>
-        <div class="relative group">
-          <a href="services.html" class="text-gray-800 hover:text-blue-600 transition flex items-center gap-1">
-            Services
-            <svg class="w-4 h-4 transition-transform duration-300 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-            </svg>
-          </a>
-          <div class="absolute left-0 mt-2 w-52 bg-white border border-gray-200 rounded-xl shadow-xl opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition-all duration-200 z-50">
-            <a href="services.html#web-dev" class="block px-5 py-3 text-gray-700 hover:bg-blue-50 transition">Web Development</a>
-            <a href="services.html#landing-pages" class="block px-5 py-3 text-gray-700 hover:bg-blue-50 transition">Landing Pages</a>
-          </div>
-        </div>
-        <a href="products.html" class="text-gray-800 hover:text-blue-600 transition">Products</a>
-        <a href="Courses.html" class="text-gray-800 hover:text-blue-600 transition">Courses</a>
-        <a href="internships.html" class="text-gray-800 hover:text-blue-600 transition">Internships</a>
-        <a href="Affiliate-Program.html" class="text-gray-800 hover:text-blue-600 transition">Affiliate Program</a>
-        <a href="about-us.html" class="text-gray-800 hover:text-blue-600 transition">About Us</a>
-        <a href="contact-us.html" class="text-gray-800 hover:text-blue-600 transition">Contact Us</a>
-      </nav>
+    <!-- Desktop Navigation -->
+    <nav class="hidden md:flex space-x-8 text-lg font-medium" style="font-family: 'Outfit', sans-serif;">
+      <a href="index.html" class="text-gray-800 hover:text-blue-600 transition">Home</a>
 
-      <!-- Mobile Toggle -->
-      <button id="menu-toggle" class="md:hidden focus:outline-none relative z-50">
-        <svg id="hamburger" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
-        <svg id="close" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-800 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-        </svg>
-      </button>
-    </div>
-
-    <!-- Mobile Menu -->
-    <div id="mobile-menu"
-         class="md:hidden hidden absolute top-full left-4 right-4 bg-white rounded-xl shadow-2xl border border-gray-200 z-40 transition-all duration-300 font-['Outfit']">
-      <a href="index.html" class="block px-6 py-4 border-b hover:bg-blue-100 text-gray-800 transition">Home</a>
-
-      <!-- Services Mobile Submenu -->
-      <div>
-        <div onclick="toggleSubmenu()" class="w-full text-left px-6 py-4 border-b hover:bg-blue-100 text-gray-800 transition flex items-center justify-between cursor-pointer">
-          <span class="text-gray-800">Services</span>
-          <svg id="services-arrow" class="w-4 h-4 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <!-- Services with Dropdown -->
+      <div class="relative group">
+        <a href="services.html" class="text-gray-800 hover:text-blue-600 transition flex items-center gap-1">
+          Services
+          <svg class="w-4 h-4 transition-transform duration-300 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
           </svg>
-        </div>
-        <div id="services-submenu" class="hidden bg-white transition-all duration-300 overflow-hidden">
-          <a href="#web-dev" class="block px-10 py-2 text-gray-700 hover:bg-blue-50 transition">Web Development</a>
-          <a href="#landing-pages" class="block px-10 py-2 text-gray-700 hover:bg-blue-50 transition">Landing Pages</a>
+        </a>
+        <div class="absolute left-0 mt-2 w-52 bg-white border border-gray-200 rounded-xl shadow-xl opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition-all duration-200 z-50">
+          <a href="services.html#web-dev" class="block px-5 py-3 text-gray-700 hover:bg-blue-50 transition">Web Development</a>
+          <a href="services.html#landing-pages" class="block px-5 py-3 text-gray-700 hover:bg-blue-50 transition">Landing Pages</a>
         </div>
       </div>
 
-      <a href="products.html" class="block px-6 py-4 border-b hover:bg-blue-100 text-gray-800 transition">Products</a>
-      <a href="Courses.html" class="block px-6 py-4 border-b hover:bg-blue-100 text-gray-800 transition">Courses</a>
-      <a href="internships.html" class="block px-6 py-4 border-b hover:bg-blue-100 text-gray-800 transition">Internships</a>
-      <a href="Affiliate-Program.html" class="block px-6 py-4 border-b hover:bg-blue-100 text-gray-800 transition">Affiliate Program</a>
-      <a href="about-us.html" class="block px-6 py-4 border-b hover:bg-blue-100 text-gray-800 transition">About Us</a>
-      <a href="contact-us.html" class="block px-6 py-4 hover:bg-blue-100 text-gray-800 transition">Contact Us</a>
+      <a href="products.html" class="text-gray-800 hover:text-blue-600 transition">Products</a>
+      <a href="Courses.html" class="text-gray-800 hover:text-blue-600 transition">Courses</a>
+      <a href="internships.html" class="text-gray-800 hover:text-blue-600 transition">Internships</a>
+      <a href="Affiliate-Program.html" class="text-gray-800 hover:text-blue-600 transition">Affiliate Program</a>
+      <a href="about-us.html" class="text-gray-800 hover:text-blue-600 transition">About Us</a>
+      <a href="contact-us.html" class="text-gray-800 hover:text-blue-600 transition">Contact Us</a>
+    </nav>
+
+    <!-- Mobile Menu Toggle Button -->
+    <button id="menu-toggle" class="md:hidden focus:outline-none relative z-50">
+      <svg id="hamburger" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+      <svg id="close" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-800 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="md:hidden hidden absolute top-full left-4 right-4 bg-white rounded-xl shadow-2xl border border-gray-200 z-40 transition-all duration-300" style="font-family: 'Outfit', sans-serif;">
+    <a href="index.html" class="block px-6 py-4 border-b hover:bg-blue-100 text-gray-800 transition">Home</a>
+
+    <!-- Services with Submenu -->
+    <div>
+      <div onclick="toggleSubmenu()" class="w-full text-left px-6 py-4 border-b hover:bg-blue-100 text-gray-800 transition flex items-center justify-between cursor-pointer">
+        <a href="services.html" class="text-gray-800">Services</a>
+        <svg id="services-arrow" class="w-4 h-4 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+        </svg>
+      </div>
+
+      <!-- Submenu -->
+      <div id="services-submenu" class="hidden bg-white transition-all duration-300 overflow-hidden">
+        <a href="#web-dev" class="block px-10 py-2 text-gray-700 hover:bg-blue-50 transition">Web Development</a>
+        <a href="#landing-pages" class="block px-10 py-2 text-gray-700 hover:bg-blue-50 transition">Landing Pages</a>
+      </div>
     </div>
-  </header>
+
+    <a href="products.html" class="block px-6 py-4 border-b hover:bg-blue-100 text-gray-800 transition">Products</a>
+    <a href="Courses.html" class="block px-6 py-4 border-b hover:bg-blue-100 text-gray-800 transition">Courses</a>
+    <a href="internships.html" class="block px-6 py-4 border-b hover:bg-blue-100 text-gray-800 transition">Internships</a>
+    <a href="Affiliate-Program.html" class="block px-6 py-4 border-b hover:bg-blue-100 text-gray-800 transition">Affiliate Program</a>
+    <a href="about-us.html" class="block px-6 py-4 border-b hover:bg-blue-100 text-gray-800 transition">About Us</a>
+    <a href="contact-us.html" class="block px-6 py-4 hover:bg-blue-100 text-gray-800 transition">Contact Us</a>
+  </div>
+</header>
 
 
 
