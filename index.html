@@ -199,30 +199,7 @@
     <a href="contact-us.html" class="block px-6 py-4 hover:bg-blue-100 text-gray-800 transition" style="font-family: 'Outfit', sans-serif;">Contact Us</a>
   </div>
 
-  <script>
-    // Mobile menu toggle
-    document.addEventListener("DOMContentLoaded", function () {
-      const toggle = document.getElementById("menu-toggle");
-      const hamburger = document.getElementById("hamburger");
-      const close = document.getElementById("close");
-      const mobileMenu = document.getElementById("mobile-menu");
 
-      toggle.addEventListener("click", () => {
-        mobileMenu.classList.toggle("hidden");
-        hamburger.classList.toggle("hidden");
-        close.classList.toggle("hidden");
-      });
-    });
-
-    // Services submenu toggle in mobile menu
-    function toggleSubmenu() {
-      const submenu = document.getElementById("services-submenu");
-      const arrow = document.getElementById("services-arrow");
-
-      submenu.classList.toggle("hidden");
-      arrow.classList.toggle("rotate-180");
-    }
-  </script>
 </header>
 
 
@@ -1111,25 +1088,28 @@
 
 
 
-<script>
-    // Toggle mobile menu visibility
-    const menuToggle = document.getElementById('menu-toggle');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const hamburgerIcon = document.getElementById('hamburger');
-    const closeIcon = document.getElementById('close');
+  <script>
+    // Mobile menu toggle
+    document.addEventListener("DOMContentLoaded", function () {
+      const toggle = document.getElementById("menu-toggle");
+      const hamburger = document.getElementById("hamburger");
+      const close = document.getElementById("close");
+      const mobileMenu = document.getElementById("mobile-menu");
 
-    menuToggle.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-      hamburgerIcon.classList.toggle('hidden');
-      closeIcon.classList.toggle('hidden');
+      toggle.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+        hamburger.classList.toggle("hidden");
+        close.classList.toggle("hidden");
+      });
     });
 
-    // Toggle submenu in mobile menu
+    // Services submenu toggle in mobile menu
     function toggleSubmenu() {
-      const submenu = document.getElementById('services-submenu');
-      const arrow = document.getElementById('services-arrow');
-      submenu.classList.toggle('hidden');
-      arrow.classList.toggle('rotate-180');
+      const submenu = document.getElementById("services-submenu");
+      const arrow = document.getElementById("services-arrow");
+
+      submenu.classList.toggle("hidden");
+      arrow.classList.toggle("rotate-180");
     }
   </script>
 
