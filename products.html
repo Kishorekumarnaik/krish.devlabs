@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>All Services | Krish.Devlabs</title>
+  <title>All Products | Krish.Devlabs</title>
   <meta name="description" content="Meet M. Kishore Kumar Naik , popularly known as 'Krish', is a young Entrepreneur and self taught Developer who founded 'Krish.devlabs' at just 19." />
   
-  <link rel="canonical" href="https://krishdevlabs.xyz/services" />
+  <link rel="canonical" href="https://krishdevlabs.xyz/products" />
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800&family=Poppins:wght@400;600&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
@@ -60,14 +60,33 @@
     <a href="index.html" class="inline-block hover:scale-105 transition-transform duration-300">
       <img src="https://i.postimg.cc/XYjKKqBm/Krish-devlabs-1.png" alt="Krish.Dev Logo" class="h-10 w-auto drop-shadow-md" />
     </a>
-      <nav class="hidden md:flex space-x-8 text-lg font-medium">
-  <a href="index.html" class="hover:text-blue-600" style="font-family: 'Outfit', sans-serif;">Home</a>
-  <a href="services.html" class="hover:text-blue-600" style="font-family: 'Outfit', sans-serif;">Services</a>
-  <a href="Courses.html" class="hover:text-blue-600 transition" style="font-family: 'Outfit', sans-serif;">Courses</a>
-  <a href="internships.html" class="hover:text-blue-600" style="font-family: 'Outfit', sans-serif;">Internships</a>
-  <a href="about-us.html" class="hover:text-blue-600" style="font-family: 'Outfit', sans-serif;">About Us</a>
-  <a href="contact-us.html" class="hover:text-blue-600" style="font-family: 'Outfit', sans-serif;">Contact Us</a>
+<nav class="hidden md:flex space-x-8 text-lg font-medium items-center" style="font-family: 'Outfit', sans-serif; position: relative;">
+
+<nav class="hidden md:flex space-x-8 text-lg font-medium" style="font-family: 'Outfit', sans-serif;">
+  <a href="index.html" class="text-gray-800 hover:text-blue-600 transition">Home</a>
+
+  <!-- Services with Dropdown -->
+  <div class="relative group">
+    <a href="services.html" class="text-gray-800 hover:text-blue-600 transition flex items-center gap-1">
+      Services
+      <svg class="w-4 h-4 transition-transform duration-300 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+      </svg>
+    </a>
+    <div class="absolute left-0 mt-2 w-52 bg-white border border-gray-200 rounded-xl shadow-xl opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition-all duration-200 z-50">
+      <a href="services.html#web-dev" class="block px-5 py-3 text-gray-700 hover:bg-blue-50 transition">Web Development</a>
+      <a href="services.html#landing-pages" class="block px-5 py-3 text-gray-700 hover:bg-blue-50 transition">Landing Pages</a>
+    </div>
+  </div>
+
+  <a href="products.html" class="text-gray-800 hover:text-blue-600 transition">Products</a>
+  <a href="Courses.html" class="text-gray-800 hover:text-blue-600 transition">Courses</a>
+  <a href="internships.html" class="text-gray-800 hover:text-blue-600 transition">Internships</a>
+  <a href="Affiliate-Program.html" class="text-gray-800 hover:text-blue-600 transition">Affiliate Program</a>
+  <a href="about-us.html" class="text-gray-800 hover:text-blue-600 transition">About Us</a>
+  <a href="contact-us.html" class="text-gray-800 hover:text-blue-600 transition">Contact Us</a>
 </nav>
+
     <button id="menu-toggle" class="md:hidden focus:outline-none relative z-50">
       <svg id="hamburger" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
@@ -78,18 +97,49 @@
     </button>
   </div>
 
+  <!-- Mobile Menu -->
   <div id="mobile-menu"
      class="md:hidden hidden absolute top-full left-4 right-4 bg-white rounded-xl shadow-2xl border border-gray-200 z-40 transition-all duration-300"
      style="font-family: 'Outfit', sans-serif;">
 
-  <a href="index.html" class="block px-6 py-4 border-b hover:bg-blue-100 text-gray-800 transition">Home</a>
-  <a href="services.html" class="block px-6 py-4 border-b hover:bg-blue-100 text-gray-800 transition">Services</a>
-  <a href="Courses.html" class="block px-6 py-4 border-b hover:bg-blue-100 text-gray-800 transition">Courses</a>
-  <a href="internships.html" class="block px-6 py-4 border-b hover:bg-blue-100 text-gray-800 transition">Internships</a>
-  <a href="about-us.html" class="block px-6 py-4 border-b hover:bg-blue-100 text-gray-800 transition">About Us</a>
-  <a href="contact-us.html" class="block px-6 py-4 hover:bg-blue-100 text-gray-800 transition">Contact Us</a>
+  <a href="index.html" class="block px-6 py-4 border-b hover:bg-blue-100 text-gray-800 transition"style="font-family: 'Outfit', sans-serif;">Home</a>
 
+  
+
+  <!-- Services with Submenu -->
+  <div>
+  <!-- Services Link with Toggle -->
+  <div onclick="toggleSubmenu()" 
+       class="w-full text-left px-6 py-4 border-b hover:bg-blue-100 text-gray-800 transition flex items-center justify-between cursor-pointer">
+    <a href="services.html" class="text-gray-800">Services</a>
+    <svg id="services-arrow" class="w-4 h-4 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+    </svg>
+  </div>
+
+  <!-- Submenu -->
+  <div id="services-submenu" class="hidden bg-white transition-all duration-300 overflow-hidden">
+    <a href="#web-dev" class="block px-10 py-2 text-gray-700 hover:bg-blue-50 transition"style="font-family: 'Outfit', sans-serif;">Web Development</a>
+    <a href="#landing-pages" class="block px-10 py-2 text-gray-700 hover:bg-blue-50 transition"style="font-family: 'Outfit', sans-serif;">Landing Pages</a>
+  </div>
 </div>
+
+<!-- Rest of Mobile Menu -->
+<a href="products.html" class="block px-6 py-4 border-b hover:bg-blue-100 text-gray-800 transition"style="font-family: 'Outfit', sans-serif;">Products</a>
+<a href="Courses.html" class="block px-6 py-4 border-b hover:bg-blue-100 text-gray-800 transition"style="font-family: 'Outfit', sans-serif;">Courses</a>
+<a href="internships.html" class="block px-6 py-4 border-b hover:bg-blue-100 text-gray-800 transition"style="font-family: 'Outfit', sans-serif;">Internships</a>
+<a href="Affiliate-Program.html" class="block px-6 py-4 border-b hover:bg-blue-100 text-gray-800 transition"style="font-family: 'Outfit', sans-serif;">Affiliate Program</a>
+<a href="about-us.html" class="block px-6 py-4 border-b hover:bg-blue-100 text-gray-800 transition"style="font-family: 'Outfit', sans-serif;">About Us</a>
+<a href="contact-us.html" class="block px-6 py-4 hover:bg-blue-100 text-gray-800 transition"style="font-family: 'Outfit', sans-serif;">Contact Us</a>
+<script>
+  function toggleSubmenu() {
+    const submenu = document.getElementById("services-submenu");
+    const arrow = document.getElementById("services-arrow");
+    
+    submenu.classList.toggle("hidden");
+    arrow.classList.toggle("rotate-180");
+  }
+</script>
 </header>
 
 
@@ -100,7 +150,7 @@
   <div class="text-center mb-10" data-aos="fade-down">
     <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white tracking-tight mb-3 uppercase text-center"
       style="text-shadow: 0 0 10px rgba(255, 215, 0, 0.6); letter-spacing: 0.05em;">
-      Our Services
+      Our Products
     </h2>
     <p class="text-lg text-gray-600 dark:text-gray-300 font-medium">Explore our expert services to boost your growth.</p>
   </div>
@@ -108,7 +158,7 @@
   <!-- Search Bar -->
   <div class="flex justify-center mb-10" data-aos="fade-up" data-aos-delay="100">
     <div class="relative w-full max-w-xl">
-      <input type="text" id="serviceSearch" placeholder="Search services..." 
+      <input type="text" id="serviceSearch" placeholder="Search products..." 
         class="w-full py-3 pl-5 pr-12 rounded-full shadow-lg border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:bg-slate-800 dark:text-white" />
       <span class="absolute top-3.5 right-4 text-gray-400 dark:text-gray-300">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
