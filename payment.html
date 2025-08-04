@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Frontend Development Internship Payment</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet"/>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #e0f7ff, #ffeefc);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 20px;
+      animation: backgroundPulse 8s ease-in-out infinite alternate;
+    }
+
+    @keyframes backgroundPulse {
+      0% { background: linear-gradient(135deg, #f5faff, #fff1f1); }
+      100% { background: linear-gradient(135deg, #ffeefc, #e0f7ff); }
+    }
+
+    .card {
+      backdrop-filter: blur(14px);
+      background: rgba(255, 255, 255, 0.75);
+      border-radius: 24px;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+      padding: 50px;
+      width: 100%;
+      max-width: 650px;
+      animation: fadeInUp 1s ease-out;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    h2 {
+      text-align: center;
+      color: #1f2937;
+      font-size: 28px;
+      margin-bottom: 12px;
+    }
+
+    p {
+      text-align: center;
+      color: #6b7280;
+      margin-bottom: 30px;
+      font-size: 16px;
+    }
+
+    label {
+      font-weight: 600;
+      display: block;
+      margin-top: 20px;
+      margin-bottom: 8px;
+      color: #374151;
+      font-size: 15px;
+    }
+
+    input {
+      width: 100%;
+      padding: 14px 16px;
+      border-radius: 14px;
+      border: 1px solid #d1d5db;
+      background: #f9fafb;
+      font-size: 15px;
+      transition: all 0.2s ease;
+    }
+
+    input:focus {
+      border-color: #6366f1;
+      outline: none;
+      background: #fff;
+      box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+    }
+
+    .pay-section {
+      margin-top: 40px;
+      text-align: center;
+    }
+
+    .note {
+      text-align: center;
+      font-size: 13px;
+      color: #9ca3af;
+      margin-top: 24px;
+    }
+
+    @media (max-width: 600px) {
+      .card {
+        padding: 30px 20px;
+      }
+      h2 {
+        font-size: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h2>Frontend Development Internship</h2>
+    <p>Pay ₹1999 to confirm your seat in the internship program 🚀</p>
+
+    <label for="name">Full Name</label>
+    <input type="text" id="name" placeholder="" required />
+
+    <label for="email">Email Address</label>
+    <input type="email" id="email" placeholder="" required />
+
+    <label for="phone">Phone Number</label>
+    <input type="tel" id="phone" placeholder="" required />
+
+    <label for="university">University / College</label>
+    <input type="text" id="university" placeholder="" required />
+
+    <div class="pay-section">
+      <!-- Updated Razorpay Payment Button -->
+      <form>
+        <script src="https://checkout.razorpay.com/v1/payment-button.js"
+                data-payment_button_id="pl_R1My55Ri7xxoly"
+                async> 
+        </script>
+      </form>
+    </div>
+
+    <p class="note">🔒 Secure Payment | ❤️ Krish.Devlabs</p>
+  </div>
+
+</body>
+</html>
