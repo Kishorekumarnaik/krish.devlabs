@@ -1,0 +1,318 @@
+<!-- Replace the whole code with this -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>KrishDevLabs Auth</title>
+    <link rel="canonical" href="https://krishdevlabs.xyz/Firebase-auth.html" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #f74084, #ffc34d);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0.5rem;
+    }
+    .auth-box {
+      background: white;
+      width: 100%;
+      max-width: 400px;
+      border-radius: 12px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+      padding: 1.4rem;
+      animation: fadeIn 0.4s ease forwards;
+    }
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(10px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+    .auth-box h2 { font-size: 1.4rem; margin-bottom: 1.5rem; color: #2c2c2c; }
+    .auth-box label {
+      font-weight: 600;
+      font-size: 14px;
+      display: block;
+      margin-bottom: 6px;
+    }
+    .auth-box input[type="text"],
+    .auth-box input[type="email"],
+    .auth-box input[type="password"] {
+      width: 100%;
+      padding: 10px 12px;
+      margin-bottom: 16px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+    .auth-box button {
+      width: 100%;
+      padding: 12px;
+      background-color: #7c3aed;
+      color: white;
+      font-weight: 600;
+      border: none;
+      border-radius: 6px;
+      font-size: 15px;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+    .auth-box button:hover { background-color: #6931d4; }
+    .auth-footer {
+      text-align: center;
+      font-size: 14px;
+      margin-top: 1rem;
+    }
+    .auth-footer a {
+      color: #7c3aed;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .auth-footer a:hover { text-decoration: underline; }
+    .form-group { margin-bottom: 14px; }
+    #nameGroup, #confirmGroup, #termsGroup { display: none; }
+    .forgot-pass {
+      text-align: right;
+      margin-top: -10px;
+      margin-bottom: 16px;
+    }
+    .forgot-pass a {
+      font-size: 13px;
+      color: #7c3aed;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .forgot-pass a:hover { text-decoration: underline; }
+    #rememberGroup {
+      display: flex;
+      align-items: center;
+      margin-top: -6px;
+      margin-bottom: 14px;
+    }
+    #rememberGroup label {
+      font-size: 14px;
+      font-weight: normal;
+      color: #333;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    #rememberMe {
+      transform: scale(1.1);
+      cursor: pointer;
+    }
+    #termsGroup label {
+      font-size: 13px;
+      font-weight: normal;
+      color: #333;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    #acceptTerms {
+      transform: scale(1.1);
+      cursor: pointer;
+    }
+  </style>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+<body>
+
+  <div class="auth-box" id="authBox">
+    <h2 id="formTitle">Sign in to your account</h2>
+    <form id="authForm">
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" required />
+      </div>
+
+      <div class="form-group" id="nameGroup">
+        <label for="name">Full name</label>
+        <input type="text" id="name" />
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" required />
+      </div>
+
+      <div class="form-group" id="rememberGroup">
+        <label for="rememberMe">
+          <input type="checkbox" id="rememberMe"> Remember Me
+        </label>
+      </div>
+
+      <div class="forgot-pass" id="forgotPassLink">
+        <a onclick="forgotPassword()">Forgot Password?</a>
+      </div>
+
+      <div class="form-group" id="confirmGroup">
+        <label for="confirmPassword">Confirm Password</label>
+        <input type="password" id="confirmPassword" />
+      </div>
+
+      <div class="form-group" id="termsGroup">
+        <label for="acceptTerms">
+          <input type="checkbox" id="acceptTerms"> I accept the <a href="#">Terms and Conditions</a>
+        </label>
+      </div>
+
+      <div class="form-group" id="recaptchaGroup" style="margin-bottom:16px;">
+        <div id="recaptcha-container" class="g-recaptcha" data-sitekey="6Lcu-pcrAAAAAAMW2-L72p3TkTAOVHyG7VASihBe"></div>
+      </div>
+
+      <button type="submit" id="actionBtn">Sign in</button>
+    </form>
+
+    <div class="auth-footer" id="toggleText">
+      New to KrishDevLabs? <a href="#" onclick="toggleForm()">Create account</a>
+    </div>
+  </div>
+
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-analytics.js";
+  import {
+    getAuth,
+    createUserWithEmailAndPassword,
+    signInWithEmailAndPassword,
+    sendEmailVerification,
+    sendPasswordResetEmail,
+    updateProfile,
+    onAuthStateChanged,
+    setPersistence,
+    browserLocalPersistence,
+    browserSessionPersistence
+  } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-auth.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyDDTnOATqSbEWwleUOOq1dlGvv9NhFE3GU",
+    authDomain: "krishdevlabs-signup.firebaseapp.com",
+    projectId: "krishdevlabs-signup",
+    storageBucket: "krishdevlabs-signup.appspot.com",
+    messagingSenderId: "399199705494",
+    appId: "1:399199705494:web:7551f84062f3b5a776e5b7",
+    measurementId: "G-44L5N8DSPQ"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+  const auth = getAuth(app);
+
+  const form = document.getElementById('authForm');
+  const email = document.getElementById('email');
+  const name = document.getElementById('name');
+  const password = document.getElementById('password');
+  const confirmPassword = document.getElementById('confirmPassword');
+  const rememberMe = document.getElementById('rememberMe');
+  const acceptTerms = document.getElementById('acceptTerms');
+  const termsGroup = document.getElementById('termsGroup');
+  const actionBtn = document.getElementById('actionBtn');
+
+  let isLogin = true;
+
+  window.toggleForm = () => {
+    isLogin = !isLogin;
+    const formTitle = document.getElementById('formTitle');
+    const nameGroup = document.getElementById('nameGroup');
+    const confirmGroup = document.getElementById('confirmGroup');
+    const toggleText = document.getElementById('toggleText');
+    const forgotPass = document.getElementById('forgotPassLink');
+    const rememberGroup = document.getElementById('rememberGroup');
+    const recaptchaGroup = document.getElementById('recaptchaGroup');
+
+    if (isLogin) {
+      formTitle.textContent = "Sign in to your account";
+      actionBtn.textContent = "Sign in";
+      toggleText.innerHTML = `New to KrishDevLabs? <a href="#" onclick="toggleForm()">Create account</a>`;
+      nameGroup.style.display = "none";
+      confirmGroup.style.display = "none";
+      termsGroup.style.display = "none";
+      forgotPass.style.display = "block";
+      rememberGroup.style.display = "flex";
+      recaptchaGroup.style.display = "block";
+    } else {
+      formTitle.textContent = "Create your account";
+      actionBtn.textContent = "Create account";
+      toggleText.innerHTML = `Already have an account? <a href="#" onclick="toggleForm()">Sign in</a>`;
+      nameGroup.style.display = "block";
+      confirmGroup.style.display = "block";
+      termsGroup.style.display = "block";
+      forgotPass.style.display = "none";
+      rememberGroup.style.display = "none";
+      recaptchaGroup.style.display = "none";
+    }
+  };
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const emailVal = email.value.trim();
+    const passwordVal = password.value.trim();
+
+    if (!isLogin) {
+      const nameVal = name.value.trim();
+      const confirmVal = confirmPassword.value.trim();
+
+      if (!nameVal || !confirmVal) return alert("Please fill all fields.");
+      if (passwordVal !== confirmVal) return alert("Passwords do not match.");
+      if (!acceptTerms.checked) return alert("You must accept the Terms and Conditions.");
+
+      try {
+        const userCred = await createUserWithEmailAndPassword(auth, emailVal, passwordVal);
+        await updateProfile(userCred.user, { displayName: nameVal });
+        await sendEmailVerification(userCred.user);
+        window.location.href = "verification.html";
+      } catch (err) {
+        alert(err.message);
+      }
+    } else {
+      const recaptchaResponse = grecaptcha.getResponse();
+      if (!recaptchaResponse) {
+        alert("Please complete the reCAPTCHA.");
+        return;
+      }
+
+      const persistenceType = rememberMe.checked ? browserLocalPersistence : browserSessionPersistence;
+      try {
+        await setPersistence(auth, persistenceType);
+        const userCred = await signInWithEmailAndPassword(auth, emailVal, passwordVal);
+        localStorage.setItem("username", userCred.user.displayName || emailVal.split("@")[0]);
+        localStorage.setItem("isReturning", "true");
+        window.location.href = "dashboard.html";
+      } catch (err) {
+        alert(err.message);
+      }
+    }
+  });
+
+  window.forgotPassword = async () => {
+    const emailVal = email.value.trim();
+    if (!emailVal) return alert("Please enter your email to reset password.");
+    try {
+      await sendPasswordResetEmail(auth, emailVal);
+      window.location.href = "reset-sent.html";
+    } catch (err) {
+      alert(err.message);
+    }
+  };
+
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+      // User is logged in
+    }
+  });
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
