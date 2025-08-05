@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Email Verification Sent</title>
+    <link rel="canonical" href="https://krishdevlabs.xyz/verification.html" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #f74084, #ffc34d);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 1.5rem;
+      overflow: hidden;
+      animation: fadeIn 0.6s ease-in-out both;
+    }
+
+    .box {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(10px);
+      padding: 2.5rem;
+      border-radius: 16px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      max-width: 420px;
+      width: 100%;
+      animation: bounceIn 0.8s ease-out;
+    }
+
+    .tick-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .tick {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      border: 4px solid #28a745;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      animation: popIn 0.5s ease forwards;
+    }
+
+    .tick svg {
+      width: 40px;
+      height: 40px;
+      stroke: #28a745;
+      stroke-width: 4;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      fill: none;
+      stroke-dasharray: 50;
+      stroke-dashoffset: 50;
+      animation: draw 0.6s 0.3s ease forwards;
+    }
+
+    h1 {
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+      color: #1a1a1a;
+    }
+
+    p {
+      font-size: 1rem;
+      color: #333;
+      line-height: 1.5;
+      margin-bottom: 1.8rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 20px;
+      font-size: 15px;
+      font-weight: 600;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+
+    .btn:hover {
+      background-color: #218838;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes bounceIn {
+      0% {
+        transform: translateY(-30px);
+        opacity: 0;
+      }
+      60% {
+        transform: translateY(10px);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes draw {
+      to {
+        stroke-dashoffset: 0;
+      }
+    }
+
+    @keyframes popIn {
+      0% {
+        transform: scale(0.5);
+        opacity: 0;
+      }
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <div class="tick-container">
+      <div class="tick">
+        <svg viewBox="0 0 24 24">
+          <polyline points="20 6 9 17 4 12"></polyline>
+        </svg>
+      </div>
+    </div>
+    <h1>Verification Email Sent</h1>
+    <p>Please check your inbox and click the verification link before logging in.</p>
+
+    <!-- ✅ Go to Login Button -->
+    <a href="Firebase-auth.html" class="btn">Go to Login Page</a>
+  </div>
+</body>
+</html>
+

@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Courses | Dashboard</title>
+    <link rel="canonical" href="https://krishdevlabs.xyz/dash-my-courses.html" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f6f8fb;
+      padding-top: 80px;
+    }
+
+    nav {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; z-index: 1000;
+      background: white; backdrop-filter: blur(12px);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+      padding: 14px 28px;
+      display: flex; justify-content: space-between; align-items: center;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .nav-logo img { height: 38px; cursor: pointer; transition: transform 0.2s ease; }
+    .nav-logo img:hover { transform: scale(1.05); }
+
+    .menu-icon { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+    .menu-icon div { width: 24px; height: 3px; background: #4f46e5; border-radius: 2px; transition: all 0.3s ease; }
+    .menu-icon.active div:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+    .menu-icon.active div:nth-child(2) { opacity: 0; }
+    .menu-icon.active div:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+    .nav-links { display: none; }
+
+    @media (max-width: 768px) {
+      .menu-icon { display: flex; }
+      .nav-links {
+        position: fixed; top: 0; right: -100%;
+        height: 100vh; width: 250px;
+        background: white;
+        display: flex; flex-direction: column;
+        padding: 80px 24px;
+        box-shadow: -6px 0 16px rgba(0,0,0,0.1);
+        transition: right 0.3s ease; z-index: 1001;
+      }
+      .nav-links.active { right: 0; }
+      .nav-links a {
+        margin-bottom: 20px;
+        font-size: 1.1rem; font-weight: 600;
+        color: #1e293b; text-decoration: none;
+      }
+      .nav-links a:hover { color: #4f46e5; }
+    }
+
+    .container {
+      padding: 10px 1.5rem 2rem;
+    }
+
+    .search-bar {
+      margin-bottom: 1.2rem;
+    }
+
+    .search-bar input {
+      width: 100%;
+      padding: 0.8rem 1rem;
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+
+    .tabs {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      border-bottom: 2px solid #e5e7eb;
+    }
+
+    .tabs button {
+      padding: 0.6rem 1rem;
+      background: none;
+      border: none;
+      font-weight: 600;
+      cursor: pointer;
+      border-bottom: 3px solid transparent;
+    }
+
+    .tabs button.active {
+      border-color: #4f46e5;
+      color: #4f46e5;
+    }
+
+    .category-section {
+      display: none;
+    }
+
+    .category-section.active {
+      display: block;
+    }
+
+    .course-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+
+    .course-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.07);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.2s ease;
+    }
+
+    .course-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .course-card img {
+      width: 100%;
+      border-radius: 8px;
+      height: 140px;
+      object-fit: cover;
+    }
+
+    .course-card h3 {
+      font-size: 16px;
+      margin: 10px 0 6px;
+      text-align: center;
+      font-weight: 600;
+      color: #1f2937;
+    }
+
+    .divider {
+      width: 80%;
+      height: 1px;
+      background: rgba(0, 0, 0, 0.1);
+      margin: 10px auto;
+    }
+
+    .course-card button {
+      margin-top: auto;
+      background: #4f46e5;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+
+    .course-card button:hover {
+      background: #4338ca;
+    }
+
+    /* 💎 Ribbon Label */
+    .ribbon {
+      width: 110px;
+      background: #10b981;
+      color: white;
+      text-align: center;
+      font-size: 13px;
+      font-weight: bold;
+      position: absolute;
+      top: 12px;
+      right: -35px;
+      transform: rotate(45deg);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+      padding: 4px 0;
+    }
+
+    .ribbon.paid { background: #f59e0b; }
+    .ribbon.bundle { background: #ec4899; }
+    .ribbon.notes { background: #0ea5e9; }
+    .watch-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #6366f1;
+  color: white;
+  text-align: center;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+.watch-btn:hover {
+  background-color: #4f46e5;
+}
+  </style>
+</head>
+<body>
+
+  <!-- ✅ Navbar -->
+  <nav>
+    <div class="nav-logo" onclick="location.href='dashboard.html'">
+      <img src="https://i.postimg.cc/Bnbct4pN/Picsart-25-06-09-19-32-03-4761749532394.png" alt="Logo" />
+    </div>
+    <div class="menu-icon" id="menuIcon">
+      <div></div><div></div><div></div>
+    </div>
+    <div class="nav-links" id="navLinks">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="dash-courses.html">Courses</a>
+      <a href="dash-my-courses.html">My Courses</a>
+      <a href="Course-comesoon.html">Quizzes</a>
+      <a href="Community.html">Community</a>
+      <a href="My-Account.html">My Account</a>
+      <a href="Firebase-auth.html" id="logoutBtn" style="color:#ef4444;">Logout</a>
+    </div>
+  </nav>
+
+  <!-- ✅ Main Content -->
+  <div class="container">
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Search courses..." />
+    </div>
+
+    <div class="tabs">
+      <button class="active" onclick="showTab('free', event)">Free</button>
+      <button onclick="showTab('paid', event)">Paid</button>
+      <button onclick="showTab('bundle', event)">Bundles</button>
+      <button onclick="showTab('notes', event)">Notes</button>
+    </div>
+
+    <div id="free" class="category-section active">
+      <div class="course-grid" id="freeCourses"></div>
+    </div>
+
+    <div id="paid" class="category-section">
+      <div class="course-grid" id="paidCourses"></div>
+    </div>
+
+    <div id="bundle" class="category-section">
+      <div class="course-grid" id="bundleCourses"></div>
+    </div>
+
+    <div id="notes" class="category-section">
+      <div class="course-grid" id="notesCourses"></div>
+    </div>
+  </div>
+
+  <!-- ✅ JavaScript -->
+  <script>
+function showTab(tab, event) {
+  document.querySelectorAll('.category-section').forEach(s => s.classList.remove('active'));
+  document.getElementById(tab).classList.add('active');
+  document.querySelectorAll('.tabs button').forEach(b => b.classList.remove('active'));
+  event.target.classList.add('active');
+}
+
+function populateEnrolledCourses() {
+  const enrolled = JSON.parse(localStorage.getItem('enrolledCourses')) || [];
+
+  const categorized = {
+    free: [], paid: [], bundle: [], notes: []
+  };
+
+  enrolled.forEach(course => {
+    if (categorized[course.category]) {
+      categorized[course.category].push(course);
+    }
+  });
+
+  Object.keys(categorized).forEach(type => {
+    const grid = document.getElementById(`${type}Courses`);
+    if (!grid) return;
+
+    grid.innerHTML = '';
+
+    if (categorized[type].length === 0) {
+      grid.innerHTML = `<p style="text-align:center; font-size:15px; color: #6b7280;">No courses enrolled.</p>`;
+      return;
+    }
+
+    categorized[type].forEach(course => {
+      const card = document.createElement('div');
+      card.className = 'course-card';
+      card.innerHTML = `
+        <div class="ribbon ${course.category}">Enrolled</div>
+        <img src="${course.image}" alt="${course.title}" />
+        <h3>${course.title}</h3>
+        <div class="divider"></div>
+       <a href="${course.link || '#'}" target="_blank" class="watch-btn">Watch Now</a>
+      `;
+      grid.appendChild(card);
+    });
+  });
+}
+
+// Mobile menu toggle
+const menuIcon = document.getElementById("menuIcon");
+const navLinks = document.getElementById("navLinks");
+menuIcon.onclick = () => {
+  menuIcon.classList.toggle("active");
+  navLinks.classList.toggle("active");
+};
+
+populateEnrolledCourses();
+// 🔍 Search Functionality
+document.getElementById('searchInput').addEventListener('input', function () {
+  const query = this.value.toLowerCase();
+  const enrolled = JSON.parse(localStorage.getItem('enrolledCourses')) || [];
+
+  const categorized = {
+    free: [], paid: [], bundle: [], notes: []
+  };
+
+  enrolled.forEach(course => {
+    if (categorized[course.category]) {
+      // Only include if the title matches the search
+      if (course.title.toLowerCase().includes(query)) {
+        categorized[course.category].push(course);
+      }
+    }
+  });
+
+  Object.keys(categorized).forEach(type => {
+    const grid = document.getElementById(`${type}Courses`);
+    if (!grid) return;
+
+    grid.innerHTML = '';
+
+    if (categorized[type].length === 0) {
+      grid.innerHTML = `<p style="text-align:center; font-size:15px; color: #6b7280;">No matching courses found.</p>`;
+      return;
+    }
+
+    categorized[type].forEach(course => {
+      const card = document.createElement('div');
+      card.className = 'course-card';
+      card.innerHTML = `
+  <div class="ribbon ${course.category}">Enrolled</div>
+  <img src="${course.image}" alt="${course.title}" />
+  <h3>${course.title}</h3>
+  <div class="divider"></div>
+  <a href="${course.link || '#'}" target="_blank" class="watch-btn">Watch Now</a>
+      `;
+      grid.appendChild(card);
+    });
+  });
+});
+</script>
+
+</body>
+</html>
+
+
+
+
+

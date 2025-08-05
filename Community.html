@@ -1,0 +1,269 @@
+<!DOCTYPE html>  <html lang="en">  
+<head>  
+<meta charset="UTF-8" />  
+<meta name="viewport" content="width=device-width, initial-scale=1.0">  
+<title>KrishDevLabs Chat</title>  
+<link rel="canonical" href="https://krishdevlabs.xyz/Community.html" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">  
+<style>  
+  * { box-sizing: border-box; margin: 0; padding: 0; }  
+  body { font-family: 'Inter', sans-serif; height: 100vh; display: flex; flex-direction: column; background: #f9f9fb; }  
+  .navbar { background: #7c3aed; color: white; display: flex; justify-content: space-between; align-items: center; padding: 0.75rem 1rem; }  
+  .navbar h1 { font-size: 1.2rem; }  
+  .menu-btn { background: none; border: none; color: white; font-size: 1.5rem; cursor: pointer; }  
+  .container { flex: 1; display: flex; overflow: hidden; }  
+  .sidebar { background: #7c3aed; color: white; width: 200px; flex-shrink: 0; display: flex; flex-direction: column; padding: 1rem; transition: 0.3s; }  
+  .sidebar.hidden { transform: translateX(-100%); }  
+  .sidebar a { color: white; text-decoration: none; margin-bottom: 1rem; font-weight: 500; }  
+  .content { flex: 1; display: flex; flex-direction: column; }  
+  .messages { flex: 1; overflow-y: auto; padding: 1rem; display: flex; flex-direction: column; }  
+  .message { display: flex; margin-bottom: 0.6rem; max-width: 75%; position: relative; }  
+  .message.right { align-self: flex-end; flex-direction: row-reverse; }  
+  .message.left { align-self: flex-start; }  
+  .bubble { padding: 0.5rem 0.8rem; border-radius: 16px; font-size: 14px; background: #e5e5ea; color: black; position: relative; }  
+  .message.right .bubble { background: #7c3aed; color: white; }  
+  .avatar { width: 32px; height: 32px; border-radius: 50%; margin: 0 0.4rem; object-fit: cover; }  
+  .author-under { font-size: 10px; color: #555; margin-top: 2px; text-align: right; }  
+  .time { font-size: 10px; opacity: 0.6; margin-left: 4px; }  
+  .options { position: relative; margin-left: 4px; }  
+  .options-btn { background: none; border: none; font-size: 20px; color: #999; cursor: pointer; padding: 2px; }  
+  .options-menu { display: none; position: absolute; top: 22px; right: 0; background: white; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.15); z-index: 10; }  
+  .options-menu button { background: none; border: none; display: block; width: 100%; text-align: left; padding: 8px 12px; font-size: 13px; cursor: pointer; color: #333; }  
+  .options-menu button:hover { background: #f5f5f5; }  
+  .message.show-options .options-menu { display: block; }  
+  .input-area { display: flex; flex-direction: column; padding: 0.5rem; border-top: 1px solid #ddd; background: white; }  
+  .reply-preview { background: #eee; padding: 4px 8px; font-size: 12px; margin-bottom: 4px; border-left: 3px solid #7c3aed; color: #333; display: flex; justify-content: space-between; align-items: center; }  
+  .input-row { display: flex; align-items: center; }  
+  .input-row input[type="text"] { flex: 1; padding: 0.5rem 0.8rem; border: 1px solid #ccc; border-radius: 20px; font-size: 14px; }  
+  .send-btn { background: #7c3aed; color: white; border: none; border-radius: 50%; width: 36px; height: 36px; margin-left: 0.4rem; cursor: pointer; font-size: 16px; display: flex; align-items: center; justify-content: center; }  
+  .typing-indicator { font-size: 12px; color: #888; margin-left: 1rem; margin-bottom: 4px; }  
+  .reply-icon { cursor: pointer; font-size: 12px; color: #555; margin-left: 4px; }  /* ✏️ Edit modal style */
+.modal-overlay { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.4); justify-content:center; align-items:center; z-index:100; }
+.modal { background:white; padding:20px; border-radius:10px; width:90%; max-width:400px; box-shadow:0 4px 12px rgba(0,0,0,0.2); }
+.modal input[type="text"] { width:100%; padding:8px; margin-top:10px; font-size:14px; border:1px solid #ccc; border-radius:6px; }
+.modal-buttons { margin-top:10px; display:flex; justify-content:flex-end; gap:6px; }
+.modal-buttons button { padding:6px 10px; font-size:13px; border:none; border-radius:4px; cursor:pointer; }
+.modal-buttons .save-btn { background:#7c3aed; color:white; }
+.modal-buttons .cancel-btn { background:#ccc; color:#333; }
+
+@media(max-width: 768px){ .sidebar { position: absolute; height: 100%; z-index: 10; left:0; top:0; } }
+</style>
+
+</head>  
+<body>  
+<div class="navbar">  
+  <h1>Community Discussions</h1>  
+  <button class="menu-btn" onclick="toggleSidebar()">☰</button>  
+</div>  
+<div class="container">  
+  <div class="sidebar hidden" id="sidebar"> 
+  <a href=""></a>
+  <a href=""></a>
+  <a href=""></a>
+  <a href=""></a>
+  
+    <a href="dashboard.html">Dashboard</a>  
+    <a href="Community.html">Discussions</a>  
+    <a href="Questions-Answers.html">Questions & Answers </a>  
+    <a href="My-Account.html">My Account</a>  
+  </div>  
+  <div class="content">  
+    <div class="messages" id="messages"></div>  
+    <div class="typing-indicator" id="typingIndicator"></div>  
+    <div class="input-area">  
+      <div id="replyPreview" class="reply-preview" style="display:none;">  
+        <span id="replyText"></span>  
+        <!-- ✅ Cancel icon SVG -->
+<svg onclick="setReply(null)" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+  stroke="currentColor" width="16" height="16" style="cursor:pointer;">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+    d="M6 18L18 6M6 6l12 12" />
+</svg>
+      </div>  
+      <div class="input-row">  
+        <input id="messageInput" type="text" placeholder="Type a message..." oninput="setTypingStatus(true)">  
+        <button class="send-btn" onclick="sendMessage()">➤</button>  
+      </div>  
+    </div>  
+  </div>  
+</div>  <!-- ✏️ Edit modal -->  <div class="modal-overlay" id="editModal">  
+  <div class="modal">  
+    <h3 style="font-size:16px; margin-bottom:6px;">Edit your message</h3>  
+    <input type="text" id="editInput">  
+    <div class="modal-buttons">  
+      <button class="cancel-btn" onclick="closeEditModal()">Cancel</button>  
+      <button class="save-btn" onclick="saveEdit()">Save</button>  
+    </div>  
+  </div>  
+</div>  <script type="module">  
+// ... your firebase import and config stays same ...  
+import { initializeApp } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-app.js";  
+import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-auth.js";  
+import { getFirestore, collection, addDoc, serverTimestamp, query, orderBy, onSnapshot, doc, deleteDoc, updateDoc, setDoc } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-firestore.js";  
+  
+const firebaseConfig = {  
+  apiKey: "AIzaSyDDTnOATqSbEWwleUOOq1dlGvv9NhFE3GU",  
+  authDomain: "krishdevlabs-signup.firebaseapp.com",  
+  projectId: "krishdevlabs-signup",  
+  storageBucket: "krishdevlabs-signup.appspot.com",  
+  messagingSenderId: "399199705494",  
+  appId: "1:399199705494:web:7551f84062f3b5a776e5b7"  
+};  
+const app = initializeApp(firebaseConfig);  
+const auth = getAuth(app);  
+const db = getFirestore(app);  
+  
+let currentUser = null;  
+let typingTimeout;  
+let replyText = null;  
+let editMsgId = null;  
+  
+onAuthStateChanged(auth, user => {  
+  if (user) { currentUser = user; loadMessages(); listenTyping(); }  
+  else { window.location.href = "index.html"; }  
+});  
+  
+window.toggleSidebar = () => {  
+  document.getElementById("sidebar").classList.toggle("hidden");  
+};  
+  
+window.sendMessage = async () => {  
+  const content = document.getElementById("messageInput").value.trim();  
+  if (!content) return;  
+  await addDoc(collection(db, "messages"), {  
+    content,  
+    replyTo: replyText,  
+    author: currentUser.displayName || currentUser.email,  
+    avatar: "https://cdn-icons-png.flaticon.com/512/3135/3135715.png", 
+    createdAt: serverTimestamp()  
+  });  
+  document.getElementById("messageInput").value = "";  
+  setReply(null);  
+  setTypingStatus(false);  
+};  
+  
+async function loadMessages(){
+  const messagesDiv = document.getElementById("messages");
+  const q = query(collection(db, "messages"), orderBy("createdAt"));
+  onSnapshot(q, snapshot => {
+    messagesDiv.innerHTML = "";
+    snapshot.forEach(docSnap => {
+      const data = docSnap.data();
+      const id = docSnap.id;
+      const isOwn = data.author === (currentUser.displayName || currentUser.email);
+      
+      const createdAt = data.createdAt?.toDate();
+      const time = createdAt?.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) || '';
+      const date = createdAt?.toLocaleDateString([], { year: 'numeric', month: 'short', day: 'numeric' }) || '';
+
+      const msgDiv = document.createElement("div");
+      msgDiv.className = "message " + (isOwn ? "right" : "left");
+      msgDiv.innerHTML = `
+       <img class="avatar" src="${data.avatar || 'https://cdn-icons-png.flaticon.com/512/149/149071.png'}">
+        <div>  
+          ${data.replyTo ? `<div class="reply-preview" style="font-size:11px; margin-bottom:2px;">${data.replyTo}</div>` : ''}  
+          <div class="bubble">${data.content}<span class="reply-icon" onclick="setReply('${data.content}')">↩</span></div>  
+          <div class="author-under">${data.author} <span class="time">${time} | ${date}</span></div>  
+        </div>  
+        ${isOwn ? `  
+        <div class="options">  
+          <button class="options-btn" onclick="toggleOptions(this)">⋮</button>  
+          <div class="options-menu">  
+            <button onclick="openEditModal('${id}', '${encodeURIComponent(data.content)}')">Edit</button>  
+            <button onclick="deleteMessage('${id}')">Delete</button>  
+          </div>  
+        </div>` : ''}  
+      `;
+      messagesDiv.appendChild(msgDiv);
+    });
+    messagesDiv.scrollTop = messagesDiv.scrollHeight;
+  });
+}
+  
+window.setReply = (text) => {  
+  replyText = text;  
+  const div = document.getElementById("replyPreview");  
+  const textSpan = document.getElementById("replyText");  
+  if (text) { textSpan.textContent = "Replying to: " + text; div.style.display = "flex"; }  
+  else { div.style.display = "none"; }  
+};  
+  
+window.deleteMessage = async (id) => {  
+  await deleteDoc(doc(db, "messages", id));  
+};  
+  
+window.toggleOptions = (btn) => {  
+  const msgDiv = btn.closest('.message');  
+  document.querySelectorAll('.message.show-options').forEach(div => {  
+    if(div !== msgDiv) div.classList.remove('show-options');  
+  });  
+  msgDiv.classList.toggle('show-options');  
+};  
+  
+// ✏️ edit modal logic  
+window.openEditModal = (id, oldContent) => {  
+  editMsgId = id;  
+  document.getElementById("editInput").value = decodeURIComponent(oldContent);  
+  document.getElementById("editModal").style.display = "flex";  
+};  
+window.closeEditModal = () => {  
+  editMsgId = null;  
+  document.getElementById("editModal").style.display = "none";  
+};  
+window.saveEdit = async () => {  
+  const newContent = document.getElementById("editInput").value.trim();  
+  if (newContent) {  
+    await updateDoc(doc(db, "messages", editMsgId), { content: newContent });  
+  }  
+  closeEditModal();  
+};  
+  
+window.setTypingStatus = async (typing) => {  
+  const typingRef = doc(db, "typing", currentUser.uid);  
+  if (typing) {  
+    await setDoc(typingRef, { name: currentUser.displayName || currentUser.email });  
+    clearTimeout(typingTimeout);  
+    typingTimeout = setTimeout(() => setTypingStatus(false), 2000);  
+  } else {  
+    await deleteDoc(typingRef).catch(()=>{});  
+  }  
+};  
+  
+function listenTyping(){  
+  const typingDiv = document.getElementById("typingIndicator");  
+  onSnapshot(collection(db, "typing"), snapshot => {  
+    const others = snapshot.docs.filter(d => d.id !== currentUser.uid);  
+    typingDiv.textContent = others.length > 0 ? `${others[0].data().name} is typing...` : "";  
+  });  
+}  
+
+// ✅ Swipe to reply gesture
+let touchStartX = 0;
+let touchEndX = 0;
+
+document.getElementById("messages").addEventListener("touchstart", function (e) {
+  if (e.target.closest(".message")) {
+    touchStartX = e.changedTouches[0].screenX;
+  }
+}, false);
+
+document.getElementById("messages").addEventListener("touchmove", function (e) {
+  touchEndX = e.changedTouches[0].screenX;
+}, false);
+
+document.getElementById("messages").addEventListener("touchend", function (e) {
+  const messageEl = e.target.closest(".message");
+  if (!messageEl) return;
+
+  const swipedDistance = touchEndX - touchStartX;
+  if (swipedDistance > 80) { // swipe right threshold
+    const contentEl = messageEl.querySelector(".bubble");
+    if (contentEl) setReply(contentEl.textContent.replace('↩', '').trim());
+  }
+
+  // Reset
+  touchStartX = 0;
+  touchEndX = 0;
+}, false);
+</script>  </body>  
+</html>

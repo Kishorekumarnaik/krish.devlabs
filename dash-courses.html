@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <title>Dashboard | KrishDevLabs</title>
+    <link rel="canonical" href="https://krishdevlabs.xyz/dash-courses.html" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f6f8fb;
+      min-height: 100vh;
+      padding-top: 80px;
+    }
+
+    nav {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; z-index: 1000;
+      background: white; backdrop-filter: blur(12px);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+      padding: 14px 28px;
+      display: flex; justify-content: space-between; align-items: center;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .nav-logo img { height: 38px; cursor: pointer; transition: transform 0.2s ease; }
+    .nav-logo img:hover { transform: scale(1.05); }
+
+    .menu-icon { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+    .menu-icon div { width: 24px; height: 3px; background: #4f46e5; border-radius: 2px; transition: all 0.3s ease; }
+    .menu-icon.active div:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+    .menu-icon.active div:nth-child(2) { opacity: 0; }
+    .menu-icon.active div:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+    .nav-links { display: none; }
+
+    @media (max-width: 768px) {
+      .menu-icon { display: flex; }
+      .account-name { display: none; }
+      .nav-links {
+        position: fixed; top: 0; right: -100%;
+        height: 100vh; width: 250px;
+        background: white;
+        display: flex; flex-direction: column;
+        padding: 80px 24px;
+        box-shadow: -6px 0 16px rgba(0,0,0,0.1);
+        transition: right 0.3s ease; z-index: 1001;
+      }
+      .nav-links.active { right: 0; }
+      .nav-links a {
+        margin-bottom: 20px;
+        font-size: 1.1rem; font-weight: 600;
+        color: #1e293b; text-decoration: none;
+        transition: color 0.3s;
+      }
+      .nav-links a:hover { color: #4f46e5; }
+    }
+
+    .container {
+      padding: 10px 1.5rem 2rem;
+    }
+
+    .search-bar {
+      margin-bottom: 1.2rem;
+    }
+
+    .search-bar input {
+      width: 100%;
+      padding: 0.8rem 1rem;
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+
+    .tabs {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      border-bottom: 2px solid #e5e7eb;
+    }
+
+    .tabs button {
+      padding: 0.6rem 1rem;
+      background: none;
+      border: none;
+      font-weight: 600;
+      cursor: pointer;
+      border-bottom: 3px solid transparent;
+    }
+
+    .tabs button.active {
+      border-color: #4f46e5;
+      color: #4f46e5;
+    }
+
+    .category-section {
+      display: none;
+    }
+
+    .category-section.active {
+      display: block;
+    }
+
+    .course-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+
+   .course-card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 16px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .course-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.08);
+  }
+
+  .ribbon {
+    width: 100px;
+    background: #e74c3c;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    font-size: 12px;
+    padding: 4px 0;
+    position: absolute;
+    right: -30px;
+    top: 15px;
+    transform: rotate(45deg);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+  }
+
+  .ribbon.free {
+    background: #10b981; /* Green */
+  }
+  .ribbon.paid {
+    background: #f59e0b; /* Amber */
+  }
+  .ribbon.bundle {
+    background: #6366f1; /* Indigo */
+  }
+  .ribbon.notes {
+    background: #ec4899; /* Pink */
+  }
+
+  .course-card img {
+    width: 100%;
+    border-radius: 12px;
+    height: 120px;
+    object-fit: cover;
+    margin-bottom: 10px;
+  }
+
+  .course-card h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    text-align: center;
+    color: #111827;
+    position: relative;
+    padding-bottom: 10px;
+    width: 100%;
+  }
+
+  .course-card h3::after {
+    content: "";
+    display: block;
+    height: 1px;
+    width: 60%;
+    margin: 0 auto;
+    background: rgba(0, 0, 0, 0.1);
+    position: absolute;
+    bottom: 0;
+    left: 20%;
+  }
+
+  .card-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+    width: 100%;
+    padding-top: 12px;
+  }
+
+  .card-actions button {
+    background: linear-gradient(to right, #4f46e5, #6366f1);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+
+  .card-actions button:hover {
+    background: linear-gradient(to right, #4338ca, #6366f1);
+  }
+
+  .view-link {
+    color: #4f46e5;
+    text-decoration: underline;
+    font-weight: 500;
+    font-size: 14px;
+    cursor: pointer;
+  }
+
+
+  </style>
+</head>
+<body>
+
+  <!-- ✅ Navbar -->
+  <nav>
+    <div class="nav-logo" onclick="location.href='dashboard.html'">
+      <img src="https://i.postimg.cc/Bnbct4pN/Picsart-25-06-09-19-32-03-4761749532394.png" alt="Logo" />
+    </div>
+    <div class="menu-icon" id="menuIcon">
+      <div></div><div></div><div></div>
+    </div>
+    <div class="nav-links" id="navLinks">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="dash-courses.html">Courses</a>
+      <a href="dash-my-courses.html">My Courses</a>
+      <a href="Course-comesoon.html">Quizzes</a>
+      <a href="Community.html">Community</a>
+      <a href="My-Account.html">My Account</a>
+      <a href="Firebase-auth.html" id="logoutBtn" style="color:#ef4444;">Logout</a>
+    </div>
+  </nav>
+
+  <!-- ✅ Main Content -->
+  <div class="container">
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Search courses..." />
+    </div>
+
+    <div class="tabs">
+      <button class="active" onclick="showTab('free', event)">Free</button>
+      <button onclick="showTab('paid', event)">Paid</button>
+      <button onclick="showTab('bundle', event)">Bundles</button>
+      <button onclick="showTab('notes', event)">Notes</button>
+    </div>
+
+    <div id="free" class="category-section active">
+      <div class="course-grid" id="freeCourses"></div>
+    </div>
+
+    <div id="paid" class="category-section">
+      <div class="course-grid" id="paidCourses"></div>
+    </div>
+
+    <div id="bundle" class="category-section">
+      <div class="course-grid" id="bundleCourses"></div>
+    </div>
+
+    <div id="notes" class="category-section">
+      <div class="course-grid" id="notesCourses"></div>
+    </div>
+  </div>
+  <!-- Custom Popup Message -->
+<div id="popup" style="
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #1f2937;
+  color: white;
+  padding: 14px 24px;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 500;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  display: none;
+  z-index: 9999;
+  transition: opacity 0.4s ease, bottom 0.4s ease;
+  max-width: 90%;
+  text-align: center;
+  line-height: 1.4;
+">
+  <span id="popup-icon" style="margin-right: 8px;"></span>
+  <span id="popup-message">Message here</span>
+</div>
+
+  <!-- ✅ JavaScript -->
+<script>
+  function showPopup(message) {
+  const popup = document.getElementById("popup");
+  popup.innerText = message;
+  popup.style.display = "block";
+  setTimeout(() => {
+    popup.style.display = "none";
+  }, 3000);
+}
+  const courseData = {
+    free: [
+      {
+        title: "HTML Basics",
+        image: "https://i.postimg.cc/vZzKJNBF/Picsart-25-08-05-17-25-09-960.jpg/featured/?html",
+        price: "₹0",
+        detailsLink: "404.html",
+        link: "Course-comesoon.html"
+      },
+
+      {
+        title: "CSS Crash Course",
+        image: "https://i.postimg.cc/9Q73sp9c/Picsart-25-08-05-17-21-22-017.jpg/featured/?css",
+        price: "₹0",
+        detailsLink: "404.html",
+        link: "Course-comesoon.html"
+      },
+            {
+        title: "Responsive Web Design",
+        image: "https://i.postimg.cc/6pw3HDkr/Picsart-25-08-05-17-16-15-780.png/featured/?css",
+        price: "₹0",
+        detailsLink: "404.html",
+        link: "Course-comesoon.html"
+      }
+    ],
+    paid: [
+  {
+    title: "JavaScript Mastery",
+    image: "https://i.postimg.cc/s2t7236k/Picsart-25-08-05-17-34-59-847.jpg/featured/?javascript",
+    price: "₹499",
+    link: "Course-comesoon.html",
+    detailsLink: "404.html",
+    paymentLink: "https://rzp.io/rzp/UIIVFdM"
+  },
+    {
+    title: "Frontend Tools",
+    image: "https://i.postimg.cc/Vs3fHdrQ/Picsart-25-08-05-17-37-08-618.jpg/featured/?javascript",
+    price: "₹499",
+    link: "Course-comesoon.html",
+    detailsLink: "404.html",
+    paymentLink: "https://rzp.io/rzp/UIIVFdM"
+  },
+      {
+    title: "Advanced CSS & SASS",
+    image: "https://i.postimg.cc/PxnGQ8V2/Picsart-25-08-05-17-42-35-198.jpg/featured/?javascript",
+    price: "₹499",
+    link: "Course-comesoon.html",
+    detailsLink: "404.html",
+    paymentLink: "https://rzp.io/rzp/sIzma1e"
+  },
+
+    {
+    title: "Mastering React & Next.js",
+    image: "https://i.postimg.cc/wMtGKqr7/Picsart-25-08-05-17-44-51-873.jpg/featured/?react",
+    price: "₹999",
+    link: "Course-comesoon.html",
+    detailsLink: "404.html",
+    paymentLink: "https://rzp.io/rzp/S9DuPiIq"
+  }
+    ],
+    bundle: [
+      {
+        title: "Full Stack Web dev Bundle",
+        image: "https://i.postimg.cc/fR6X5wc8/Picsart-25-08-05-17-50-10-171.jpg/featured/?webdevelopment",
+        price: "₹1499",
+        link: "Course-comesoon.html",
+        detailsLink: "404.html",
+        paymentLink: "https://rzp.io/rzp/c7Llyuyy"
+      },
+            {
+        title: "Ultimate Backend Bundle",
+        image: "https://i.postimg.cc/MZNQz64q/Picsart-25-08-05-17-57-45-416.jpg/featured/?webdevelopment",
+        price: "₹1499",
+        link: "Course-comesoon.html",
+        detailsLink: "404.html",
+        paymentLink: "https://rzp.io/rzp/c7Llyuyy"
+      },
+      {
+        title: "Ultimate Frontend Bundle",
+        image: "https://i.postimg.cc/4dBx2g7K/Picsart-25-08-05-18-03-29-033.jpg/featured/?frontend",
+        price: "₹1999",
+        detailsLink: "404.html",
+        link: "Course-comesoon.html"
+      }
+    ],
+    notes: [
+      {
+        title: "HTML Notes",
+        image: "https://i.postimg.cc/YSyWjYRD/Picsart-25-08-05-18-10-30-723.png/featured/?html,notes",
+        price: "₹199",
+        detailsLink: "404.html",
+        link: "Course-comesoon.html"
+      },
+            {
+        title: "CSS Notes",
+        image: "https://i.postimg.cc/3xxjR87R/Picsart-25-08-05-18-15-39-612.jpg/featured/?html,notes",
+        price: "₹199",
+        detailsLink: "404.html",
+        link: "Course-comesoon.html"
+      },
+      {
+        title: "JAVASCRIPT Notes",
+        image: "https://source.unsplash.com/featured/?css,notes",
+        price: "₹299",
+        detailsLink: "404.html",
+        link: "Course-comesoon.html"
+      }
+    ]
+  };
+
+  function populateCourses(type) {
+    const container = document.getElementById(`${type}Courses`);
+    container.innerHTML = '';
+
+    courseData[type].forEach(course => {
+      const courseWithCategory = { ...course, category: type };
+
+      const card = document.createElement('div');
+      card.className = `course-card ${type}`;
+      card.setAttribute('data-category', type);
+
+      card.innerHTML = `
+  <div class="ribbon ${type}">${course.price}</div>
+  <img src="${course.image}" alt="${course.title}" />
+  <h3>${course.title}</h3>
+  <div class="card-actions">
+    <a class="view-link" href="${course.detailsLink}" target="_blank">View Details</a>
+    <button onclick='handleEnroll(${JSON.stringify(courseWithCategory)})'>Enroll</button>
+  </div>
+`;
+
+      container.appendChild(card);
+    });
+  }
+
+  function viewDetails(title, image) {
+    alert("Viewing details for: " + title);
+  }
+
+  function handleEnroll(course) {
+  const enrolled = JSON.parse(localStorage.getItem('enrolledCourses') || '[]');
+  const already = enrolled.some(c => c.title === course.title && c.category === course.category);
+
+  if (already) {
+    showPopup("⚠️ You have already enrolled in this course.");
+    return;
+  }
+
+  if (course.category === 'free' || course.category === 'notes') {
+    enrolled.push(course);
+    localStorage.setItem('enrolledCourses', JSON.stringify(enrolled));
+    showPopup("Enrolled successfully!🎉 ");
+  } else {
+    // Paid - use Razorpay Checkout with callback_url
+    const options = {
+      key: "rzp_live_LQdczFva8o4hOr", // Replace with your key
+      amount: parseInt(course.price.replace("₹", "")) * 100, // in paise
+      currency: "INR",
+      name: "KrishDevLabs",
+      description: course.title,
+      image: "https://i.postimg.cc/Bnbct4pN/Picsart-25-06-09-19-32-03-4761749532394.png",
+      handler: function (response) {
+        const enrolled = JSON.parse(localStorage.getItem('enrolledCourses') || '[]');
+        enrolled.push(course);
+        localStorage.setItem('enrolledCourses', JSON.stringify(enrolled));
+
+        // Redirect to success page
+        window.location.href = `payment-success.html?title=${encodeURIComponent(course.title)}&category=${course.category}&image=${encodeURIComponent(course.image)}&price=${course.price}&link=${encodeURIComponent(course.link)}&payment_id=${response.razorpay_payment_id}`;
+      },
+      prefill: {
+        name: "Student Name",
+        email: "student@example.com"
+      },
+      theme: {
+        color: "#6366f1"
+      }
+    };
+
+    const rzp = new Razorpay(options);
+    rzp.open();
+  }
+}
+
+  function showTab(tab, e) {
+    document.querySelectorAll('.category-section').forEach(s => s.classList.remove('active'));
+    document.getElementById(tab).classList.add('active');
+    document.querySelectorAll('.tabs button').forEach(b => b.classList.remove('active'));
+    e.target.classList.add('active');
+  }
+
+  ['free', 'paid', 'bundle', 'notes'].forEach(type => populateCourses(type));
+
+  document.getElementById("logoutBtn").addEventListener("click", () => {
+    localStorage.clear();
+    window.location.href = "auth.html";
+  });
+
+  document.getElementById("menuIcon").addEventListener("click", () => {
+    document.getElementById("navLinks").classList.toggle("active");
+    document.getElementById("menuIcon").classList.toggle("active");
+  });
+  localStorage.setItem('allCourses', JSON.stringify(courseData));
+  document.getElementById("searchInput").addEventListener("input", function () {
+  const query = this.value.toLowerCase();
+
+  document.querySelectorAll(".category-section").forEach(section => {
+    section.querySelectorAll(".course-card").forEach(card => {
+      const title = card.querySelector("h3").innerText.toLowerCase();
+      if (title.includes(query)) {
+        card.style.display = "flex";
+      } else {
+        card.style.display = "none";
+      }
+    });
+  });
+});
+  
+</script>
+
+
+</body>
+</html>
+
+
