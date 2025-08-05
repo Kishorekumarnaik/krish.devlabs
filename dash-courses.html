@@ -457,7 +457,7 @@
     return;
   }
 
-  if (course.category === 'free' || course.category === 'notes') {
+  if (course.price === '₹0')  {
     enrolled.push(course);
     localStorage.setItem('enrolledCourses', JSON.stringify(enrolled));
     showPopup("Enrolled successfully!🎉 ");
@@ -531,6 +531,7 @@
 
 </body>
 </html>
+
 
 
 
