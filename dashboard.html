@@ -270,93 +270,176 @@
   updateEnrolledCounts();
 </script>
 
+
+
 <script type="module">
+
   import { initializeApp } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-app.js";
+
   import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-auth.js";
-  import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-firestore.js";
+
+
 
   const firebaseConfig = {
+
     apiKey: "AIzaSyDDTnOATqSbEWwleUOOq1dlGvv9NhFE3GU",
+
     authDomain: "krishdevlabs-signup.firebaseapp.com",
+
     projectId: "krishdevlabs-signup",
+
     storageBucket: "krishdevlabs-signup.appspot.com",
+
     messagingSenderId: "399199705494",
+
     appId: "1:399199705494:web:7551f84062f3b5a776e5b7"
+
   };
+
+
 
   const app = initializeApp(firebaseConfig);
+
   const auth = getAuth(app);
-  const db = getFirestore(app);
+
+
 
   const userName = document.getElementById("userName");
+
   const profileImg = document.getElementById("profileImg");
+
+  const accountName = document.getElementById("accountName");
+
+  const profilePic = document.getElementById("profilePic");
+
   const greetTime = document.getElementById("greetTime");
 
-  const updateCounts = (enrolledData = {}) => {
-    let totalCourses = 0;
-    let totalNotes = 0;
-    let totalBundles = 0;
 
-    for (const course of enrolledData) {
-      const category = course.category?.toLowerCase();
-      if (category === "free" || category === "paid") totalCourses++;
-      else if (category === "notes") totalNotes++;
-      else if (category === "bundle" || category === "bundles") totalBundles++;
-    }
 
-    document.getElementById("earnings").textContent = "0";
-    document.getElementById("enrolledCourses").textContent = totalCourses;
-    document.getElementById("enrollednotes").textContent = totalNotes;
-    document.getElementById("enrolledBundles").textContent = totalBundles;
-  };
+  onAuthStateChanged(auth, (user) => {
 
-  onAuthStateChanged(auth, async (user) => {
     if (user) {
+
       const name = user.displayName || user.email.split("@")[0] || "User";
+
       userName.textContent = name;
-      profileImg.src = "https://i.imgur.com/4ZQZ4zo.png";
 
-      // 🧠 Load enrolledCourses from Firestore
-      const userDocRef = doc(db, "users", user.uid);
-      const userSnap = await getDoc(userDocRef);
+      accountName.textContent = name;
 
-      if (userSnap.exists()) {
-        const data = userSnap.data();
-        const enrolledCourses = data.enrolledCourses || [];
+      // Always use default profile icon
 
-        // Store in localStorage for consistency
-        localStorage.setItem("enrolledCourses", JSON.stringify(enrolledCourses));
+profileImg.src = "https://i.imgur.com/4ZQZ4zo.png";
 
-        updateCounts(enrolledCourses);
-      } else {
-        console.log("User data not found in Firestore.");
-        updateCounts([]);
-      }
+
+
+      // Demo values
+
+      // Dynamic values based on localStorage
+
+// Dynamically count enrolled data from localStorage
+
+const enrolledData = JSON.parse(localStorage.getItem("enrolledCourses")) || {};
+
+
+
+let totalCourses = 0;
+
+let totalNotes = 0;
+
+let totalBundles = 0;
+
+
+
+for (const category in enrolledData) {
+
+  const items = enrolledData[category];
+
+  if (!Array.isArray(items)) continue;
+
+
+
+  if (category === "free" || category === "paid") {
+
+    totalCourses += items.length;
+
+  } else if (category === "notes") {
+
+    totalNotes += items.length;
+
+  } else if (category === "bundles") {
+
+    totalBundles += items.length;
+
+  }
+
+}
+
+
+
+document.getElementById("earnings").textContent = "0"; // Default for now
+
+document.getElementById("enrolledCourses").textContent = totalCourses;
+
+document.getElementById("enrollednotes").textContent = totalNotes;
+
+document.getElementById("enrolledBundles").textContent = totalBundles;
+
+
+
+
+
+
 
     } else {
+
       window.location.href = "auth.html";
+
     }
+
   });
+
+
 
   document.getElementById("logoutBtn").addEventListener("click", async () => {
+
     await signOut(auth);
+
     localStorage.clear();
+
     window.location.href = "auth.html";
+
   });
+
+
 
   document.getElementById("menuIcon").addEventListener("click", () => {
+
     document.getElementById("navLinks").classList.toggle("active");
+
     document.getElementById("menuIcon").classList.toggle("active");
+
   });
 
+
+
   const hour = new Date().getHours();
+
   let greet = "Good Evening,";
+
   if (hour < 12) greet = "Good Morning,";
+
   else if (hour < 18) greet = "Good Afternoon,";
+
   greetTime.textContent = greet;
+
+
+
+  
+
 </script>
 </body>
 </html>
+
 
 
 
