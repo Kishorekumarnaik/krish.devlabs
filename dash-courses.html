@@ -459,7 +459,27 @@
 
   if (course.price === '₹0')  {
     enrolled.push(course);
-    localStorage.setItem('enrolledCourses', JSON.stringify(enrolled));
+    // Save to Firestore under the logged-in user's UID
+import {
+  getFirestore,
+  doc,
+  setDoc,
+  updateDoc,
+  getDoc,
+  arrayUnion
+} from "firebase/firestore";
+
+const db = getFirestore();
+const user = auth.currentUser;
+
+const userRef = doc(db, "users", user.uid);
+await updateDoc(userRef, {
+  enrolledCourses: arrayUnion(course)
+}).catch(async () => {
+  await setDoc(userRef, {
+    enrolledCourses: [course]
+  });
+});
     showPopup("Enrolled successfully!🎉 ");
   } else {
     // Paid - use Razorpay Checkout with callback_url
@@ -531,6 +551,7 @@
 
 </body>
 </html>
+
 
 
 
