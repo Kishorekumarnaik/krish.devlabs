@@ -248,6 +248,23 @@
 
   <!-- ✅ JavaScript -->
   <script>
+    import { getDoc, doc } from "firebase/firestore";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
+
+const auth = getAuth();
+const db = getFirestore();
+
+onAuthStateChanged(auth, async (user) => {
+  if (user) {
+    const userRef = doc(db, "users", user.uid);
+    const userSnap = await getDoc(userRef);
+
+    if (userSnap.exists()) {
+      const enrolledCourses = userSnap.data().enrolledCourses || [];
+      // Now display these courses in your "My Courses" section
+    }
+  }
+});
 function showTab(tab, event) {
   document.querySelectorAll('.category-section').forEach(s => s.classList.remove('active'));
   document.getElementById(tab).classList.add('active');
@@ -350,6 +367,7 @@ document.getElementById('searchInput').addEventListener('input', function () {
 
 </body>
 </html>
+
 
 
 
